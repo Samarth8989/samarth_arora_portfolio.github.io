@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samarth Arora - Product Manager Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #37352f;
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e9e9e7;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #37352f;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #6f6e69;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #37352f;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 64px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            margin-bottom: 32px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            margin-bottom: 48px;
+            opacity: 0.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 16px 32px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .cta-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .cta-button.primary {
+            background: white;
+            color: #37352f;
+            border-color: white;
+        }
+
+        .cta-button.primary:hover {
+            background: #f8f9fa;
+        }
+
+        /* Section Base Styles */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 800;
+            color: #37352f;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: #6f6e69;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        /* About Section */
+        .about {
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #37352f;
+        }
+
+        .about-text p {
+            margin-bottom: 24px;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 32px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease;
+        }
+
+        .stat:hover {
+            transform: translateY(-4px);
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 800;
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #6f6e69;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Case Studies Section */
+        .case-studies {
+            background: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            border: 1px solid #e9e9e7;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(135deg, #e85a4f 0%, #f39c12 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image.spotify {
+            background: linear-gradient(135deg, #1DB954 0%, #1ed760 100%);
+        }
+
+        .project-image.uber {
+            background: linear-gradient(135deg, #000000 0%, #1c3aa9 100%);
+        }
+
+        .project-image.zomato {
+            background: linear-gradient(135deg, #e23744 0%, #ff6b35 100%);
+        }
+
+        .project-image.azgo {
+            background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%);
+        }
+
+        .project-image.fliptalk {
+            background: linear-gradient(135deg, #9C27B0 0%, #E91E63 100%);
+        }
+
+        .project-content {
+            padding: 32px;
+        }
+
+        .project-category {
+            display: inline-block;
+            background: #f1f1ef;
+            color: #6f6e69;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+        }
+
+        .project-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #37352f;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .project-description {
+            font-size: 16px;
+            color: #6f6e69;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .project-metrics {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #37352f;
+        }
+
+        .metric-label {
+            font-size: 12px;
+            color: #6f6e69;
+            margin-top: 4px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.2s ease;
+        }
+
+        .project-link:hover {
+            color: #5a67d8;
+        }
+
+        .project-link.disabled {
+            color: #a0a0a0;
+            cursor: not-allowed;
+        }
+
+        .project-tag {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            margin: 4px 4px 0 0;
+        }
+
+        .project-tag.orange {
+            background: #e85a4f;
+        }
+
+        .project-tag.green {
+            background: #1DB954;
+        }
+
+        .project-tag.black {
+            background: #37352f;
+        }
+
+        .project-tag.red {
+            background: #e23744;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-title {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 24px;
+        }
+
+        .contact-description {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 12px 24px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: #37352f;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: #a0a0a0;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .nav-container {
+                padding: 0 16px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 48px;
+            }
+
+            .hero-subtitle {
+                font-size: 20px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .project-metrics {
+                justify-content: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Scroll Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">Samarth Arora</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#case-studies">Case Studies</a></li>
+                <li><a href="#teardowns">Teardowns</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar"></div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1 class="hero-title">Product Manager</h1>
+                <p class="hero-subtitle">Building products that users love and businesses grow</p>
+                <p class="hero-description">
+                    I'm a product manager with experience in B2B commerce, marketplace optimization, and user activation. 
+                    I focus on data-driven growth strategies and creating seamless user experiences across web and mobile platforms.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#case-studies" class="cta-button primary">View My Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="case-studies" class="section case-studies">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Case Studies</h2>
+                <p class="section-subtitle">
+                    Deep dives into product challenges I've solved and the impact achieved
+                </p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <span>🛒</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">B2B Commerce</div>
+                        <h3 class="project-title">Kirana Club – Retailer Activation</h3>
+                        <p class="project-description">
+                            Drove order activation and retention for 3M+ Indian retailers through personalized onboarding and gamified loyalty programs.
+                        </p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <div class="metric-value">24%</div>
+                                <div class="metric-label">First Order↑</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">37%</div>
+                                <div class="metric-label">Repeat Rate</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">19%</div>
+                                <div class="metric-label">AOV Growth</div>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag orange">Order Activation</span>
+                            <span class="project-tag orange">Gamification</span>
+                            <span class="project-tag orange">B2B</span>
+                        </div>
+                        <br><br>
+                        <a href="javascript:void(0)" class="project-link" onclick="openKiranaStudy(event)">View Case Study →</a>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image azgo">
+                        <span>🤖</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">AI Systems</div>
+                        <h3 class="project-title">Azgo – AI Inventory Management</h3>
+                        <p class="project-description">
+                            Built AI-powered inventory prediction system for SMB retailers to optimize stock levels and reduce waste.
+                        </p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <div class="metric-value">32%</div>
+                                <div class="metric-label">Waste Reduction</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">18%</div>
+                                <div class="metric-label">Revenue↑</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">85%</div>
+                                <div class="metric-label">Accuracy</div>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag" style="background: #4CAF50;">AI/ML</span>
+                            <span class="project-tag" style="background: #4CAF50;">Inventory</span>
+                            <span class="project-tag" style="background: #4CAF50;">SMB</span>
+                        </div>
+                        <br><br>
+                        <a href="javascript:void(0)" class="project-link" onclick="openFlipTalkStudy(event)">View Case Study →</a>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image fliptalk">
+                        <span>🎮</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">Social Gaming</div>
+                        <h3 class="project-title">FlipTalk – Social Engagement</h3>
+                        <p class="project-description">
+                            Designed viral growth mechanics and community features for a social gaming platform targeting Gen Z users.
+                        </p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <div class="metric-value">2.8x</div>
+                                <div class="metric-label">Viral Growth</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">45%</div>
+                                <div class="metric-label">DAU↑</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">65%</div>
+                                <div class="metric-label">D7 Retention</div>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag" style="background: #9C27B0;">Social</span>
+                            <span class="project-tag" style="background: #9C27B0;">Gaming</span>
+                            <span class="project-tag" style="background: #9C27B0;">Growth</span>
+                        </div>
+                        <br><br>
+                        <a href="#" class="project-link disabled">Coming Soon →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Teardowns Section -->
+    <section id="teardowns" class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Product Teardowns</h2>
+                <p class="section-subtitle">
+                    Strategic analysis of leading products, exploring architecture, user journeys, and optimization opportunities
+                </p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-image uber">
+                        <span style="color: white; font-size: 40px; font-weight: bold;">UBER</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">Ride-Sharing Platform</div>
+                        <h3 class="project-title">Uber – Real-time Matching</h3>
+                        <p class="project-description">
+                            Deep dive into Uber's ride-sharing platform, driver-rider matching algorithms, and global mobility ecosystem across different markets.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag black">Ride-Sharing</span>
+                            <span class="project-tag black">Real-time</span>
+                            <span class="project-tag black">Mobility</span>
+                        </div>
+                        <br><br>
+                        <a href="javascript:void(0)" class="project-link" onclick="openUberTeardown(event)">View Analysis →</a>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image spotify">
+                        <span style="color: white; font-size: 32px; font-weight: bold;">♪ Spotify</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">Music Streaming</div>
+                        <h3 class="project-title">Spotify – Discovery Engine</h3>
+                        <p class="project-description">
+                            Analysis of Spotify's recommendation algorithms, Discovery Weekly mechanics, and ML-driven personalization engine for music discovery.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag green">Streaming</span>
+                            <span class="project-tag green">Discovery</span>
+                            <span class="project-tag green">Personalization</span>
+                        </div>
+                        <br><br>
+                        <a href="javascript:void(0)" class="project-link" onclick="openSpotifyTeardown(event)">View Analysis →</a>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image zomato">
+                        <span style="color: white; font-size: 32px; font-weight: bold;">Zomato</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">Food Delivery</div>
+                        <h3 class="project-title">Zomato – Delivery Optimization</h3>
+                        <p class="project-description">
+                            Analysis of Zomato's multi-stakeholder platform architecture, real-time delivery optimization algorithms, and database design managing millions of orders across restaurants, delivery partners, and customers.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag red">Food Tech</span>
+                            <span class="project-tag red">Delivery</span>
+                            <span class="project-tag red">Discovery</span>
+                        </div>
+                        <br><br>
+                        <a href="javascript:void(0)" class="project-link" onclick="openZomatoTeardown(event)">View Analysis →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">
+                    A product manager passionate about turning complex business challenges into intuitive user experiences
+                </p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text slide-in-left">
+                    <p>
+                        I'm a product manager with expertise in B2B commerce platforms, user activation strategies, and growth optimization. 
+                        My approach combines deep user research with data-driven decision making to build products that solve real problems.
+                    </p>
+                    <p>
+                        I've worked with companies serving millions of users, focusing on conversion optimization, retention strategies, 
+                        and product-market fit. I believe in building products that are not just functional, but delightful to use.
+                    </p>
+                    <p>
+                        My background spans across user experience design, data analysis, and business strategy, allowing me to bridge 
+                        the gap between technical feasibility and business objectives.
+                    </p>
+                </div>
+                
+                <div class="about-stats slide-in-right">
+                    <div class="stats-grid">
+                        <div class="stat">
+                            <div class="stat-number">3M+</div>
+                            <div class="stat-label">Users Impacted</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">37%</div>
+                            <div class="stat-label">Retention Improvement</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">24%</div>
+                            <div class="stat-label">Conversion Uplift</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Products Shipped</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="contact-content fade-in">
+                <h2 class="contact-title">Let's Build Something Together</h2>
+                <p class="contact-description">
+                    I'm always interested in discussing product challenges, sharing insights, or exploring new opportunities.
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:arorasamarth01@gmail.com" class="contact-link">Email Me</a>
+                    <a href="https://linkedin.com/in/samarth-arora" class="contact-link">LinkedIn</a>
+                    <a href="#" class="contact-link">Download Resume</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <p>&copy; 2025 Samarth Arora. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#case-studies">Case Studies</a>
+                    <a href="#teardowns">Teardowns</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 70;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Global link handler to prevent navigation errors
+        document.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A') {
+                const href = e.target.getAttribute('href');
+                if (href === '#' || href === 'javascript:void(0)' || href?.startsWith('javascript:')) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    return false;
+                }
+            }
+        });
+
+        // Scroll progress bar
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.querySelector('.progress-bar').style.width = `${scrolled}%`;
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animation elements
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+
+        // Project link functions - Updated for actual navigation
+        function openKiranaStudy(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            // Try to open the Kirana case study
+            try {
+                // In a real website, this would be: window.location.href = '/case-studies/kirana-club'
+                window.open('about:blank', '_blank');
+                
+                // Provide instructions for the user
+                setTimeout(() => {
+                    alert(`Navigation Info:
+
+In a live portfolio website, this link would take you to the full Kirana Club case study page.
+
+For now, you can:
+1. View the detailed case study by accessing the individual Kirana Club artifact
+2. See the complete user journey optimization process
+3. Review the gamification and retention strategies implemented
+
+Key Results: 24% conversion ↑, 37% retention ↑, 19% AOV ↑`);
+                }, 100);
+                
+            } catch (error) {
+                alert('Navigation would redirect to: /case-studies/kirana-club');
+            }
+            return false;
+        }
+
+        function openUberTeardown(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            try {
+                window.open('about:blank', '_blank');
+                setTimeout(() => {
+                    alert(`Navigation Info:
+
+In a live portfolio, this would open the complete Uber Product Teardown.
+
+The analysis includes:
+• System architecture diagrams
+• API specifications and database schema  
+• Real-time matching algorithms
+• Marketplace optimization strategies
+• User journey improvements
+
+Would redirect to: /teardowns/uber-analysis`);
+                }, 100);
+            } catch (error) {
+                alert('Navigation would redirect to: /teardowns/uber-analysis');
+            }
+            return false;
+        }
+
+        function openSpotifyTeardown(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            try {
+                window.open('about:blank', '_blank');
+                setTimeout(() => {
+                    alert(`Navigation Info:
+
+In a live portfolio, this would open the Spotify Product Teardown.
+
+The teardown covers:
+• ML recommendation engine analysis
+• Content discovery optimization
+• Subscription model insights
+• User engagement strategies
+
+Would redirect to: /teardowns/spotify-analysis`);
+                }, 100);
+            } catch (error) {
+                alert('Navigation would redirect to: /teardowns/spotify-analysis');
+            }
+            return false;
+        }
+
+        function openZomatoTeardown(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            try {
+                window.open('about:blank', '_blank');
+                setTimeout(() => {
+                    alert(`Navigation Info:
+
+In a live portfolio, this would open the Zomato Product Teardown.
+
+The analysis includes:
+• Multi-sided marketplace dynamics
+• Real-time logistics optimization
+• Delivery algorithm insights
+• Stakeholder management strategies
+
+Would redirect to: /teardowns/zomato-analysis`);
+                }, 100);
+            } catch (error) {
+                alert('Navigation would redirect to: /teardowns/zomato-analysis');
+            }
+            return false;
+        }
+
+        function openFlipTalkStudy(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            try {
+                window.open('about:blank', '_blank');
+                setTimeout(() => {
+                    alert(`Navigation Info:
+
+In a live portfolio, this would open the complete FlipTalk Case Study.
+
+The case study covers:
+• Community-led learning platform for Gen Z
+• Founder-led growth from 10K to 40K+ users
+• 30% CAC reduction & 13% churn improvement
+• Multi-incubator funding success
+
+Would redirect to: /case-studies/fliptalk`);
+                }, 100);
+            } catch (error) {
+                alert('Navigation would redirect to: /case-studies/fliptalk');
+            }
+            return false;
+        }
+
+        // Typing animation for hero title
+        const heroTitle = document.querySelector('.hero-title');
+        const text = 'Product Manager';
+        heroTitle.textContent = '';
+        
+        setTimeout(() => {
+            let i = 0;
+            const typeWriter = () => {
+                if (i < text.length) {
+                    heroTitle.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            };
+            typeWriter();
+        }, 1000);
+
+        // Parallax effect for hero background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${rate}px)`;
+            }
+        });
+
+        // Add stagger delay to project cards
+        document.querySelectorAll('.project-card').forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+        });
+    </script>
+</body>
+</html>

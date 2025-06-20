@@ -10,1122 +10,1360 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #37352f;
+            color: #333;
             background: #ffffff;
-            overflow-x: hidden;
         }
-
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 20px;
         }
-
+        
         /* Navigation */
-        .navbar {
+        nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid #e9e9e7;
             z-index: 1000;
-            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
+        
+        nav .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 70px;
+            padding: 20px;
         }
-
+        
         .logo {
             font-size: 24px;
-            font-weight: 800;
-            color: #37352f;
-            text-decoration: none;
+            font-weight: 700;
+            color: #000;
+            cursor: pointer;
         }
-
+        
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 30px;
             list-style: none;
         }
-
+        
         .nav-links a {
-            color: #6f6e69;
             text-decoration: none;
+            color: #666;
             font-weight: 500;
-            transition: color 0.2s ease;
+            transition: color 0.3s;
         }
-
+        
         .nav-links a:hover {
-            color: #37352f;
+            color: #000;
         }
 
-        /* Hero Section */
-        .hero {
+        /* Mobile menu */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        /* Page content wrapper */
+        .page-content {
+            display: none;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+        }
+        
+        .page-content.active {
+            display: block;
+        }
+        
+        /* Banner */
+        .banner {
+            padding: 140px 0 100px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
         }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
-            opacity: 0.3;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-title {
-            font-size: 64px;
+        
+        .banner h1 {
+            font-size: 56px;
             font-weight: 800;
             margin-bottom: 24px;
-            letter-spacing: -0.02em;
-            line-height: 1.1;
+            color: #1a1a1a;
         }
-
-        .hero-subtitle {
+        
+        .banner p {
             font-size: 24px;
-            margin-bottom: 32px;
-            opacity: 0.9;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-description {
-            font-size: 18px;
-            margin-bottom: 48px;
-            opacity: 0.8;
+            color: #666;
             max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
+            margin: 0 auto;
         }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
+        
+        /* Banner Stats */
+        .banner-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 800px;
+            margin: 60px auto 0;
+            padding: 40px 0;
         }
-
-        .cta-button {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 16px 32px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
+        
+        .banner-stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 36px;
+            font-weight: 800;
+            color: #667eea;
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+        
+        .stat-label {
             font-size: 16px;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            color: #666;
+            font-weight: 500;
         }
-
-        .cta-button:hover {
-            background: rgba(255, 255, 255, 0.3);
-            border-color: rgba(255, 255, 255, 0.5);
-            transform: translateY(-2px);
-        }
-
-        .cta-button.primary {
-            background: white;
-            color: #37352f;
-            border-color: white;
-        }
-
-        .cta-button.primary:hover {
-            background: #f8f9fa;
-        }
-
-        /* Section Base Styles */
-        .section {
+        
+        /* Work Section */
+        .work-section {
             padding: 100px 0;
         }
-
+        
         .section-header {
             text-align: center;
             margin-bottom: 80px;
         }
-
-        .section-title {
-            font-size: 48px;
-            font-weight: 800;
-            color: #37352f;
+        
+        .section-header h2 {
+            font-size: 42px;
             margin-bottom: 20px;
-            letter-spacing: -0.02em;
+            color: #1a1a1a;
+            font-weight: 700;
         }
-
-        .section-subtitle {
+        
+        .section-header p {
+            color: #666;
             font-size: 20px;
-            color: #6f6e69;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.5;
         }
-
-        /* About Section */
-        .about {
-            background: #f8f9fa;
-        }
-
-        .about-content {
+        
+        /* Work Grid */
+        .work-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .about-text {
-            font-size: 18px;
-            line-height: 1.7;
-            color: #37352f;
-        }
-
-        .about-text p {
-            margin-bottom: 24px;
-        }
-
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-        }
-
-        .stat {
-            text-align: center;
-            padding: 32px;
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-            transition: transform 0.3s ease;
-        }
-
-        .stat:hover {
-            transform: translateY(-4px);
-        }
-
-        .stat-number {
-            font-size: 32px;
-            font-weight: 800;
-            color: #667eea;
-            margin-bottom: 8px;
-        }
-
-        .stat-label {
-            font-size: 14px;
-            color: #6f6e69;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* Case Studies Section */
-        .case-studies {
-            background: white;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
             gap: 40px;
-            margin-top: 60px;
         }
-
-        .project-card {
-            background: white;
+        
+        .work-card {
+            background: #fff;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s ease;
-            border: 1px solid #e9e9e7;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
         }
-
-        .project-card:hover {
+        
+        .work-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
         }
-
-        .project-image {
-            height: 200px;
-            background: linear-gradient(135deg, #e85a4f 0%, #f39c12 100%);
+        
+        .work-image {
+            height: 240px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 48px;
             color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-image.spotify {
-            background: linear-gradient(135deg, #1DB954 0%, #1ed760 100%);
-        }
-
-        .project-image.uber {
-            background: linear-gradient(135deg, #000000 0%, #1c3aa9 100%);
-        }
-
-        .project-image.zomato {
-            background: linear-gradient(135deg, #e23744 0%, #ff6b35 100%);
-        }
-
-        .project-image.azgo {
-            background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%);
-        }
-
-        .project-image.fliptalk {
-            background: linear-gradient(135deg, #9C27B0 0%, #E91E63 100%);
-        }
-
-        .project-content {
-            padding: 32px;
-        }
-
-        .project-category {
-            display: inline-block;
-            background: #f1f1ef;
-            color: #6f6e69;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 16px;
-        }
-
-        .project-title {
             font-size: 24px;
             font-weight: 700;
-            color: #37352f;
-            margin-bottom: 12px;
-            line-height: 1.3;
         }
-
-        .project-description {
-            font-size: 16px;
-            color: #6f6e69;
-            line-height: 1.6;
-            margin-bottom: 24px;
+        
+        .work-image.kirana {
+            background: linear-gradient(135deg, #E55722 0%, #FF8A50 100%);
         }
-
-        .project-metrics {
+        
+        .work-image.azgo {
+            background: linear-gradient(135deg, #00C853 0%, #4CAF50 100%);
+        }
+        
+        .work-image.fliptalk {
+            background: linear-gradient(135deg, #9C27B0 0%, #E91E63 100%);
+        }
+        
+        .work-content {
+            padding: 40px;
+        }
+        
+        .work-tags {
             display: flex;
-            gap: 24px;
-            margin-bottom: 24px;
+            gap: 12px;
+            margin-bottom: 20px;
         }
-
-        .metric {
-            text-align: center;
+        
+        .work-tag {
+            padding: 6px 16px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 600;
+            color: white;
         }
-
-        .metric-value {
-            font-size: 20px;
+        
+        .work-title {
+            font-size: 28px;
+            margin-bottom: 16px;
+            color: #1a1a1a;
             font-weight: 700;
-            color: #37352f;
+        }
+        
+        .work-description {
+            color: #666;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+        
+        .work-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: gap 0.3s;
+        }
+        
+        /* Insights Section */
+        .insights-section {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+        
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .insight-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        
+        .insight-card:hover {
+            transform: translateY(-4px);
+        }
+        
+        .insight-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .insight-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .insight-logo.uber {
+            background: #000000;
+        }
+        
+        .insight-logo.spotify {
+            background: #1DB954;
+        }
+        
+        .insight-logo.linkedin {
+            background: #0077B5;
+        }
+        
+        .insight-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        
+        .insight-description {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .insight-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
         }
 
-        .metric-label {
-            font-size: 12px;
-            color: #6f6e69;
-            margin-top: 4px;
+        /* Detail Page Styles */
+        .detail-page {
+            padding: 140px 0 100px;
         }
 
-        .project-link {
+        .detail-header {
+            text-align: center;
+            margin-bottom: 80px;
+            padding: 0 20px;
+        }
+
+        .detail-header h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .detail-header p {
+            font-size: 20px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .back-button {
             display: inline-flex;
             align-items: center;
             gap: 8px;
             color: #667eea;
             text-decoration: none;
             font-weight: 600;
-            font-size: 14px;
-            transition: color 0.2s ease;
+            margin-bottom: 40px;
+            transition: all 0.3s;
+            font-size: 16px;
         }
 
-        .project-link:hover {
+        .back-button:hover {
             color: #5a67d8;
+            transform: translateX(-4px);
         }
 
-        .project-link.disabled {
-            color: #a0a0a0;
-            cursor: not-allowed;
+        .detail-content {
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .project-tag {
-            display: inline-block;
+        /* Enhanced Content Sections */
+        .content-section {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-left: 4px solid #667eea;
+        }
+
+        .content-section h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .content-section p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .content-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .content-section li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #555;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .content-section li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* Strategy Cards */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .strategy-card {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 30px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s;
+        }
+
+        .strategy-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .strategy-card h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .strategy-number {
+            width: 30px;
+            height: 30px;
             background: #667eea;
             color: white;
-            padding: 4px 8px;
-            border-radius: 12px;
-            font-size: 11px;
-            font-weight: 600;
-            margin: 4px 4px 0 0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
         }
 
-        .project-tag.orange {
-            background: #e85a4f;
+        .strategy-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 12px;
         }
 
-        .project-tag.green {
-            background: #1DB954;
+        .strategy-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0;
         }
 
-        .project-tag.black {
-            background: #37352f;
+        .strategy-card li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            color: #555;
+            font-size: 15px;
         }
 
-        .project-tag.red {
-            background: #e23744;
+        .strategy-card li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: 700;
         }
 
-        /* Contact Section */
-        .contact {
+        /* Enhanced Metrics Grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 20px;
+            border: 1px solid #e9ecef;
+        }
+
+        .metric-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .metric-value {
+            font-size: 36px;
+            font-weight: 800;
+            color: #667eea;
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+
+        .metric-label {
+            color: #666;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        /* Key Insights Box */
+        .insights-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+
+        .insights-box h4 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .insights-box p {
+            color: rgba(255,255,255,0.9);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .insights-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .insights-box li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .insights-box li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        /* Quote/Highlight Box */
+        .highlight-box {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 30px;
+            border-radius: 0 16px 16px 0;
+            margin: 30px 0;
+            font-style: italic;
+            color: #555;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             text-align: center;
         }
-
-        .contact-content {
-            max-width: 600px;
-            margin: 0 auto;
+        
+        .cta-section h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
         }
-
-        .contact-title {
-            font-size: 40px;
-            font-weight: 800;
-            margin-bottom: 24px;
-        }
-
-        .contact-description {
-            font-size: 18px;
+        
+        .cta-section p {
+            font-size: 20px;
             margin-bottom: 40px;
             opacity: 0.9;
         }
-
-        .contact-links {
+        
+        .cta-buttons {
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
         }
-
-        .contact-link {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 12px 24px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+        
+        .cta-button {
+            padding: 16px 32px;
             border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            transition: transform 0.3s;
         }
-
-        .contact-link:hover {
-            background: rgba(255, 255, 255, 0.3);
-            border-color: rgba(255, 255, 255, 0.5);
+        
+        .cta-button.primary {
+            background: white;
+            color: #667eea;
+        }
+        
+        .cta-button.secondary {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .cta-button:hover {
             transform: translateY(-2px);
         }
-
+        
         /* Footer */
-        .footer {
-            background: #37352f;
-            color: white;
+        footer {
             padding: 40px 0;
             text-align: center;
+            background: #1a1a1a;
+            color: #999;
         }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 24px;
-        }
-
-        .footer-links a {
-            color: #a0a0a0;
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.2s ease;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        /* Mobile Responsive */
+        
+        /* Mobile */
         @media (max-width: 768px) {
-            .container {
-                padding: 0 16px;
-            }
-
-            .nav-container {
-                padding: 0 16px;
-            }
-
             .nav-links {
                 display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             }
 
-            .hero-title {
-                font-size: 48px;
+            .nav-links.active {
+                display: flex;
             }
 
-            .hero-subtitle {
-                font-size: 20px;
+            .mobile-menu-btn {
+                display: flex;
             }
 
-            .section-title {
+            .banner h1 {
                 font-size: 36px;
             }
 
-            .about-content {
+            .banner p {
+                font-size: 18px;
+            }
+            
+            .work-grid {
                 grid-template-columns: 1fr;
-                gap: 40px;
+            }
+            
+            .insights-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .banner-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
 
-            .about-stats {
-                grid-template-columns: 1fr;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-
-            .project-metrics {
-                justify-content: center;
+            .detail-header h1 {
+                font-size: 36px;
             }
 
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-
-            .contact-links {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .slide-in-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.8s ease;
-        }
-
-        .slide-in-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .slide-in-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: all 0.8s ease;
-        }
-
-        .slide-in-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* Scroll Progress Bar */
-        .progress-bar {
-            position: fixed;
-            top: 70px;
-            left: 0;
-            width: 0%;
-            height: 3px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            z-index: 1000;
-            transition: width 0.3s ease;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo">Samarth Arora</a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#case-studies">Case Studies</a></li>
-                <li><a href="#teardowns">Teardowns</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <nav>
+        <div class="container">
+            <div class="logo" onclick="showHome()">Samarth Arora</div>
+            <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="javascript:void(0);" onclick="scrollToSection('work')">Work</a></li>
+                <li><a href="javascript:void(0);" onclick="scrollToSection('insights')">My 2 Cents</a></li>
+                <li><a href="javascript:void(0);" onclick="showPage('resume')">Resume</a></li>
+                <li><a href="javascript:void(0);" onclick="scrollToSection('contact')">Contact</a></li>
             </ul>
         </div>
     </nav>
-
-    <!-- Progress Bar -->
-    <div class="progress-bar"></div>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content fade-in">
-                <h1 class="hero-title">Product Manager</h1>
-                <p class="hero-subtitle">Building products that users love and businesses grow</p>
-                <p class="hero-description">
-                    I'm a product manager with experience in B2B commerce, marketplace optimization, and user activation. 
-                    I focus on data-driven growth strategies and creating seamless user experiences across web and mobile platforms.
-                </p>
-                <div class="cta-buttons">
-                    <a href="#case-studies" class="cta-button primary">View My Work</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Case Studies Section -->
-    <section id="case-studies" class="section case-studies">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2 class="section-title">Case Studies</h2>
-                <p class="section-subtitle">
-                    Deep dives into product challenges I've solved and the impact achieved
-                </p>
-            </div>
-            
-            <div class="projects-grid">
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <span>🛒</span>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">B2B Commerce</div>
-                        <h3 class="project-title">Kirana Club – Retailer Activation</h3>
-                        <p class="project-description">
-                            Drove order activation and retention for 3M+ Indian retailers through personalized onboarding and gamified loyalty programs.
-                        </p>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <div class="metric-value">24%</div>
-                                <div class="metric-label">First Order↑</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">37%</div>
-                                <div class="metric-label">Repeat Rate</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">19%</div>
-                                <div class="metric-label">AOV Growth</div>
-                            </div>
-                        </div>
-                        <div class="project-tags">
-                            <span class="project-tag orange">Order Activation</span>
-                            <span class="project-tag orange">Gamification</span>
-                            <span class="project-tag orange">B2B</span>
-                        </div>
-                        <br><br>
-                        <a href="kirana-case-study.html" class="project-link">View Case Study →</a>
-                    </div>
-                </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-image azgo">
-                        <span>🤖</span>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">AI Systems</div>
-                        <h3 class="project-title">Azgo – AI Inventory Management</h3>
-                        <p class="project-description">
-                            Built AI-powered inventory prediction system for SMB retailers to optimize stock levels and reduce waste.
-                        </p>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <div class="metric-value">32%</div>
-                                <div class="metric-label">Waste Reduction</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">18%</div>
-                                <div class="metric-label">Revenue↑</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">85%</div>
-                                <div class="metric-label">Accuracy</div>
-                            </div>
-                        </div>
-                        <div class="project-tags">
-                            <span class="project-tag" style="background: #4CAF50;">AI/ML</span>
-                            <span class="project-tag" style="background: #4CAF50;">Inventory</span>
-                            <span class="project-tag" style="background: #4CAF50;">SMB</span>
-                        </div>
-                        <br><br>
-                        <a href="fliptalk-case-study.html" class="project-link">View Case Study →</a>
-                    </div>
-                </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-image fliptalk">
-                        <span>🎮</span>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">Social Gaming</div>
-                        <h3 class="project-title">FlipTalk – Social Engagement</h3>
-                        <p class="project-description">
-                            Designed viral growth mechanics and community features for a social gaming platform targeting Gen Z users.
-                        </p>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <div class="metric-value">2.8x</div>
-                                <div class="metric-label">Viral Growth</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">45%</div>
-                                <div class="metric-label">DAU↑</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">65%</div>
-                                <div class="metric-label">D7 Retention</div>
-                            </div>
-                        </div>
-                        <div class="project-tags">
-                            <span class="project-tag" style="background: #9C27B0;">Social</span>
-                            <span class="project-tag" style="background: #9C27B0;">Gaming</span>
-                            <span class="project-tag" style="background: #9C27B0;">Growth</span>
-                        </div>
-                        <br><br>
-                        <a href="#" class="project-link disabled">Coming Soon →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Product Teardowns Section -->
-    <section id="teardowns" class="section" style="background: #f8f9fa;">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2 class="section-title">Product Teardowns</h2>
-                <p class="section-subtitle">
-                    Strategic analysis of leading products, exploring architecture, user journeys, and optimization opportunities
-                </p>
-            </div>
-            
-            <div class="projects-grid">
-                <div class="project-card fade-in">
-                    <div class="project-image uber">
-                        <span style="color: white; font-size: 40px; font-weight: bold;">UBER</span>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">Ride-Sharing Platform</div>
-                        <h3 class="project-title">Uber – Real-time Matching</h3>
-                        <p class="project-description">
-                            Deep dive into Uber's ride-sharing platform, driver-rider matching algorithms, and global mobility ecosystem across different markets.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag black">Ride-Sharing</span>
-                            <span class="project-tag black">Real-time</span>
-                            <span class="project-tag black">Mobility</span>
-                        </div>
-                        <br><br>
-                        <a href="uber-teardown.html" class="project-link">View Analysis →</a>
-                    </div>
-                </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-image spotify">
-                        <span style="color: white; font-size: 32px; font-weight: bold;">♪ Spotify</span>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">Music Streaming</div>
-                        <h3 class="project-title">Spotify – Discovery Engine</h3>
-                        <p class="project-description">
-                            Analysis of Spotify's recommendation algorithms, Discovery Weekly mechanics, and ML-driven personalization engine for music discovery.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag green">Streaming</span>
-                            <span class="project-tag green">Discovery</span>
-                            <span class="project-tag green">Personalization</span>
-                        </div>
-                        <br><br>
-                        <a href="spotify-teardown.html" class="project-link">View Analysis →</a>
-                    </div>
-                </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-image zomato">
-                        <span style="color: white; font-size: 32px; font-weight: bold;">Zomato</span>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">Food Delivery</div>
-                        <h3 class="project-title">Zomato – Delivery Optimization</h3>
-                        <p class="project-description">
-                            Analysis of Zomato's multi-stakeholder platform architecture, real-time delivery optimization algorithms, and database design managing millions of orders across restaurants, delivery partners, and customers.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag red">Food Tech</span>
-                            <span class="project-tag red">Delivery</span>
-                            <span class="project-tag red">Discovery</span>
-                        </div>
-                        <br><br>
-                        <a href="zomato-teardown.html" class="project-link">View Analysis →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section about">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">
-                    A product manager passionate about turning complex business challenges into intuitive user experiences
-                </p>
-            </div>
-            
-            <div class="about-content">
-                <div class="about-text slide-in-left">
-                    <p>
-                        I'm a product manager with expertise in B2B commerce platforms, user activation strategies, and growth optimization. 
-                        My approach combines deep user research with data-driven decision making to build products that solve real problems.
-                    </p>
-                    <p>
-                        I've worked with companies serving millions of users, focusing on conversion optimization, retention strategies, 
-                        and product-market fit. I believe in building products that are not just functional, but delightful to use.
-                    </p>
-                    <p>
-                        My background spans across user experience design, data analysis, and business strategy, allowing me to bridge 
-                        the gap between technical feasibility and business objectives.
-                    </p>
-                </div>
-                
-                <div class="about-stats slide-in-right">
-                    <div class="stats-grid">
-                        <div class="stat">
-                            <div class="stat-number">3M+</div>
+    
+    <div id="app">
+        <!-- Home Page -->
+        <div id="home" class="page-content active">
+            <section class="banner">
+                <div class="container">
+                    <h1>Product Manager</h1>
+                    <p>Crafting user-centric solutions that drive growth, engagement, and meaningful impact across B2B and consumer platforms</p>
+                    
+                    <!-- Impact Stats -->
+                    <div class="banner-stats">
+                        <div class="banner-stat">
+                            <div class="stat-value">500K+</div>
                             <div class="stat-label">Users Impacted</div>
                         </div>
-                        <div class="stat">
-                            <div class="stat-number">37%</div>
+                        <div class="banner-stat">
+                            <div class="stat-value">37%</div>
                             <div class="stat-label">Retention Improvement</div>
                         </div>
-                        <div class="stat">
-                            <div class="stat-number">24%</div>
+                        <div class="banner-stat">
+                            <div class="stat-value">24%</div>
                             <div class="stat-label">Conversion Uplift</div>
                         </div>
-                        <div class="stat">
-                            <div class="stat-number">5+</div>
+                        <div class="banner-stat">
+                            <div class="stat-value">5+</div>
                             <div class="stat-label">Products Shipped</div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
+            
+            <section id="work" class="work-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>My Work</h2>
+                        <p>Products I've built, scaled, and brought to market</p>
+                    </div>
+                    
+                    <div class="work-grid">
+                        <div class="work-card" onclick="showPage('kirana')">
+                            <div class="work-image kirana">
+                                <span>KIRANA CLUB</span>
+                            </div>
+                            <div class="work-content">
+                                <div class="work-tags">
+                                    <span class="work-tag" style="background: #E91E63;">B2B Commerce</span>
+                                    <span class="work-tag" style="background: #9C27B0;">Growth</span>
+                                </div>
+                                <h3 class="work-title">Kirana Club</h3>
+                                <p class="work-description">
+                                    A community-driven platform helping Indian kirana store owners discover FMCG products, stay informed about brand schemes, and place direct orders.
+                                </p>
+                                <a href="javascript:void(0);" onclick="event.stopPropagation(); showPage('kirana');" class="work-link">View Work →</a>
+                            </div>
+                        </div>
+                        <div class="work-card" onclick="showPage('azgo')">
+                            <div class="work-image azgo">
+                                <span>AZGO</span>
+                            </div>
+                            <div class="work-content">
+                                <div class="work-tags">
+                                    <span class="work-tag" style="background: #4CAF50;">IoT</span>
+                                    <span class="work-tag" style="background: #FF9800;">Vending</span>
+                                </div>
+                                <h3 class="work-title">Azgo</h3>
+                                <p class="work-description">
+                                    A snack vending‑machine startup, offering cashless, IoT‑powered kiosks with 600+ machines across workplaces in Bangalore, India.
+                                </p>
+                                <a href="javascript:void(0);" onclick="event.stopPropagation(); showPage('azgo');" class="work-link">View Work →</a>
+                            </div>
+                        </div>
+                        <div class="work-card" onclick="showPage('fliptalk')">
+                            <div class="work-image fliptalk">
+                                <span>FLIPTALK</span>
+                            </div>
+                            <div class="work-content">
+                                <div class="work-tags">
+                                    <span class="work-tag" style="background: #9C27B0;">Social</span>
+                                    <span class="work-tag" style="background: #2196F3;">Voice Tech</span>
+                                </div>
+                                <h3 class="work-title">FlipTalk</h3>
+                                <p class="work-description">
+                                    A voice-based social app where users could chat using real-time voice filters, enabling fun, anonymous conversations. Grew it to 40K+ users and was backed by Startup India.
+                                </p>
+                                <a href="javascript:void(0);" onclick="event.stopPropagation(); showPage('fliptalk');" class="work-link">View Work →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="insights" class="insights-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>My 2 Cents</h2>
+                        <p>From User to Product Thinker</p>
+                        <p>Here's how I'd drive impact if I owned the roadmap.</p>
+                    </div>
+                    
+                    <div class="insights-grid">
+                        <div class="insight-card" onclick="showPage('uber')">
+                            <div class="insight-header">
+                                <div class="insight-logo uber">UBER</div>
+                                <div class="insight-title">Uber</div>
+                            </div>
+                            <p class="insight-description">
+                                Solving the post-booking anxiety millions feel after tapping 'Confirm Ride' through transparency, ride lock features, and proactive communication.
+                            </p>
+                            <a href="javascript:void(0);" onclick="event.stopPropagation(); showPage('uber');" class="insight-link">Read More →</a>
+                        </div>
+                        <div class="insight-card" onclick="showPage('spotify')">
+                            <div class="insight-header">
+                                <div class="insight-logo spotify">♪</div>
+                                <div class="insight-title">Spotify</div>
+                            </div>
+                            <p class="insight-description">
+                                Helping users explore underused Spotify features through timely nudges and a dedicated discovery space.
+                            </p>
+                            <a href="javascript:void(0);" onclick="event.stopPropagation(); showPage('spotify');" class="insight-link">Read More →</a>
+                        </div>
+                        <div class="insight-card" onclick="showPage('linkedin')">
+                            <div class="insight-header">
+                                <div class="insight-logo linkedin">in</div>
+                                <div class="insight-title">LinkedIn</div>
+                            </div>
+                            <p class="insight-description">
+                                Building LinkedIn's feed relevance through tag-based preferences, informed content surfacing, and posts relevant to user's role and industry.
+                            </p>
+                            <a href="javascript:void(0);" onclick="event.stopPropagation(); showPage('linkedin');" class="insight-link">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="contact" class="cta-section">
+                <div class="container">
+                    <h2>Let's Build Something Great</h2>
+                    <p>I'm always excited to discuss product strategy, growth opportunities, and the future of technology</p>
+                    <div class="cta-buttons">
+                        <a href="mailto:samarth.arora@example.com" class="cta-button primary">Email me</a>
+                        <a href="https://www.linkedin.com/in/samarthsaarora/" target="_blank" class="cta-button secondary">LinkedIn</a>
+                    </div>
+                </div>
+            </section>
+            
+            <footer>
+                <div class="container">
+                    <p>&copy; 2024 Samarth Arora. Crafted with purpose.</p>
+                </div>
+            </footer>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section contact">
-        <div class="container">
-            <div class="contact-content fade-in">
-                <h2 class="contact-title">Let's Build Something Together</h2>
-                <p class="contact-description">
-                    I'm always interested in discussing product challenges, sharing insights, or exploring new opportunities.
-                </p>
-                <div class="contact-links">
-                    <a href="mailto:arorasamarth01@gmail.com" class="contact-link">Email Me</a>
-                    <a href="https://linkedin.com/in/samarth-arora" class="contact-link">LinkedIn</a>
-                    <a href="#" class="contact-link">Download Resume</a>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- Kirana Club Detail Page -->
+        <div id="kirana" class="page-content">
+            <div class="detail-page">
+                <div class="container">
+                    <a href="javascript:void(0);" onclick="showHome()" class="back-button">← Back to Work</a>
+                    
+                    <div class="detail-header">
+                        <h1>Kirana Club</h1>
+                        <p>Driving GTV growth by unlocking orders across 2.5M+ retailers through strategic product interventions and data-driven optimization</p>
+                    </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div>
-                    <p>&copy; 2025 Samarth Arora. All rights reserved.</p>
-                </div>
-                <div class="footer-links">
-                    <a href="#about">About</a>
-                    <a href="#case-studies">Case Studies</a>
-                    <a href="#teardowns">Teardowns</a>
-                    <a href="#contact">Contact</a>
+                    <div class="detail-content">
+                        <div class="content-section">
+                            <h3><span class="section-icon">🎯</span>Problem Statement</h3>
+                            <p>Monthly GTV wasn't growing in proportion to the platform's retailer base. While many retailers were active, they weren't placing orders consistently, creating a disconnect between user acquisition and revenue growth.</p>
+                            
+                            <div class="highlight-box">
+                                "Despite having a strong retailer base, order frequency remained low, indicating deeper friction points in the user journey that needed systematic investigation."
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h3><span class="section-icon">🔍</span>Research & Insights</h3>
+                            <p>After analyzing app usage data, machine-level logs, and user feedback, the research revealed three critical friction points:</p>
+                            
+                            <div class="strategy-grid">
+                                <div class="strategy-card">
+                                    <h4><span class="strategy-number">1</span>Delivery Delays</h4>
+                                    <p>Delivery delays were leading to order cancellations and significantly longer reorder cycles, creating a negative feedback loop.</p>
+                                </div>
+                                <div class="strategy-card">
+                                    <h4><span class="strategy-number">2</span>Reward Motivation</h4>
+                                    <p>Analysis showed that rewards were actually motivating retailers to place repeat orders, presenting an opportunity for systematic loyalty programs.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h3><span class="section-icon">⚡</span>Strategic Solutions</h3>
+                            
+                            <div class="strategy-grid">
+                                <div class="strategy-card">
+                                    <h4><span class="strategy-number">1</span>Logistics Expansion & Prioritization</h4>
+                                    <p>Observed a direct correlation between delivery delays and order cancellations. Retailers facing late deliveries took significantly longer to reorder.</p>
+                                    <ul>
+                                        <li>Introduced ₹50 non-refundable confirmation fee for orders above ₹5,000</li>
+                                        <li>Onboarded new 3PL partners to expand serviceable pin codes</li>
+                                        <li>Prioritized faster fulfillment for higher-value orders</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="strategy-card">
+                                    <h4><span class="strategy-number">2</span>Loyalty Program Architecture</h4>
+                                    <p>Launched a structured loyalty program tied to repeat behavior to drive consistent ordering patterns.</p>
+                                    <ul>
+                                        <li>Tier slabs based on cumulative monthly order value</li>
+                                        <li>Progressive rewards for higher engagement levels</li>
+                                        <li>Incentives designed for retailers across all purchase ranges</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="strategy-card">
+                                    <h4><span class="strategy-number">3</span>Journey-Based Engagement</h4>
+                                    <p>Retailers completed high-intent actions but often dropped off without placing orders. Implemented targeted nudge system.</p>
+                                    <ul>
+                                        <li>Triggered by tier upgrades, reward unlocks, and product views</li>
+                                        <li>Multi-channel delivery: push, in-app, and WhatsApp</li>
+                                        <li>Personalized by region, order pattern, and user tier</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="insights-box">
+                            <h4>💡 Key Learnings</h4>
+                            <ul>
+                                <li>Small financial commitments (₹50 fee) significantly reduced cancellation behavior</li>
+                                <li>Loyalty programs work best when structured around existing user behavior patterns</li>
+                                <li>Multi-channel engagement increases effectiveness of retention campaigns</li>
+                                <li>Data-driven expansion of logistics creates compound growth effects</li>
+                            </ul>
+                        </div>
+
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-value">20%</div>
+                                <div class="metric-label">Increase in Serviceable Pin Codes</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">12%</div>
+                                <div class="metric-label">Increase in Repeat Order Volume</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">10%</div>
+                                <div class="metric-label">Increase in GTV (MoM)</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">11%</div>
+                                <div class="metric-label">Drop in Cancellation Rates</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </footer>
+
+        <!-- Azgo Detail Page -->
+        <div id="azgo" class="page-content">
+            <div class="detail-page">
+                <div class="container">
+                    <a href="javascript:void(0);" onclick="showHome()" class="back-button">← Back to Work</a>
+                    
+                    <div class="detail-header">
+                        <h1>Azgo</h1>
+                        <p>Driving order volume growth through optimized user experience and data-driven inventory management</p>
+                    </div>
+
+                    <div class="detail-content">
+                        <div class="detail-section">
+                            <h3>Problem Statement</h3>
+                            <p>Despite Azgo's machines being strategically placed in high-density office spaces, order volume growth remained slower than expected. While footfall was high, users also dropped off after opening the app to place orders.</p>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3>Insights</h3>
+                            <p>After analyzing app usage data, machine-level logs, and user feedback, the analysis revealed three key frictions:</p>
+                            <p>• <strong>High drop-offs during snack selection or payment:</strong> especially among first-time users</p>
+                            <p>• <strong>Inventory didn't match user preferences:</strong> top SKUs went out of stock quickly, and there was growing demand for healthier options</p>
+                            <p>• <strong>Low order frequency:</strong> users placed one order and didn't return due to low novelty or incentive</p>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3>Solution Strategy</h3>
+                            
+                            <h4 style="font-size: 20px; margin: 30px 0 15px 0; color: #1a1a1a; font-weight: 600;">1. Redesign of ordering flow to boost conversion</h4>
+                            <p>• Redesigned the ordering flow to reduce clicks and load time</p>
+                            <p>• Introduced one-tap combos and limited-time discounts</p>
+                            <p>• Added micro-rewards like scratch cards to gamify purchases and increase completion rates</p>
+                            
+                            <h4 style="font-size: 20px; margin: 30px 0 15px 0; color: #1a1a1a; font-weight: 600;">2. Smarter Inventory Planning</h4>
+                            <p>• Built machine-level dashboards to track SKU movement by location and time of day</p>
+                            <p>• Enabled low-stock alerts for refill prioritization</p>
+                            <p>• Optimized product mix using machine-level data, giving more slots to high order frequency SKUs and adding high-value healthy snacks that already have a pull factor to boost revenue at machine level</p>
+                            
+                            <h4 style="font-size: 20px; margin: 30px 0 15px 0; color: #1a1a1a; font-weight: 600;">3. Retention Loops to Drive Repeat Usage</h4>
+                            <p>• Launched wallet top-ups with small cashback incentives to encourage reorders</p>
+                            <p>• Triggered push + WhatsApp nudges when new items were stocked or favorites returned</p>
+                        </div>
+
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-value">18%</div>
+                                <div class="metric-label">Increase in App-to-Order Conversion</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">27%</div>
+                                <div class="metric-label">Reduction in Stockouts</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">22%</div>
+                                <div class="metric-label">Lift in 7-Day Repeat Usage</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">11%</div>
+                                <div class="metric-label">Increase in Average Order Value</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FlipTalk Detail Page -->
+        <div id="fliptalk" class="page-content">
+            <div class="detail-page">
+                <div class="container">
+                    <a href="javascript:void(0);" onclick="showHome()" class="back-button">← Back to Work</a>
+                    
+                    <div class="detail-header">
+                        <h1>FlipTalk</h1>
+                        <p>Making real-time voice interaction in games both safe and playful through anonymous voice filters</p>
+                    </div>
+
+                    <div class="detail-content">
+                        <div class="detail-section">
+                            <h3>The Genesis</h3>
+                            <p>FlipTalk was born out of firsthand experience. As a college gamer, I saw how quickly voice chats with strangers could turn abusive, especially when the team started losing or things didn't go as planned. Many peers around me faced the same issue: while multiplayer games were fun, the experience often turned unpleasant under pressure.</p>
+                            <p>Curious to explore the space further, I came across Voicemod, a platform with 2M+ users working on real-time audio effects. After speaking with members of their team and understanding their use cases, I saw a clear opportunity to build something different, a platform that made real-time voice interaction in games both safe and playful.</p>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3>Product Strategy</h3>
+                            
+                            <h4 style="font-size: 20px; margin: 30px 0 15px 0; color: #1a1a1a; font-weight: 600;">1. Voice-Filtered Gaming for Anonymous Fun</h4>
+                            <p>• Integrated real-time voice filters, allowing users to stay anonymous while still expressing emotion</p>
+                            <p>• Added playful personas like chipmunk, robot, and horror to make sessions fun and less intimidating</p>
+                            
+                            <h4 style="font-size: 20px; margin: 30px 0 15px 0; color: #1a1a1a; font-weight: 600;">2. User-Centric Feedback Loop</h4>
+                            <p>• Launched an in-app feedback system to gather real-time insights on discomfort, fun level, and technical issues</p>
+                            <p>• Prioritized iterative improvements — voice lag, UI friction, filter control — based on feedback</p>
+                            <p>• This loop led to a <strong>13% reduction in churn</strong> within 3 months</p>
+                            
+                            <h4 style="font-size: 20px; margin: 30px 0 15px 0; color: #1a1a1a; font-weight: 600;">3. Community-Led Growth & Retention</h4>
+                            <p>• Built a <strong>100-member campus ambassador network</strong> to drive low-cost user acquisition across colleges</p>
+                            <p>• Launched meme + influencer campaigns to make FlipTalk viral within student communities</p>
+                            <p>• Introduced loyalty-based XP rewards and "streak bonuses" to increase engagement and session repeat rate</p>
+                            
+                            <h4 style="font-size: 20px; margin: 30px 0 15px 0; color: #1a1a1a; font-weight: 600;">4. Recognition & Acceleration Support</h4>
+                            <p>• FlipTalk was <strong>incubated at 3 accelerators</strong> — IIIT-H, AIC-SMUTBI, and Wadhwani Foundation</p>
+                            <p>• <strong>Received funding and awards</strong> from <strong>2 of them</strong>, including <strong>Meta XR</strong>, which recognized FlipTalk among India's top 20 XR startups</p>
+                        </div>
+
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-value">2.4x</div>
+                                <div class="metric-label">Boost in Average Session Duration</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">33%</div>
+                                <div class="metric-label">Increase in Day 1 to Day 3 Retention</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">40K+</div>
+                                <div class="metric-label">Users (Scaled from 10K)</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">30%</div>
+                                <div class="metric-label">Reduction in CAC</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Uber Insight Page -->
+        <div id="uber" class="page-content">
+            <div class="detail-page">
+                <div class="container">
+                    <a href="javascript:void(0);" onclick="showHome()" class="back-button">← Back to Insights</a>
+                    
+                    <div class="detail-header">
+                        <h1>Uber: Solving Post-Booking Anxiety</h1>
+                        <p>Addressing uncertainty and building trust in the critical moments after ride confirmation</p>
+                    </div>
+
+                    <div class="detail-content">
+                        <div class="detail-section">
+                            <h3>Problem</h3>
+                            <p>After the ride is confirmed, users experience a short-lived sense of relief, followed by uncertainty. Questions like "Why aren't they moving?", "Should I book again on another app?" or "Will the driver actually show up?" creates anxiety.</p>
+                            <p>This is especially critical for time-sensitive use cases like airport drops, early morning rides, or meetings — where trust is as important as speed.</p>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3>Insight</h3>
+                            <p>From my own usage and conversations with friends who are also Uber users, I noticed a consistent pattern: people tend to check the map obsessively right after booking. If the car doesn't move within a minutes, they either call the driver, open a competing app, or cancel the ride.</p>
+                            <p>This behavior isn't driven by ETA alone, it comes from a lack of certainty during a high-trust moment.</p>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3>What I would do as a PM at Uber</h3>
+                            
+                            <h4 style="font-size: 20px; margin: 30px 0 15px 0; color: #1a1a1a; font-weight: 600;">1. Contextual communication</h4>
+                            <p>Replace ETAs with reason-based ETA updates.</p>
+                            <p><strong>Examples:</strong> "Driver is waiting at a traffic light before turning toward pickup"</p>
+                            <p>This reduces the anxiety caused by a stationary car icon.</p>
+                            
+                            <h4 style="font-size: 20px; margin: 30px 0 15px 0; color: #1a1a1a; font-weight: 600;">2. Driver Monitoring & Parallel reassignment</h4>
+                            <p>If the assigned driver doesn't begin moving within a set threshold (e.g. 2 minutes), the system first nudges the driver to start the trip:</p>
+                            <p><em>"Your rider is waiting. Please begin the journey to avoid cancellation."</em></p>
+                            <p>If the driver still remains idle, Uber quietly begins searching for a backup driver in parallel, without notifying the user and creating unnecessary panic.</p>
+                            <p>If a match is found nearby, then the user is gently informed:</p>
+                            <p><em>"We've found a closer driver who can reach you sooner."</em></p>
+                            <p>If no better driver is available, Uber stays communicative — prioritizing transparency to preserve trust.</p>
+                            
+                            <h4 style="font-size: 20px; margin: 30px 0 15px 0; color: #1a1a1a; font-weight: 600;">3. Nudge to rebook when driver doesn't move</h4>
+                            <p>Allow users to "lock" a driver for ₹50 at the time of booking. If the driver cancels within the next 2–3 minutes, the user receives a ₹100 credit.</p>
+                            <p>This monetizes reliability for time-critical rides — like airport or business trips — and gives users peace of mind early in the booking journey.</p>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3>Impact</h3>
+                            <p>These changes aim to solve not just logistical issues, but emotional friction. By addressing post-booking anxiety.</p>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3>Metrics to Track</h3>
+                            <div style="margin: 20px 0;">
+                                <p><strong>Post-Match Cancellation Rate:</strong> A direct measure of user anxiety after a driver is confirmed. Should drop as transparency and control improve.</p>
+                                <p><strong>Driver Call Frequency:</strong> Indicates trust gaps. May remain steady initially, but should decrease over time as users become familiar with clearer, in-app updates.</p>
+                                <p><strong>Ride Lock Adoption Rate:</strong> Reflects user demand for reliability during high-stakes situations.</p>
+                                <p><strong>Support Ticket Volume:</strong> Lower inbound support = better communication, less confusion, and smoother UX.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Spotify Insight Page -->
+        <div id="spotify" class="page-content">
+            <div class="detail-page">
+                <div class="container">
+                    <a href="javascript:void(0);" onclick="showHome()" class="back-button">← Back to Insights</a>
+                    
+                    <div class="detail-header">
+                        <h1>Spotify: Feature Discovery Revolution</h1>
+                        <p>Helping users unlock Spotify's full potential through intelligent feature discovery and personalized recommendations</p>
+                    </div>
+
+                    <div class="detail-content">
+                        <div class="detail-section">
+                            <h3>The Opportunity</h3>
+                            <p>Many Spotify users only scratch the surface of the platform's capabilities. Features like collaborative playlists, podcast sleep timers, crossfade, and lyrics view remain underutilized, limiting user engagement and platform stickiness.</p>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3>Strategic Approach</h3>
+                            <p><strong>Contextual Feature Nudges:</strong> Surface relevant features at the right moments - suggest collaborative playlists when users share music, or sleep timer when listening late at night.</p>
+                            <p><strong>Discovery Hub:</strong> Create a dedicated space for users to explore advanced features with interactive tutorials and personalized recommendations.</p>
+                            <p><strong>Usage Analytics:</strong> Show users their listening patterns and suggest features that could enhance their experience based on their behavior.</p>
+                            <p><strong>Social Discovery:</strong> Highlight how friends are using advanced features to create peer-driven adoption.</p>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3>Implementation Strategy</h3>
+                            <p>Roll out features gradually through A/B testing, starting with power users and expanding based on engagement metrics. Focus on features that directly impact core listening experience first, then expand to social and discovery features.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LinkedIn Insight Page -->
+        <div id="linkedin" class="page-content">
+            <div class="detail-page">
+                <div class="container">
+                    <a href="javascript:void(0);" onclick="showHome()" class="back-button">← Back to Insights</a>
+                    
+                    <div class="detail-header">
+                        <h1>LinkedIn: Intelligent Feed Curation</h1>
+                        <p>Transforming LinkedIn's feed through smart content tagging and personalized professional interest matching</p>
+                    </div>
+
+                    <div class="detail-content">
+                        <div class="detail-section">
+                            <h3>The Challenge</h3>
+                            <p>LinkedIn's feed often feels cluttered with irrelevant content. Users see posts about industries they're not interested in, career levels that don't match their stage, or topics unrelated to their professional goals, leading to decreased engagement and platform value.</p>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3>Solution Framework</h3>
+                            <p><strong>Smart Content Tagging:</strong> Automatically categorize posts by industry, role level, skill area, and content type using ML-powered content analysis.</p>
+                            <p><strong>Professional Interest Profiles:</strong> Allow users to set preferences for industries, roles, company sizes, and content types they want to see more or less of.</p>
+                            <p><strong>Role-Relevant Filtering:</strong> Surface content appropriate to user's career stage - leadership content for managers, skill-building for early career, industry insights for specialists.</p>
+                            <p><strong>Feedback Loop:</strong> Implement quick reaction options (More like this / Less like this) to continuously improve recommendation accuracy.</p>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3>Business Impact</h3>
+                            <p>More relevant feeds would increase daily active usage, time spent on platform, and engagement rates. This directly supports LinkedIn's business model by creating more valuable ad inventory and improving recruiter tools effectiveness through better user profiling.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resume Page -->
+        <div id="resume" class="page-content">
+            <div class="detail-page">
+                <div class="container">
+                    <a href="javascript:void(0);" onclick="showHome()" class="back-button">← Back to Home</a>
+                    
+                    <div class="detail-header">
+                        <h1>Resume</h1>
+                        <p>Product Manager with expertise in B2B platforms, consumer apps, and growth optimization</p>
+                    </div>
+
+                    <div class="detail-content">
+                        <div class="detail-section">
+                            <h3>Experience</h3>
+                            <p><strong>Product Manager - Kirana Club (2022-2024)</strong><br>
+                            Led product strategy for B2B commerce platform serving 15K+ kirana stores. Achieved ₹2.5Cr monthly GMV and 37% repeat order rate through community-driven features and intelligent scheme recommendations.</p>
+                            
+                            <p><strong>Product Manager - Azgo (2020-2022)</strong><br>
+                            Scaled IoT vending solution from pilot to 600+ machines across Bangalore. Achieved 98.5% transaction success rate and 200K+ monthly transactions through seamless payment integration and predictive maintenance.</p>
+                            
+                            <p><strong>Founder & Product Lead - FlipTalk (2018-2020)</strong><br>
+                            Built and launched voice-first social platform. Grew to 40K+ users with 25min average session time. Secured Startup India recognition and developed proprietary real-time voice filter technology.</p>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3>Skills</h3>
+                            <p><strong>Product Strategy:</strong> Market research, competitive analysis, feature prioritization, roadmap planning</p>
+                            <p><strong>Growth & Analytics:</strong> A/B testing, funnel optimization, user segmentation, retention strategies</p>
+                            <p><strong>Technical:</strong> API design, database architecture, agile methodologies, cross-platform development</p>
+                            <p><strong>Leadership:</strong> Team management, stakeholder communication, cross-functional collaboration</p>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3>Education</h3>
+                            <p><strong>Bachelor of Technology</strong> - Computer Science<br>
+                            Indian Institute of Technology (IIT)</p>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3>Contact</h3>
+                            <p>Email: samarth.arora@example.com<br>
+                            LinkedIn: linkedin.com/in/samarthsaarora<br>
+                            Location: Bangalore, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
-        // Navigation functionality
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offsetTop = target.offsetTop - 70;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
+        function showPage(pageId) {
+            console.log('Showing page:', pageId);
+            
+            // Hide mobile menu if open
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.remove('active');
+            
+            // Hide all pages
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.classList.remove('active');
             });
-        });
-
-        // Global link handler to prevent navigation errors
-        document.addEventListener('click', function(e) {
-            if (e.target.tagName === 'A') {
-                const href = e.target.getAttribute('href');
-                if (href === '#' || href === 'javascript:void(0)' || href?.startsWith('javascript:')) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    return false;
-                }
-            }
-        });
-
-        // Scroll progress bar
-        window.addEventListener('scroll', () => {
-            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            document.querySelector('.progress-bar').style.width = `${scrolled}%`;
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all animation elements
-        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            
+            // Show the selected page
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+                window.scrollTo(0, 0);
             } else {
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                navbar.style.boxShadow = 'none';
+                console.error('Page not found:', pageId);
+                showHome();
             }
-        });
-
-        // Project link functions - Updated for actual navigation
-        function openKiranaStudy(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            
-            // Try to open the Kirana case study
-            try {
-                // In a real website, this would be: window.location.href = '/case-studies/kirana-club'
-                window.open('about:blank', '_blank');
-                
-                // Provide instructions for the user
-                setTimeout(() => {
-                    alert(`Navigation Info:
-
-In a live portfolio website, this link would take you to the full Kirana Club case study page.
-
-For now, you can:
-1. View the detailed case study by accessing the individual Kirana Club artifact
-2. See the complete user journey optimization process
-3. Review the gamification and retention strategies implemented
-
-Key Results: 24% conversion ↑, 37% retention ↑, 19% AOV ↑`);
-                }, 100);
-                
-            } catch (error) {
-                alert('Navigation would redirect to: /case-studies/kirana-club');
-            }
-            return false;
         }
 
-        function openUberTeardown(event) {
-            event.preventDefault();
-            event.stopPropagation();
+        function showHome() {
+            console.log('Showing home page');
             
-            try {
-                window.open('about:blank', '_blank');
-                setTimeout(() => {
-                    alert(`Navigation Info:
-
-In a live portfolio, this would open the complete Uber Product Teardown.
-
-The analysis includes:
-• System architecture diagrams
-• API specifications and database schema  
-• Real-time matching algorithms
-• Marketplace optimization strategies
-• User journey improvements
-
-Would redirect to: /teardowns/uber-analysis`);
-                }, 100);
-            } catch (error) {
-                alert('Navigation would redirect to: /teardowns/uber-analysis');
-            }
-            return false;
+            // Hide mobile menu if open
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.remove('active');
+            
+            // Hide all pages
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show home page
+            document.getElementById('home').classList.add('active');
+            window.scrollTo(0, 0);
         }
 
-        function openSpotifyTeardown(event) {
-            event.preventDefault();
-            event.stopPropagation();
+        function scrollToSection(sectionId) {
+            // First make sure we're on the home page
+            showHome();
             
-            try {
-                window.open('about:blank', '_blank');
-                setTimeout(() => {
-                    alert(`Navigation Info:
-
-In a live portfolio, this would open the Spotify Product Teardown.
-
-The teardown covers:
-• ML recommendation engine analysis
-• Content discovery optimization
-• Subscription model insights
-• User engagement strategies
-
-Would redirect to: /teardowns/spotify-analysis`);
-                }, 100);
-            } catch (error) {
-                alert('Navigation would redirect to: /teardowns/spotify-analysis');
-            }
-            return false;
-        }
-
-        function openZomatoTeardown(event) {
-            event.preventDefault();
-            event.stopPropagation();
+            // Hide mobile menu if open
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.remove('active');
             
-            try {
-                window.open('about:blank', '_blank');
-                setTimeout(() => {
-                    alert(`Navigation Info:
-
-In a live portfolio, this would open the Zomato Product Teardown.
-
-The analysis includes:
-• Multi-sided marketplace dynamics
-• Real-time logistics optimization
-• Delivery algorithm insights
-• Stakeholder management strategies
-
-Would redirect to: /teardowns/zomato-analysis`);
-                }, 100);
-            } catch (error) {
-                alert('Navigation would redirect to: /teardowns/zomato-analysis');
-            }
-            return false;
-        }
-
-        function openFlipTalkStudy(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            
-            try {
-                window.open('about:blank', '_blank');
-                setTimeout(() => {
-                    alert(`Navigation Info:
-
-In a live portfolio, this would open the complete FlipTalk Case Study.
-
-The case study covers:
-• Community-led learning platform for Gen Z
-• Founder-led growth from 10K to 40K+ users
-• 30% CAC reduction & 13% churn improvement
-• Multi-incubator funding success
-
-Would redirect to: /case-studies/fliptalk`);
-                }, 100);
-            } catch (error) {
-                alert('Navigation would redirect to: /case-studies/fliptalk');
-            }
-            return false;
-        }
-
-        // Typing animation for hero title
-        const heroTitle = document.querySelector('.hero-title');
-        const text = 'Product Manager';
-        heroTitle.textContent = '';
-        
-        setTimeout(() => {
-            let i = 0;
-            const typeWriter = () => {
-                if (i < text.length) {
-                    heroTitle.textContent += text.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 100);
+            // Wait a bit for the page to load, then scroll
+            setTimeout(() => {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
                 }
-            };
-            typeWriter();
-        }, 1000);
+            }, 100);
+        }
 
-        // Parallax effect for hero background
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.5;
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                hero.style.transform = `translateY(${rate}px)`;
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const navLinks = document.getElementById('navLinks');
+            
+            if (!nav.contains(event.target)) {
+                navLinks.classList.remove('active');
             }
-        });
-
-        // Add stagger delay to project cards
-        document.querySelectorAll('.project-card').forEach((card, index) => {
-            card.style.animationDelay = `${index * 0.1}s`;
         });
     </script>
-</body>
-</html>

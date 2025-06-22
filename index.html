@@ -701,3 +701,11 @@
     </div>
 </body>
 </html>
+// Listen for messages from embedded case studies
+window.addEventListener('message', function(event) {
+    if (event.data.action === 'showPage') {
+        showPage(event.data.page);
+    } else if (event.data.action === 'showHome') {
+        showHome();
+    }
+});

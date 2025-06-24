@@ -435,280 +435,10 @@
             text-align: center;
         }
 
-        /* Margin Analysis Chart */
-        .margin-chart {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .margin-bar {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .brand-label {
-            font-weight: 600;
-            color: #374151;
-            min-width: 100px;
-        }
-
-        .margin-visual {
-            height: 40px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-            font-size: 0.875rem;
-            position: relative;
-            min-width: 120px;
-        }
-
-        .margin-visual.big-brand {
-            background: linear-gradient(135deg, #ef4444, #dc2626);
-        }
-
-        .margin-visual.small-brand {
-            background: linear-gradient(135deg, #10b981, #059669);
-        }
-
-        /* Ordering Pattern Chart */
-        .ordering-pattern-chart {
-            display: flex;
-            justify-content: center;
-            align-items: end;
-            height: 250px;
-            padding: 2rem;
-            overflow: hidden;
-        }
-
-        .month-comparison {
-            display: flex;
-            gap: 3rem;
-            align-items: end;
-            width: 100%;
-            max-width: 500px;
-            justify-content: center;
-        }
-
-        .month-column {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            flex: 1;
-        }
-
-        .month-header {
-            font-weight: 600;
-            color: #374151;
-            margin-bottom: 0.5rem;
-        }
-
-        .order-bar {
-            width: 70px;
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-            border-radius: 8px 8px 0 0;
-            display: flex;
-            align-items: end;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-            font-size: 0.875rem;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .order-bar.low {
-            background: linear-gradient(135deg, #ef4444, #dc2626);
-        }
-
-        .order-bar.recovery {
-            background: linear-gradient(135deg, #10b981, #059669);
-        }
-
-        .order-value {
-            position: absolute;
-            top: -30px;
-            background: #333;
-            color: white;
-            padding: 0.3rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            white-space: nowrap;
-        }
-
-        .month-label {
-            font-size: 0.875rem;
-            color: #6b7280;
-            text-align: center;
-            margin-top: 0.75rem;
-            max-width: 80px;
-        }
-
-        /* Two Separate Charts Layout */
-        .single-chart-container {
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .single-chart-container h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #374151;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        /* Revenue Chart */
-        .revenue-bar-chart {
-            display: flex;
-            justify-content: space-around;
-            align-items: end;
-            gap: 2rem;
-            height: 180px;
-            margin-bottom: 1rem;
-            padding: 0 1rem;
-        }
-
-        .revenue-month {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex: 1;
-            max-width: 120px;
-        }
-
-        .revenue-bar {
-            width: 100%;
-            border-radius: 8px 8px 0 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .revenue-bar.month1 {
-            height: 60px;
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-        }
-
-        .revenue-bar.month2 {
-            height: 100px;
-            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-        }
-
-        .revenue-bar.month3 {
-            height: 150px;
-            background: linear-gradient(135deg, #10b981, #059669);
-        }
-
-        .revenue-amount {
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-
-        .month-label {
-            font-weight: 600;
-            color: #374151;
-            margin-top: 0.75rem;
-            text-align: center;
-        }
-
-        .chart-insight {
-            text-align: center;
-            padding: 1rem;
-            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
-            border-radius: 8px;
-            color: #047857;
-            font-size: 0.9rem;
-        }
-
-        /* Order Metrics Chart */
-        .metrics-comparison {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .metric-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .metric-header {
-            font-weight: 600;
-            color: #374151;
-            margin-bottom: 1rem;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        .metric-bars {
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
-            height: 120px;
-            margin-bottom: 1rem;
-        }
-
-        .metric-month {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex: 1;
-        }
-
-        .metric-bar {
-            width: 90%;
-            border-radius: 6px 6px 0 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-            font-size: 0.75rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .metric-bar.orders.month1 { height: 40px; background: linear-gradient(135deg, #ef4444, #dc2626); }
-        .metric-bar.orders.month2 { height: 65px; background: linear-gradient(135deg, #f97316, #ea580c); }
-        .metric-bar.orders.month3 { height: 80px; background: linear-gradient(135deg, #eab308, #ca8a04); }
-
-        .metric-bar.aov.month1 { height: 45px; background: linear-gradient(135deg, #06b6d4, #0891b2); }
-        .metric-bar.aov.month2 { height: 70px; background: linear-gradient(135deg, #3b82f6, #2563eb); }
-        .metric-bar.aov.month3 { height: 85px; background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
-
-        .metric-label {
-            font-size: 0.7rem;
-            color: #6b7280;
-            margin-top: 0.5rem;
-            text-align: center;
-        }
-
-        .metric-growth {
-            text-align: center;
-            font-weight: 600;
-            color: #059669;
-            background: #f0fdf4;
-            padding: 0.5rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-        }
-
-        /* Pie Chart Styles */
         .category-analysis {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 3rem;
             margin: 2rem 0;
         }
 
@@ -730,13 +460,6 @@
             border-radius: 50%;
             position: relative;
             margin-bottom: 1.5rem;
-            background: conic-gradient(
-                #ef4444 0deg 126deg,
-                #f97316 126deg 216deg,
-                #eab308 216deg 288deg,
-                #22c55e 288deg 331.2deg,
-                #3b82f6 331.2deg 360deg
-            );
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
@@ -977,6 +700,415 @@
         .impact-mini strong {
             color: #047857;
         }
+
+        /* Simple Bar Charts */
+        .simple-chart-section {
+            margin-bottom: 2rem;
+        }
+
+        .simple-chart-section h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .simple-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .simple-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .bar-label {
+            min-width: 120px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        .bar-container {
+            flex: 1;
+            height: 45px;
+            background: #e5e7eb;
+            border-radius: 6px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bar {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.875rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            min-width: 60px;
+        }
+
+        .bar.chips {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+
+        .bar.chocolates {
+            background: linear-gradient(135deg, #f97316, #ea580c);
+        }
+
+        .bar.beverages {
+            background: linear-gradient(135deg, #eab308, #ca8a04);
+        }
+
+        .bar.healthy {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+        }
+
+        .bar.low-margin {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+
+        .bar.medium-margin {
+            background: linear-gradient(135deg, #f97316, #ea580c);
+        }
+
+        .bar.high-margin {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+        }
+
+        /* FlipTalk specific bar colors */
+        .bar.toxicity {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+
+        .bar.privacy {
+            background: linear-gradient(135deg, #f97316, #ea580c);
+        }
+
+        .bar.language {
+            background: linear-gradient(135deg, #eab308, #ca8a04);
+        }
+
+        .bar.shyness {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+        }
+
+        .bar.technical {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+        }
+
+        .bar.positive-chat {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+        }
+
+        .bar.mixed-chat {
+            background: linear-gradient(135deg, #eab308, #ca8a04);
+        }
+
+        .bar.negative-chat {
+            background: linear-gradient(135deg, #f97316, #ea580c);
+        }
+
+        .bar.toxic-chat {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+
+        /* Dual Comparison Chart */
+        .dual-comparison-chart {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+
+        .comparison-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .group-header {
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .category-bars {
+            display: flex;
+            gap: 1rem;
+            align-items: end;
+            height: 120px;
+        }
+
+        .category-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .category-bar {
+            width: 60px;
+            border-radius: 6px 6px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.875rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .red-bar {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+
+        .orange-bar {
+            background: linear-gradient(135deg, #f97316, #ea580c);
+        }
+
+        .yellow-bar {
+            background: linear-gradient(135deg, #eab308, #ca8a04);
+        }
+
+        .green-bar {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+        }
+
+        .category-label {
+            font-size: 0.75rem;
+            color: #6b7280;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Margin Impact Chart */
+        .margin-impact-chart {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .impact-metric {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .metric-bar {
+            width: 120px;
+            height: 80px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .before-bar {
+            background: linear-gradient(135deg, #6b7280, #4b5563);
+        }
+
+        .after-bar {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+        }
+
+        .metric-label {
+            font-weight: 600;
+            color: #374151;
+            text-align: center;
+        }
+
+        .arrow-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .improvement-arrow {
+            font-size: 2rem;
+            color: #22c55e;
+            font-weight: bold;
+        }
+
+        .improvement-text {
+            font-size: 0.875rem;
+            color: #059669;
+            font-weight: 600;
+            background: #ecfdf5;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+        }
+
+        /* Revenue Charts */
+        .single-chart-container {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .single-chart-container h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .revenue-bar-chart {
+            display: flex;
+            justify-content: space-around;
+            align-items: end;
+            gap: 2rem;
+            height: 180px;
+            margin-bottom: 1rem;
+            padding: 0 1rem;
+        }
+
+        .revenue-month {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            max-width: 120px;
+        }
+
+        .revenue-bar {
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .revenue-bar.month1 {
+            height: 60px;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        }
+
+        .revenue-bar.month2 {
+            height: 100px;
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+        }
+
+        .revenue-bar.month3 {
+            height: 150px;
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+
+        .revenue-amount {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .month-label {
+            font-weight: 600;
+            color: #374151;
+            margin-top: 0.75rem;
+            text-align: center;
+        }
+
+        .chart-insight {
+            text-align: center;
+            padding: 1rem;
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            border-radius: 8px;
+            color: #047857;
+            font-size: 0.9rem;
+        }
+
+        /* Order Metrics Chart */
+        .metrics-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .metric-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .metric-header {
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .metric-bars {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            height: 120px;
+            margin-bottom: 1rem;
+        }
+
+        .metric-month {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+
+        .metric-bar {
+            width: 90%;
+            border-radius: 6px 6px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.75rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .metric-bar.orders.month1 { height: 40px; background: linear-gradient(135deg, #ef4444, #dc2626); }
+        .metric-bar.orders.month2 { height: 65px; background: linear-gradient(135deg, #f97316, #ea580c); }
+        .metric-bar.orders.month3 { height: 80px; background: linear-gradient(135deg, #eab308, #ca8a04); }
+
+        .metric-bar.aov.month1 { height: 45px; background: linear-gradient(135deg, #06b6d4, #0891b2); }
+        .metric-bar.aov.month2 { height: 70px; background: linear-gradient(135deg, #3b82f6, #2563eb); }
+        .metric-bar.aov.month3 { height: 85px; background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+
+        .metric-label {
+            font-size: 0.7rem;
+            color: #6b7280;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+
+        .metric-growth {
+            text-align: center;
+            font-weight: 600;
+            color: #059669;
+            background: #f0fdf4;
+            padding: 0.5rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -1162,62 +1294,14 @@
                 </div>
             </div>
 
-            <!-- Problem Visualization -->
             <div class="content-section">
                 <h2>The Problem</h2>
                 <p>Big brands had such strong consumer pull that they could afford to give us minimal margins—sometimes we'd actually lose money on orders. We needed higher-margin small brands, but they lacked brand recognition.</p>
-                
-                <div class="chart-container">
-                    <h3>Margin Analysis: Big Brands vs Small Brands</h3>
-                    <div class="margin-chart">
-                        <div class="margin-bar">
-                            <div class="brand-label">Big Brands</div>
-                            <div class="margin-visual big-brand" style="width: 15%;">
-                                <span class="margin-text">2-5% Margin</span>
-                            </div>
-                        </div>
-                        <div class="margin-bar">
-                            <div class="brand-label">Small Brands</div>
-                            <div class="margin-visual small-brand" style="width: 35%;">
-                                <span class="margin-text">20-35% Margin</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <div class="content-section">
                 <h2>The Aha Moment</h2>
                 <p>I noticed a concerning pattern: retailers who placed large orders one month would drastically reduce their orders the following month. When I started calling retailers to understand this behavior, the answer was clear: <em>'Customers don't ask for these small brands by name. We get stuck with inventory that doesn't move.'</em></p>
-                
-                <div class="chart-container">
-                    <h3>Retailer Ordering Pattern Discovery</h3>
-                    <div class="ordering-pattern-chart">
-                        <div class="month-comparison">
-                            <div class="month-column">
-                                <div class="order-bar high" style="height: 100px;">
-                                    <span class="order-value">₹25K</span>
-                                    <span class="month-in-bar">Month 1</span>
-                                </div>
-                                <div class="month-label">Initial Large Order</div>
-                            </div>
-                            <div class="month-column">
-                                <div class="order-bar low" style="height: 48px;">
-                                    <span class="order-value">₹12K</span>
-                                    <span class="month-in-bar">Month 2</span>
-                                </div>
-                                <div class="month-label">Inventory Stuck</div>
-                            </div>
-                            <div class="month-column">
-                                <div class="order-bar recovery" style="height: 96px;">
-                                    <span class="order-value">₹24K</span>
-                                    <span class="month-in-bar">Month 3</span>
-                                </div>
-                                <div class="month-label">After Implementation</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <div class="content-section">
@@ -1362,8 +1446,86 @@
 
             <div class="content-section">
                 <h2>The Aha Moment</h2>
-                <p>"We had machines selling ₹3K/month while others hit ₹25K—same building, different floors. Traditional snacks offered 12-15% margins with constant price pressure from distributors.</p>
-                <p>During routine site visits, I started noticing patterns: machines near meeting areas sold more afternoon snacks, but office workers kept asking 'do you have protein bars?' We were stocking what vendors pushed, not what office workers actually wanted."</p>
+                <p>We had machines selling ₹3K/month while others hit ₹25K—same building, different floors. Traditional snacks offered 12-15% margins with constant price pressure from distributors.</p>
+                <p>During routine site visits, I started noticing patterns: machines near meeting areas sold more afternoon snacks, but office workers kept asking 'do you have protein bars?' We were stocking what vendors pushed, not what office workers actually wanted.</p>
+                
+                <div class="chart-container">
+                    <h3>Machine Performance Analysis: Product Mix & Margins</h3>
+                    
+                    <!-- Product Distribution Chart -->
+                    <div class="single-chart-container">
+                        <h4>Traditional Snack Distribution</h4>
+                        <div class="revenue-bar-chart">
+                            <div class="revenue-month">
+                                <div class="revenue-bar" style="height: 120px; background: linear-gradient(135deg, #ef4444, #dc2626);">
+                                    <div class="revenue-amount">50%</div>
+                                </div>
+                                <div class="month-label">Chips & Namkeen</div>
+                            </div>
+                            
+                            <div class="revenue-month">
+                                <div class="revenue-bar" style="height: 60px; background: linear-gradient(135deg, #f97316, #ea580c);">
+                                    <div class="revenue-amount">25%</div>
+                                </div>
+                                <div class="month-label">Chocolates</div>
+                            </div>
+                            
+                            <div class="revenue-month">
+                                <div class="revenue-bar" style="height: 36px; background: linear-gradient(135deg, #eab308, #ca8a04);">
+                                    <div class="revenue-amount">15%</div>
+                                </div>
+                                <div class="month-label">Beverages</div>
+                            </div>
+
+                            <div class="revenue-month">
+                                <div class="revenue-bar" style="height: 24px; background: linear-gradient(135deg, #22c55e, #16a34a);">
+                                    <div class="revenue-amount">10%</div>
+                                </div>
+                                <div class="month-label">Healthy Options</div>
+                            </div>
+                        </div>
+                        <div class="chart-insight">
+                            <strong>Current Mix:</strong> Heavy reliance on low-margin traditional snacks
+                        </div>
+                    </div>
+
+                    <!-- Margin Analysis Chart -->
+                    <div class="single-chart-container">
+                        <h4>Profit Margin by Category</h4>
+                        <div class="revenue-bar-chart">
+                            <div class="revenue-month">
+                                <div class="revenue-bar" style="height: 48px; background: linear-gradient(135deg, #ef4444, #dc2626);">
+                                    <div class="revenue-amount">12%</div>
+                                </div>
+                                <div class="month-label">Chips Margin</div>
+                            </div>
+                            
+                            <div class="revenue-month">
+                                <div class="revenue-bar" style="height: 60px; background: linear-gradient(135deg, #f97316, #ea580c);">
+                                    <div class="revenue-amount">15%</div>
+                                </div>
+                                <div class="month-label">Chocolates Margin</div>
+                            </div>
+                            
+                            <div class="revenue-month">
+                                <div class="revenue-bar" style="height: 72px; background: linear-gradient(135deg, #eab308, #ca8a04);">
+                                    <div class="revenue-amount">18%</div>
+                                </div>
+                                <div class="month-label">Beverages Margin</div>
+                            </div>
+
+                            <div class="revenue-month">
+                                <div class="revenue-bar" style="height: 140px; background: linear-gradient(135deg, #22c55e, #16a34a);">
+                                    <div class="revenue-amount">35%</div>
+                                </div>
+                                <div class="month-label">Healthy Margin</div>
+                            </div>
+                        </div>
+                        <div class="chart-insight">
+                            <strong>Key Insight:</strong> Healthy options offer 35% margins vs 12% for chips - nearly 3x profit potential
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="content-section">
@@ -1386,7 +1548,112 @@
 
             <div class="content-section">
                 <h2>The Results</h2>
-                <p>"First pilot machine went from ₹8K to ₹22K monthly revenue. Word spread to facility managers who started requesting 'wellness-focused' machines for their offices."</p>
+                <p>First pilot machine went from ₹8K to ₹22K monthly revenue. Word spread to facility managers who started requesting 'wellness-focused' machines for their offices.</p>
+                
+                <div class="chart-container">
+                    <h3>Product Mix Transformation: From Traditional to Wellness</h3>
+                    
+                    <!-- Before vs After Comparison -->
+                    <div class="single-chart-container">
+                        <h4>Product Mix: Before vs After</h4>
+                        <div class="dual-comparison-chart">
+                            <div class="comparison-group">
+                                <div class="group-header">Before: Traditional Mix</div>
+                                <div class="category-bars">
+                                    <div class="category-item">
+                                        <div class="category-bar red-bar" style="height: 100px;">50%</div>
+                                        <span class="category-label">Chips</span>
+                                    </div>
+                                    <div class="category-item">
+                                        <div class="category-bar orange-bar" style="height: 50px;">25%</div>
+                                        <span class="category-label">Chocolates</span>
+                                    </div>
+                                    <div class="category-item">
+                                        <div class="category-bar yellow-bar" style="height: 30px;">15%</div>
+                                        <span class="category-label">Beverages</span>
+                                    </div>
+                                    <div class="category-item">
+                                        <div class="category-bar green-bar" style="height: 20px;">10%</div>
+                                        <span class="category-label">Healthy</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="comparison-group">
+                                <div class="group-header">After: Wellness Focus</div>
+                                <div class="category-bars">
+                                    <div class="category-item">
+                                        <div class="category-bar red-bar" style="height: 70px;">35%</div>
+                                        <span class="category-label">Chips</span>
+                                    </div>
+                                    <div class="category-item">
+                                        <div class="category-bar orange-bar" style="height: 40px;">20%</div>
+                                        <span class="category-label">Chocolates</span>
+                                    </div>
+                                    <div class="category-item">
+                                        <div class="category-bar yellow-bar" style="height: 36px;">18%</div>
+                                        <span class="category-label">Beverages</span>
+                                    </div>
+                                    <div class="category-item">
+                                        <div class="category-bar green-bar" style="height: 54px;">27%</div>
+                                        <span class="category-label">Healthy</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Margin Impact -->
+                    <div class="single-chart-container">
+                        <h4>Business Impact: Margin Improvement</h4>
+                        <div class="margin-impact-chart">
+                            <div class="impact-metric">
+                                <div class="metric-bar before-bar">
+                                    <span class="metric-value">15%</span>
+                                </div>
+                                <div class="metric-label">Before: Overall Margin</div>
+                            </div>
+                            
+                            <div class="arrow-container">
+                                <div class="improvement-arrow">→</div>
+                                <div class="improvement-text">+3% Improvement</div>
+                            </div>
+
+                            <div class="impact-metric">
+                                <div class="metric-bar after-bar">
+                                    <span class="metric-value">18%</span>
+                                </div>
+                                <div class="metric-label">After: Overall Margin</div>
+                            </div>
+                        </div>
+                        <div class="chart-insight">
+                            <strong>Key Achievement:</strong> 2.7x increase in healthy snack mix (10% → 27%) drove 20% margin improvement
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="metrics-dashboard">
+                    <div class="metric-card positive">
+                        <div class="metric-value">₹15K</div>
+                        <div class="metric-label">Avg Monthly Revenue</div>
+                        <div class="metric-detail">Up from ₹8K baseline</div>
+                    </div>
+                    <div class="metric-card positive">
+                        <div class="metric-value">27%</div>
+                        <div class="metric-label">Healthy Snack Mix</div>
+                        <div class="metric-detail">Increased from 10%</div>
+                    </div>
+                    <div class="metric-card positive">
+                        <div class="metric-value">₹3L+</div>
+                        <div class="metric-label">Monthly Revenue Boost</div>
+                        <div class="metric-detail">Across 120 pilot machines</div>
+                    </div>
+                    <div class="metric-card neutral">
+                        <div class="metric-value">18%</div>
+                        <div class="metric-label">Overall Margins</div>
+                        <div class="metric-detail">Improved from 15%</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -1422,8 +1689,82 @@
 
             <div class="content-section">
                 <h2>The Aha Moment</h2>
-                <p>"During college gaming sessions, I noticed a consistent pattern: voice chats with strangers would quickly turn toxic when things went wrong—especially when teams started losing or strategies failed. Many of my peers faced the same issue: multiplayer games were fun, but voice interaction often became unpleasant under pressure.</p>
-                <p>After discovering Voicemod's platform with 2M+ users and speaking with their team about use cases, I realized there was a clear opportunity: we needed a solution that maintained the emotional expression of voice communication while removing the personal attack vectors through anonymity."</p>
+                <p>During college gaming sessions, I noticed a consistent pattern: voice chats with strangers would quickly turn toxic when things went wrong—especially when teams started losing or strategies failed. Many of my peers faced the same issue: multiplayer games were fun, but voice interaction often became unpleasant under pressure.</p>
+                <p>After discovering Voicemod's platform with 2M+ users and speaking with their team about use cases, I realized there was a clear opportunity: we needed a solution that maintained the emotional expression of voice communication while removing the personal attack vectors through anonymity.</p>
+                
+                <div class="chart-container">
+                    <h3>User Behavior Analysis: Gaming Voice Chat Pain Points</h3>
+                    <div class="category-analysis">
+                        <div class="simple-chart-section">
+                            <h4>Why Users Avoided Voice Chat</h4>
+                            <div class="simple-bars">
+                                <div class="simple-bar-row">
+                                    <span class="bar-label">Toxicity & Abuse</span>
+                                    <div class="bar-container">
+                                        <div class="bar toxicity" style="width: 40%;">40%</div>
+                                    </div>
+                                </div>
+                                <div class="simple-bar-row">
+                                    <span class="bar-label">Privacy Concerns</span>
+                                    <div class="bar-container">
+                                        <div class="bar privacy" style="width: 20%;">20%</div>
+                                    </div>
+                                </div>
+                                <div class="simple-bar-row">
+                                    <span class="bar-label">Language Barriers</span>
+                                    <div class="bar-container">
+                                        <div class="bar language" style="width: 20%;">20%</div>
+                                    </div>
+                                </div>
+                                <div class="simple-bar-row">
+                                    <span class="bar-label">Shyness/Anxiety</span>
+                                    <div class="bar-container">
+                                        <div class="bar shyness" style="width: 10%;">10%</div>
+                                    </div>
+                                </div>
+                                <div class="simple-bar-row">
+                                    <span class="bar-label">Technical Issues</span>
+                                    <div class="bar-container">
+                                        <div class="bar technical" style="width: 10%;">10%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="simple-chart-section">
+                            <h4>Gaming Session Impact on Chat Quality</h4>
+                            <div class="simple-bars">
+                                <div class="simple-bar-row">
+                                    <span class="bar-label">Team Winning</span>
+                                    <div class="bar-container">
+                                        <div class="bar positive-chat" style="width: 85%;">85% Positive</div>
+                                    </div>
+                                </div>
+                                <div class="simple-bar-row">
+                                    <span class="bar-label">Close Game</span>
+                                    <div class="bar-container">
+                                        <div class="bar mixed-chat" style="width: 60%;">60% Positive</div>
+                                    </div>
+                                </div>
+                                <div class="simple-bar-row">
+                                    <span class="bar-label">Team Losing</span>
+                                    <div class="bar-container">
+                                        <div class="bar negative-chat" style="width: 25%;">25% Positive</div>
+                                    </div>
+                                </div>
+                                <div class="simple-bar-row">
+                                    <span class="bar-label">Player Mistake</span>
+                                    <div class="bar-container">
+                                        <div class="bar toxic-chat" style="width: 15%;">15% Positive</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="analysis-insight">
+                        <strong>Key Insight:</strong> Voice chat toxicity was directly correlated with game performance—creating a predictable pattern that anonymity could solve.
+                    </div>
+                </div>
             </div>
 
             <div class="content-section">
@@ -1450,8 +1791,110 @@
 
             <div class="content-section">
                 <h2>The Results</h2>
-                <p>"Within 3 months, the user-centric feedback loop led to 13% churn reduction. The campus ambassador network proved highly effective for student-focused acquisition, while gamification elements significantly boosted engagement metrics."</p>
-                <p><strong>Recognition:</strong> "FlipTalk was incubated at 3 accelerators—IIIT-H, AIC-SMUTBI, and Wadhwani Foundation. Received funding and awards from 2 of them, including Meta XR recognition among India's top 20 XR startups."</p>
+                <p>Within 3 months, the user-centric feedback loop led to 13% churn reduction. The campus ambassador network proved highly effective for student-focused acquisition, while gamification elements significantly boosted engagement metrics.</p>
+                
+                <div class="chart-container">
+                    <h3>3-Month Growth Journey: From Concept to 40K Users</h3>
+                    
+                    <!-- User Growth Chart -->
+                    <div class="single-chart-container">
+                        <h4>User Acquisition & Retention Growth</h4>
+                        <div class="revenue-bar-chart">
+                            <div class="revenue-month">
+                                <div class="revenue-bar month1">
+                                    <div class="revenue-amount">8.5K</div>
+                                </div>
+                                <div class="month-label">Month 1</div>
+                            </div>
+                            
+                            <div class="revenue-month">
+                                <div class="revenue-bar month2">
+                                    <div class="revenue-amount">22K</div>
+                                </div>
+                                <div class="month-label">Month 2</div>
+                            </div>
+                            
+                            <div class="revenue-month">
+                                <div class="revenue-bar month3">
+                                    <div class="revenue-amount">40K</div>
+                                </div>
+                                <div class="month-label">Month 3</div>
+                            </div>
+                        </div>
+                        <div class="chart-insight">
+                            <strong>370% User Growth</strong> - Driven by campus ambassador network and viral meme campaigns
+                        </div>
+                    </div>
+
+                    <!-- Engagement Metrics Chart -->
+                    <div class="single-chart-container">
+                        <h4>Engagement & Session Quality Improvements</h4>
+                        <div class="metrics-comparison">
+                            <div class="metric-group">
+                                <div class="metric-header">Avg Session Duration</div>
+                                <div class="metric-bars">
+                                    <div class="metric-month">
+                                        <div class="metric-bar orders month1">8 min</div>
+                                        <span class="metric-label">Before</span>
+                                    </div>
+                                    <div class="metric-month">
+                                        <div class="metric-bar orders month2">14 min</div>
+                                        <span class="metric-label">Month 2</span>
+                                    </div>
+                                    <div class="metric-month">
+                                        <div class="metric-bar orders month3">19 min</div>
+                                        <span class="metric-label">Month 3</span>
+                                    </div>
+                                </div>
+                                <div class="metric-growth">+137% Growth</div>
+                            </div>
+
+                            <div class="metric-group">
+                                <div class="metric-header">Day 1-3 Retention</div>
+                                <div class="metric-bars">
+                                    <div class="metric-month">
+                                        <div class="metric-bar aov month1">45%</div>
+                                        <span class="metric-label">Before</span>
+                                    </div>
+                                    <div class="metric-month">
+                                        <div class="metric-bar aov month2">58%</div>
+                                        <span class="metric-label">Month 2</span>
+                                    </div>
+                                    <div class="metric-month">
+                                        <div class="metric-bar aov month3">60%</div>
+                                        <span class="metric-label">Month 3</span>
+                                    </div>
+                                </div>
+                                <div class="metric-growth">+33% Improvement</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metrics-dashboard">
+                    <div class="metric-card positive">
+                        <div class="metric-value">40K+</div>
+                        <div class="metric-label">Total Users</div>
+                        <div class="metric-detail">From 0 to 40K in 3 months</div>
+                    </div>
+                    <div class="metric-card positive">
+                        <div class="metric-value">2.4x</div>
+                        <div class="metric-label">Session Duration</div>
+                        <div class="metric-detail">19 min vs 8 min baseline</div>
+                    </div>
+                    <div class="metric-card positive">
+                        <div class="metric-value">30%</div>
+                        <div class="metric-label">CAC Reduction</div>
+                        <div class="metric-detail">Via campus ambassadors</div>
+                    </div>
+                    <div class="metric-card neutral">
+                        <div class="metric-value">13%</div>
+                        <div class="metric-label">Churn Reduction</div>
+                        <div class="metric-detail">Through UX improvements</div>
+                    </div>
+                </div>
+                
+                <p><strong>Recognition:</strong> FlipTalk was incubated at 3 accelerators—IIIT-H, AIC-SMUTBI, and Wadhwani Foundation. Received funding and awards from 2 of them, including Meta XR recognition among India's top 20 XR startups.</p>
             </div>
         </div>
     </div>
@@ -1642,12 +2085,6 @@
                 }
             });
         });
-
-        // Mobile menu functionality (for future enhancement)
-        function toggleMobileMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        }
     </script>
 </body>
 </html>

@@ -81,6 +81,7 @@
             font-weight: 700;
             margin-bottom: 1rem;
             line-height: 1.2;
+            color: white;
         }
 
         .hero p {
@@ -90,6 +91,7 @@
             margin-left: auto;
             margin-right: auto;
             opacity: 0.9;
+            color: white;
         }
 
         /* Metrics */
@@ -111,12 +113,13 @@
         .metric-number {
             font-size: 2.5rem;
             font-weight: 700;
-            color: #fff;
+            color: #fff !important;
             display: block;
         }
 
         .metric-label {
             font-size: 1rem;
+            color: #fff !important;
             opacity: 0.9;
             margin-top: 0.5rem;
         }
@@ -1281,15 +1284,15 @@
                     <div class="stat-label">Monthly Revenue</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-number">10%</div>
-                    <div class="stat-label">Take Rate (up from 8%)</div>
-                </div>
-                <div class="stat">
                     <div class="stat-number">40%</div>
-                    <div class="stat-label">Increased Retailer Participation</div>
+                    <div class="stat-label">Retailer Participation Growth</div>
                 </div>
                 <div class="stat">
                     <div class="stat-number">22%</div>
+                    <div class="stat-label">First-Order Conversion</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">18%</div>
                     <div class="stat-label">AOV Increase</div>
                 </div>
             </div>
@@ -1301,31 +1304,40 @@
 
             <div class="content-section">
                 <h2>The Aha Moment</h2>
-                <p>I noticed a concerning pattern: retailers who placed large orders one month would drastically reduce their orders the following month. When I started calling retailers to understand this behavior, the answer was clear: <em>'Customers don't ask for these small brands by name. We get stuck with inventory that doesn't move.'</em></p>
+                <p>I noticed a concerning pattern: retailers who placed large orders one month would drastically reduce their orders the following month. When I started calling retailers to understand this behavior, the answer was clear: <em>'Customers don't ask for these small brands by name. We get stuck with inventory that <span style="color: #ef4444; font-weight: 600;">moves slowly</span>.'</em></p>
             </div>
 
             <div class="content-section">
                 <h2>What I Built</h2>
                 <div class="cards-grid">
                     <div class="feature-card">
-                        <h3>Retailer Display Contest</h3>
-                        <p>Launched monthly competitions where retailers could earn ₹500-2000 for creating attractive brand displays, with a guaranteed ₹100 participation reward. Implemented photo verification system and created scoring criteria based on display creativity, product placement, and customer engagement. This gamified approach motivated retailers to actively promote small brands instead of just stocking them.</p>
+                        <h3>Driving Brand Visibility via Retailer-Led Display Campaigns</h3>
+                        <p>To increase visibility and adoption for partner brands at the store level, we launched a monthly display competition for retailers:</p>
+                        <p>• Rewards ranged from ₹500–₹2,000, with a guaranteed ₹100 for participation<br>
+                        • Introduced a photo verification system and scoring model based on display creativity and product range<br><br>
+                        This initiative empowered retailers to actively showcase products, resulting in a 22% increase in first orders linked to in-store displays.</p>
                         <div class="impact-mini">
-                            <strong>Impact:</strong> 40% increase in retailer participation within first month
+                            <strong>Impact:</strong> 40% growth in retailer participation within first quarter
                         </div>
                     </div>
                     <div class="feature-card">
-                        <h3>Brand Activation Intelligence</h3>
-                        <p>Developed a comprehensive scoring system that tracked retailer performance through photo verification and sales data. Created personalized dashboards showing each retailer the ROI of promoting specific brands, including metrics like inventory turnover rate, customer repeat purchases, and profit margins. This data-driven approach helped retailers understand which small brands were worth actively promoting.</p>
+                        <h3>Reinforcing Repeat Behavior through Loyalty Tiers</h3>
+                        <p>To build long-term ordering habits, we rolled out a structured loyalty program tied to monthly order value:</p>
+                        <p>• Tier-based slabs designed to cater to retailers across different spending bands<br>
+                        • As retailers moved to higher tiers, rewards increased, encouraging higher order volumes<br>
+                        • Retailers also began proactively promoting products within their network to climb tiers faster</p>
                         <div class="impact-mini">
-                            <strong>Impact:</strong> 22% AOV increase as retailers consolidated orders for higher rewards
+                            <strong>Impact:</strong> 12% increase in repeat order volume with significantly higher engagement among mid-frequency retailers
                         </div>
                     </div>
                     <div class="feature-card">
-                        <h3>Margin Arbitrage Engine</h3>
-                        <p>Created a subscription model where small brands paid ₹50/month per participating store for guaranteed visibility through our display program. Used the performance data from displays to demonstrate value to brands - showing increased sales, brand awareness, and market penetration. This created a sustainable revenue stream while solving the brand pull problem at the retailer level.</p>
+                        <h3>Reducing Order Cancellations through Upfront Incentives</h3>
+                        <p>To reduce high-value order cancellations, we introduced two nudges at the checkout level:</p>
+                        <p>• ₹50 confirmation fee for orders above ₹5,000 (~$60)<br>
+                        • 1% extra discount for full advance payments<br><br>
+                        These initiatives helped build commitment and reduce friction for serious buyers, resulting in a measurable drop in order cancellation rate within the first few weeks of implementation.</p>
                         <div class="impact-mini">
-                            <strong>Impact:</strong> ₹30L+ monthly revenue stream, increased platform take rate to 10%
+                            <strong>Impact:</strong> Significant reduction in high-value order cancellations
                         </div>
                     </div>
                 </div>
@@ -1334,84 +1346,85 @@
             <div class="content-section">
                 <h2>Results Overview</h2>
                 <div class="chart-container">
-                    <h3>3-Month Growth Trajectory</h3>
+                    <h3>Retailer Engagement & Ordering Behavior</h3>
                     
-                    <!-- Revenue Growth Chart -->
+                    <!-- Display Contest Participation Chart -->
                     <div class="single-chart-container">
-                        <h4>Monthly Revenue Growth</h4>
+                        <h4>Monthly Display Contest Participation</h4>
                         <div class="revenue-bar-chart">
                             <div class="revenue-month">
                                 <div class="revenue-bar month1">
-                                    <div class="revenue-amount">₹12L</div>
+                                    <div class="revenue-amount">1,500</div>
                                 </div>
                                 <div class="month-label">Month 1</div>
                             </div>
                             
                             <div class="revenue-month">
                                 <div class="revenue-bar month2">
-                                    <div class="revenue-amount">₹20L</div>
+                                    <div class="revenue-amount">1,730</div>
                                 </div>
                                 <div class="month-label">Month 2</div>
                             </div>
                             
                             <div class="revenue-month">
                                 <div class="revenue-bar month3">
-                                    <div class="revenue-amount">₹30L</div>
+                                    <div class="revenue-amount">1,980</div>
                                 </div>
                                 <div class="month-label">Month 3</div>
                             </div>
                         </div>
                         <div class="chart-insight">
-                            <strong>150% Revenue Growth</strong> - From ₹12L to ₹30L in 3 months
-                        </div>
-                    </div>
+                            <strong>22% of display contest participants placed their first order</strong> within the program period
+                        </div>                    </div>
 
-                    <!-- Order Metrics Chart -->
+                    <!-- Monthly Retention Chart -->
                     <div class="single-chart-container">
-                        <h4>Order Volume & Value Growth</h4>
+                        <h4>Monthly Retailer Retention from Loyalty Program</h4>
                         <div class="metrics-comparison">
                             <div class="metric-group">
-                                <div class="metric-header">Number of Orders</div>
+                                <div class="metric-header">Active Retailers Ordering Monthly</div>
                                 <div class="metric-bars">
                                     <div class="metric-month">
-                                        <div class="metric-bar orders month1">1,600</div>
+                                        <div class="metric-bar orders month1">34%</div>
                                         <span class="metric-label">Month 1</span>
                                     </div>
                                     <div class="metric-month">
-                                        <div class="metric-bar orders month2">2,200</div>
+                                        <div class="metric-bar orders month2">38%</div>
                                         <span class="metric-label">Month 2</span>
                                     </div>
                                     <div class="metric-month">
-                                        <div class="metric-bar orders month3">2,700</div>
+                                        <div class="metric-bar orders month3">41%</div>
                                         <span class="metric-label">Month 3</span>
                                     </div>
                                 </div>
-                                <div class="metric-growth">+69% Growth</div>
+                                <div class="metric-growth">+19% Improvement</div>
                             </div>
 
                             <div class="metric-group">
-                                <div class="metric-header">Average Order Value</div>
+                                <div class="metric-header">Avg Orders Per Retailer</div>
                                 <div class="metric-bars">
                                     <div class="metric-month">
-                                        <div class="metric-bar aov month1">₹7,500</div>
+                                        <div class="metric-bar aov month1">1.7</div>
                                         <span class="metric-label">Month 1</span>
                                     </div>
                                     <div class="metric-month">
-                                        <div class="metric-bar aov month2">₹9,200</div>
+                                        <div class="metric-bar aov month2">1.9</div>
                                         <span class="metric-label">Month 2</span>
                                     </div>
                                     <div class="metric-month">
-                                        <div class="metric-bar aov month3">₹11,100</div>
+                                        <div class="metric-bar aov month3">2.0</div>
                                         <span class="metric-label">Month 3</span>
                                     </div>
                                 </div>
-                                <div class="metric-growth">+48% Growth</div>
+                                <div class="metric-growth">+17% Growth</div>
                             </div>
+                        </div>
+                        <div class="chart-insight" style="margin-top: 2rem;">
+                            <strong>Loyalty points system drives consistent ordering behavior</strong> - Retailers actively chase tier rewards, leading to improved monthly retention and order frequency
                         </div>
                     </div>
                 </div>
-                <p style="text-align: center; margin-top: 2rem;"><em>"The combination of increased order frequency and higher order values created a compounding effect, leading to sustainable ₹30L+ monthly revenue within 3 months."</em></p>
-            </div>
+                <p style="text-align: center; margin-top: 2rem;"><em>"The three initiatives created a compounding effect that **unlocked ₹30L+ monthly revenue** by transforming retailer behavior from sporadic ordering to consistent brand advocacy."</em></p>            </div>
         </div>
     </div>
 

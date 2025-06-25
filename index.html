@@ -265,9 +265,18 @@
 
         /* Contact Section */
         .contact {
-            background: #1f2937;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             text-align: center;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact .section-subtitle {
+            color: white;
+            opacity: 0.9;
         }
 
         .contact-buttons {
@@ -375,8 +384,8 @@
 
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
             margin: 2rem 0;
         }
 
@@ -438,527 +447,6 @@
             text-align: center;
         }
 
-        .category-analysis {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin: 2rem 0;
-        }
-
-        .pie-chart-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .pie-chart-container h4 {
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-            color: #374151;
-        }
-
-        .pie-chart {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            position: relative;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .pie-legend {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.8rem;
-        }
-
-        .legend-color {
-            width: 12px;
-            height: 12px;
-            border-radius: 2px;
-        }
-
-        .legend-text {
-            color: #374151;
-        }
-
-        /* Margin Analysis */
-        .margin-analysis h4 {
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-            color: #374151;
-            text-align: center;
-        }
-
-        .margin-bars {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .margin-bar-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .margin-category {
-            width: 100px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: #374151;
-        }
-
-        .margin-bar-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 0.25rem;
-        }
-
-        .volume-bar {
-            background: linear-gradient(90deg, #ddd6fe, #c4b5fd);
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.7rem;
-            font-weight: 500;
-            color: #374151;
-            text-align: center;
-        }
-
-        .margin-bar {
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.7rem;
-            font-weight: 500;
-            color: white;
-            text-align: center;
-        }
-
-        .margin-bar.low {
-            background: linear-gradient(90deg, #ef4444, #dc2626);
-        }
-
-        .margin-bar.medium {
-            background: linear-gradient(90deg, #f97316, #ea580c);
-        }
-
-        .margin-bar.high {
-            background: linear-gradient(90deg, #22c55e, #16a34a);
-        }
-
-        .analysis-insight {
-            margin-top: 1.5rem;
-            padding: 1rem;
-            background: linear-gradient(135deg, #fef3c7, #fde68a);
-            border-radius: 8px;
-            border-left: 4px solid #f59e0b;
-            font-size: 0.85rem;
-            color: #92400e;
-        }
-
-        /* Before/After Comparison */
-        .before-after-comparison {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin: 2rem 0;
-        }
-
-        .comparison-side {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .comparison-side h5 {
-            margin-bottom: 1rem;
-            font-weight: 600;
-            color: #374151;
-        }
-
-        .revenue-breakdown {
-            display: flex;
-            flex-direction: column;
-            width: 120px;
-            height: 200px;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 1rem;
-        }
-
-        .revenue-segment {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-align: center;
-            line-height: 1.2;
-        }
-
-        .revenue-segment.low {
-            background: linear-gradient(135deg, #ef4444, #dc2626);
-        }
-
-        .revenue-segment.medium {
-            background: linear-gradient(135deg, #f97316, #ea580c);
-        }
-
-        .revenue-segment.high {
-            background: linear-gradient(135deg, #22c55e, #16a34a);
-        }
-
-        .overall-margin {
-            font-weight: 600;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            background: #f3f4f6;
-            color: #374151;
-            text-align: center;
-        }
-
-        .overall-margin.improved {
-            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
-            color: #047857;
-        }
-
-        /* Metrics Dashboard */
-        .metrics-dashboard {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .metric-card {
-            background: white;
-            border: 2px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: transform 0.2s ease;
-        }
-
-        .metric-card:hover {
-            transform: translateY(-2px);
-        }
-
-        .metric-card.positive {
-            border-color: #10b981;
-            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
-        }
-
-        .metric-card.neutral {
-            border-color: #6b7280;
-            background: linear-gradient(135deg, #f9fafb, #f3f4f6);
-        }
-
-        .metric-value {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .metric-card.positive .metric-value {
-            color: #059669;
-        }
-
-        .metric-card.neutral .metric-value {
-            color: #374151;
-        }
-
-        .metric-label {
-            font-weight: 600;
-            color: #374151;
-            margin-bottom: 0.5rem;
-        }
-
-        .metric-detail {
-            font-size: 0.8rem;
-            color: #6b7280;
-            line-height: 1.4;
-        }
-
-        /* Impact Mini Callouts */
-        .impact-mini {
-            margin-top: 1rem;
-            padding: 0.75rem;
-            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
-            border-radius: 8px;
-            border-left: 4px solid #10b981;
-            font-size: 0.875rem;
-            color: #064e3b;
-        }
-
-        .impact-mini strong {
-            color: #047857;
-        }
-
-        /* Simple Bar Charts */
-        .simple-chart-section {
-            margin-bottom: 2rem;
-        }
-
-        .simple-chart-section h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #374151;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .simple-bars {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .simple-bar-row {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .bar-label {
-            min-width: 120px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: #374151;
-        }
-
-        .bar-container {
-            flex: 1;
-            height: 45px;
-            background: #e5e7eb;
-            border-radius: 6px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .bar {
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-            font-size: 0.875rem;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-            min-width: 60px;
-        }
-
-        .bar.chips {
-            background: linear-gradient(135deg, #ef4444, #dc2626);
-        }
-
-        .bar.chocolates {
-            background: linear-gradient(135deg, #f97316, #ea580c);
-        }
-
-        .bar.beverages {
-            background: linear-gradient(135deg, #eab308, #ca8a04);
-        }
-
-        .bar.healthy {
-            background: linear-gradient(135deg, #22c55e, #16a34a);
-        }
-
-        .bar.low-margin {
-            background: linear-gradient(135deg, #ef4444, #dc2626);
-        }
-
-        .bar.medium-margin {
-            background: linear-gradient(135deg, #f97316, #ea580c);
-        }
-
-        .bar.high-margin {
-            background: linear-gradient(135deg, #22c55e, #16a34a);
-        }
-
-        /* FlipTalk specific bar colors */
-        .bar.toxicity {
-            background: linear-gradient(135deg, #ef4444, #dc2626);
-        }
-
-        .bar.privacy {
-            background: linear-gradient(135deg, #f97316, #ea580c);
-        }
-
-        .bar.language {
-            background: linear-gradient(135deg, #eab308, #ca8a04);
-        }
-
-        .bar.shyness {
-            background: linear-gradient(135deg, #22c55e, #16a34a);
-        }
-
-        .bar.technical {
-            background: linear-gradient(135deg, #3b82f6, #2563eb);
-        }
-
-        .bar.positive-chat {
-            background: linear-gradient(135deg, #22c55e, #16a34a);
-        }
-
-        .bar.mixed-chat {
-            background: linear-gradient(135deg, #eab308, #ca8a04);
-        }
-
-        .bar.negative-chat {
-            background: linear-gradient(135deg, #f97316, #ea580c);
-        }
-
-        .bar.toxic-chat {
-            background: linear-gradient(135deg, #ef4444, #dc2626);
-        }
-
-        /* Dual Comparison Chart */
-        .dual-comparison-chart {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin: 2rem 0;
-        }
-
-        .comparison-group {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .group-header {
-            font-weight: 600;
-            color: #374151;
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-        }
-
-        .category-bars {
-            display: flex;
-            gap: 1rem;
-            align-items: end;
-            height: 120px;
-        }
-
-        .category-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .category-bar {
-            width: 60px;
-            border-radius: 6px 6px 0 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-            font-size: 0.875rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .red-bar {
-            background: linear-gradient(135deg, #ef4444, #dc2626);
-        }
-
-        .orange-bar {
-            background: linear-gradient(135deg, #f97316, #ea580c);
-        }
-
-        .yellow-bar {
-            background: linear-gradient(135deg, #eab308, #ca8a04);
-        }
-
-        .green-bar {
-            background: linear-gradient(135deg, #22c55e, #16a34a);
-        }
-
-        .category-label {
-            font-size: 0.75rem;
-            color: #6b7280;
-            text-align: center;
-            font-weight: 500;
-        }
-
-        /* Margin Impact Chart */
-        .margin-impact-chart {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .impact-metric {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .metric-bar {
-            width: 120px;
-            height: 80px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .before-bar {
-            background: linear-gradient(135deg, #6b7280, #4b5563);
-        }
-
-        .after-bar {
-            background: linear-gradient(135deg, #22c55e, #16a34a);
-        }
-
-        .metric-label {
-            font-weight: 600;
-            color: #374151;
-            text-align: center;
-        }
-
-        .arrow-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .improvement-arrow {
-            font-size: 2rem;
-            color: #22c55e;
-            font-weight: bold;
-        }
-
-        .improvement-text {
-            font-size: 0.875rem;
-            color: #059669;
-            font-weight: 600;
-            background: #ecfdf5;
-            padding: 0.25rem 0.75rem;
-            border-radius: 12px;
-        }
-
-        /* Revenue Charts */
         .single-chart-container {
             background: white;
             border: 1px solid #e5e7eb;
@@ -1040,7 +528,226 @@
             font-size: 0.9rem;
         }
 
-        /* Order Metrics Chart */
+        /* Metrics Dashboard */
+        .metrics-dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .metric-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .metric-card.positive {
+            border-color: #10b981;
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+        }
+
+        .metric-card.neutral {
+            border-color: #6b7280;
+            background: linear-gradient(135deg, #f9fafb, #f3f4f6);
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-card.positive .metric-value {
+            color: #059669;
+        }
+
+        .metric-card.neutral .metric-value {
+            color: #374151;
+        }
+
+        .metric-card .metric-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1f2937 !important;
+            opacity: 1 !important;
+            margin-bottom: 0.25rem;
+        }
+
+        .metric-detail {
+            font-size: 0.8rem;
+            color: #6b7280;
+            line-height: 1.4;
+        }
+
+        /* Dual Comparison Chart */
+        .dual-comparison-chart {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+
+        .comparison-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .group-header {
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .category-bars {
+            display: flex;
+            gap: 1rem;
+            align-items: end;
+            height: 120px;
+        }
+
+        .category-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .category-bar {
+            width: 60px;
+            border-radius: 6px 6px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.875rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .red-bar {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+
+        .orange-bar {
+            background: linear-gradient(135deg, #f97316, #ea580c);
+        }
+
+        .yellow-bar {
+            background: linear-gradient(135deg, #eab308, #ca8a04);
+        }
+
+        .green-bar {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+        }
+
+        .category-label {
+            font-size: 0.75rem;
+            color: #6b7280;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Simple Bar Charts */
+        .simple-chart-section {
+            margin-bottom: 2rem;
+        }
+
+        .simple-chart-section h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .simple-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .simple-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .bar-label {
+            min-width: 120px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        .bar-container {
+            flex: 1;
+            height: 45px;
+            background: #e5e7eb;
+            border-radius: 6px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bar {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.875rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            min-width: 60px;
+        }
+
+        .bar.toxicity {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+
+        .bar.privacy {
+            background: linear-gradient(135deg, #f97316, #ea580c);
+        }
+
+        .bar.language {
+            background: linear-gradient(135deg, #eab308, #ca8a04);
+        }
+
+        .bar.shyness {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+        }
+
+        .bar.technical {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+        }
+
+        .bar.positive-chat {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+        }
+
+        .bar.mixed-chat {
+            background: linear-gradient(135deg, #eab308, #ca8a04);
+        }
+
+        .bar.negative-chat {
+            background: linear-gradient(135deg, #f97316, #ea580c);
+        }
+
+        .bar.toxic-chat {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+
+        /* Metrics Comparison */
         .metrics-comparison {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1095,13 +802,6 @@
         .metric-bar.aov.month2 { height: 70px; background: linear-gradient(135deg, #3b82f6, #2563eb); }
         .metric-bar.aov.month3 { height: 85px; background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
 
-        .metric-label {
-            font-size: 0.7rem;
-            color: #6b7280;
-            margin-top: 0.5rem;
-            text-align: center;
-        }
-
         .metric-growth {
             text-align: center;
             font-weight: 600;
@@ -1110,6 +810,31 @@
             padding: 0.5rem;
             border-radius: 6px;
             font-size: 0.85rem;
+        }
+
+        /* Impact Mini Callouts */
+        .impact-mini {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            border-radius: 8px;
+            border-left: 4px solid #10b981;
+            font-size: 0.875rem;
+            color: #064e3b;
+        }
+
+        .impact-mini strong {
+            color: #047857;
+        }
+
+        .analysis-insight {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-radius: 8px;
+            border-left: 4px solid #f59e0b;
+            font-size: 0.85rem;
+            color: #92400e;
         }
 
         @media (max-width: 768px) {
@@ -1154,7 +879,7 @@
                 <li><a onclick="showHome()">Home</a></li>
                 <li><a onclick="scrollToSection('work')">My Work</a></li>
                 <li><a onclick="scrollToSection('two-cents')">2 Cents</a></li>
-                <li><a href="#" onclick="window.open('resume-link-here', '_blank')">Resume</a></li>
+                <li><a href="https://drive.google.com/file/d/1ZmCKqHuOI77kINMq406deosK3cdFyFV0/view?usp=sharing" target="_blank">Resume</a></li>
                 <li><a onclick="scrollToSection('contact')">Contact</a></li>
             </ul>
         </div>
@@ -1261,7 +986,7 @@
                 <p class="section-subtitle">Always excited to discuss product strategy, user experience, and growth opportunities</p>
                 
                 <div class="contact-buttons">
-                    <a href="mailto:your-email@example.com" class="contact-button">Email me</a>
+                    <a href="mailto:arorasamarth17@gmail.com" class="contact-button">Email me</a>
                     <a href="https://www.linkedin.com/in/samarthsaarora/" target="_blank" class="contact-button secondary">LinkedIn</a>
                 </div>
             </div>
@@ -1304,7 +1029,7 @@
 
             <div class="content-section">
                 <h2>The Aha Moment</h2>
-                <p>I noticed a concerning pattern: retailers who placed large orders one month would drastically reduce their orders the following month. When I started calling retailers to understand this behavior, the answer was clear: <em>'Customers don't ask for these small brands by name. We get stuck with inventory that <span style="color: #ef4444; font-weight: 600;">moves slowly</span>.'</em></p>
+                <p>I noticed a concerning pattern: retailers who placed large orders one month would drastically reduce their orders the following month. When I started calling retailers to understand this behavior, the answer was clear: <em>'Customers don't ask for these small brands by name. We get stuck with inventory that <span style="color: #ef4444; font-weight: 700;">moves slowly</span>.'</em></p>
             </div>
 
             <div class="content-section">
@@ -1312,30 +1037,21 @@
                 <div class="cards-grid">
                     <div class="feature-card">
                         <h3>Driving Brand Visibility via Retailer-Led Display Campaigns</h3>
-                        <p>To increase visibility and adoption for partner brands at the store level, we launched a monthly display competition for retailers:</p>
-                        <p>• Rewards ranged from ₹500–₹2,000, with a guaranteed ₹100 for participation<br>
-                        • Introduced a photo verification system and scoring model based on display creativity and product range<br><br>
-                        This initiative empowered retailers to actively showcase products, resulting in a 22% increase in first orders linked to in-store displays.</p>
+                        <p>To increase visibility and adoption for partner brands at the store level, we launched a monthly display competition for retailers with rewards ranging from ₹500–₹2,000, with a guaranteed ₹100 for participation. This resulted in a 22% increase in first orders linked to in-store displays.</p>
                         <div class="impact-mini">
                             <strong>Impact:</strong> 40% growth in retailer participation within first quarter
                         </div>
                     </div>
                     <div class="feature-card">
                         <h3>Reinforcing Repeat Behavior through Loyalty Tiers</h3>
-                        <p>To build long-term ordering habits, we rolled out a structured loyalty program tied to monthly order value:</p>
-                        <p>• Tier-based slabs designed to cater to retailers across different spending bands<br>
-                        • As retailers moved to higher tiers, rewards increased, encouraging higher order volumes<br>
-                        • Retailers also began proactively promoting products within their network to climb tiers faster</p>
+                        <p>We rolled out a structured loyalty program tied to monthly order value with tier-based slabs designed to cater to retailers across different spending bands, leading to a 12% increase in repeat order volume.</p>
                         <div class="impact-mini">
                             <strong>Impact:</strong> 12% increase in repeat order volume with significantly higher engagement among mid-frequency retailers
                         </div>
                     </div>
                     <div class="feature-card">
                         <h3>Reducing Order Cancellations through Upfront Incentives</h3>
-                        <p>To reduce high-value order cancellations, we introduced two nudges at the checkout level:</p>
-                        <p>• ₹50 confirmation fee for orders above ₹5,000 (~$60)<br>
-                        • 1% extra discount for full advance payments<br><br>
-                        These initiatives helped build commitment and reduce friction for serious buyers, resulting in a measurable drop in order cancellation rate within the first few weeks of implementation.</p>
+                        <p>We introduced a ₹50 confirmation fee for orders above ₹5,000 and 1% extra discount for full advance payments, resulting in a significant reduction in high-value order cancellations.</p>
                         <div class="impact-mini">
                             <strong>Impact:</strong> Significant reduction in high-value order cancellations
                         </div>
@@ -1375,7 +1091,8 @@
                         </div>
                         <div class="chart-insight">
                             <strong>22% of display contest participants placed their first order</strong> within the program period
-                        </div>                    </div>
+                        </div>
+                    </div>
 
                     <!-- Monthly Retention Chart -->
                     <div class="single-chart-container">
@@ -1419,12 +1136,13 @@
                                 <div class="metric-growth">+17% Growth</div>
                             </div>
                         </div>
-                        <div class="chart-insight" style="margin-top: 2rem;">
+                        <div class="chart-insight">
                             <strong>Loyalty points system drives consistent ordering behavior</strong> - Retailers actively chase tier rewards, leading to improved monthly retention and order frequency
                         </div>
                     </div>
                 </div>
-                <p style="text-align: center; margin-top: 2rem;"><em>"The three initiatives created a compounding effect that **unlocked ₹30L+ monthly revenue** by transforming retailer behavior from sporadic ordering to consistent brand advocacy."</em></p>            </div>
+                <p style="text-align: center; margin-top: 2rem;"><em>The three initiatives created a compounding effect that unlocked ₹30L+ monthly revenue by transforming retailer behavior from sporadic ordering to consistent brand advocacy.</em></p>
+            </div>
         </div>
     </div>
 
@@ -1435,7 +1153,7 @@
             
             <div class="case-study-hero">
                 <h1>How I Turned Underperforming Machines Into Wellness Revenue Generators</h1>
-                <p>When 40% of our 600 machines underperformed despite "prime" office locations, I discovered the real opportunity: office workers wanted healthier snacking options we weren't providing. A pilot on 120 machines unlocked the strategy.</p>
+                <p>When 40% of our 600 machines underperformed despite "prime" office locations, I discovered the real opportunity: office workers wanted healthier snacking options we weren't providing.</p>
             </div>
 
             <div class="stats-grid">
@@ -1459,8 +1177,7 @@
 
             <div class="content-section">
                 <h2>The Aha Moment</h2>
-                <p>We had machines selling ₹3K/month while others hit ₹25K—same building, different floors. Traditional snacks offered 12-15% margins with constant price pressure from distributors.</p>
-                <p>During routine site visits, I started noticing patterns: machines near meeting areas sold more afternoon snacks, but office workers kept asking 'do you have protein bars?' We were stocking what vendors pushed, not what office workers actually wanted.</p>
+                <p>We had machines selling ₹3K/month while others hit ₹25K—same building, different floors. During routine site visits, I started noticing patterns: office workers kept asking 'do you have protein bars?' We were stocking what vendors pushed, not what office workers actually wanted.</p>
                 
                 <div class="chart-container">
                     <h3>Machine Performance Analysis: Product Mix & Margins</h3>
@@ -1473,7 +1190,7 @@
                                 <div class="revenue-bar" style="height: 120px; background: linear-gradient(135deg, #ef4444, #dc2626);">
                                     <div class="revenue-amount">50%</div>
                                 </div>
-                                <div class="month-label">Chips & Namkeen</div>
+                                <div class="month-label">Chips</div>
                             </div>
                             
                             <div class="revenue-month">
@@ -1494,7 +1211,7 @@
                                 <div class="revenue-bar" style="height: 24px; background: linear-gradient(135deg, #22c55e, #16a34a);">
                                     <div class="revenue-amount">10%</div>
                                 </div>
-                                <div class="month-label">Healthy Options</div>
+                                <div class="month-label">Healthy</div>
                             </div>
                         </div>
                         <div class="chart-insight">
@@ -1510,32 +1227,32 @@
                                 <div class="revenue-bar" style="height: 48px; background: linear-gradient(135deg, #ef4444, #dc2626);">
                                     <div class="revenue-amount">12%</div>
                                 </div>
-                                <div class="month-label">Chips Margin</div>
+                                <div class="month-label">Chips</div>
                             </div>
                             
                             <div class="revenue-month">
                                 <div class="revenue-bar" style="height: 60px; background: linear-gradient(135deg, #f97316, #ea580c);">
                                     <div class="revenue-amount">15%</div>
                                 </div>
-                                <div class="month-label">Chocolates Margin</div>
+                                <div class="month-label">Chocolates</div>
                             </div>
                             
                             <div class="revenue-month">
                                 <div class="revenue-bar" style="height: 72px; background: linear-gradient(135deg, #eab308, #ca8a04);">
                                     <div class="revenue-amount">18%</div>
                                 </div>
-                                <div class="month-label">Beverages Margin</div>
+                                <div class="month-label">Beverages</div>
                             </div>
 
                             <div class="revenue-month">
                                 <div class="revenue-bar" style="height: 140px; background: linear-gradient(135deg, #22c55e, #16a34a);">
-                                    <div class="revenue-amount">35%</div>
+                                    <div class="revenue-amount">30%</div>
                                 </div>
-                                <div class="month-label">Healthy Margin</div>
+                                <div class="month-label">Healthy</div>
                             </div>
                         </div>
                         <div class="chart-insight">
-                            <strong>Key Insight:</strong> Healthy options offer 35% margins vs 12% for chips - nearly 3x profit potential
+                            <strong>Key Insight:</strong> Healthy options offer 30% margins vs 12% for chips - nearly 2.5x profit potential
                         </div>
                     </div>
                 </div>
@@ -1550,19 +1267,17 @@
                     </div>
                     <div class="feature-card">
                         <h3>Wellness Snacking Portfolio</h3>
-                        <p>Partnered with healthy snack brands offering 35% margins and positioned select machines as 'office wellness corners'</p>
+                        <p>Partnered with healthy snack brands offering 30% margins and positioned select machines as 'office wellness corners'</p>
                     </div>
                     <div class="feature-card">
-                        <h3>Demand-Based Inventory Strategy</h3>
-                        <p>Piloted wellness-focused inventory on 120 machines: 27% healthy options during peak hours, energy items for late workers</p>
+                        <h3>Data-Driven Restocking Optimization</h3>
+                        <p>Analyzed hourly consumption patterns to optimize restocking schedules and reduce out-of-stock instances by 40%</p>
                     </div>
                 </div>
             </div>
 
             <div class="content-section">
                 <h2>The Results</h2>
-                <p>First pilot machine went from ₹8K to ₹22K monthly revenue. Word spread to facility managers who started requesting 'wellness-focused' machines for their offices.</p>
-                
                 <div class="chart-container">
                     <h3>Product Mix Transformation: From Traditional to Wellness</h3>
                     
@@ -1614,31 +1329,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Margin Impact -->
-                    <div class="single-chart-container">
-                        <h4>Business Impact: Margin Improvement</h4>
-                        <div class="margin-impact-chart">
-                            <div class="impact-metric">
-                                <div class="metric-bar before-bar">
-                                    <span class="metric-value">15%</span>
-                                </div>
-                                <div class="metric-label">Before: Overall Margin</div>
-                            </div>
-                            
-                            <div class="arrow-container">
-                                <div class="improvement-arrow">→</div>
-                                <div class="improvement-text">+3% Improvement</div>
-                            </div>
-
-                            <div class="impact-metric">
-                                <div class="metric-bar after-bar">
-                                    <span class="metric-value">18%</span>
-                                </div>
-                                <div class="metric-label">After: Overall Margin</div>
-                            </div>
-                        </div>
                         <div class="chart-insight">
                             <strong>Key Achievement:</strong> 2.7x increase in healthy snack mix (10% → 27%) drove 20% margin improvement
                         </div>
@@ -1661,7 +1351,7 @@
                         <div class="metric-label">Monthly Revenue Boost</div>
                         <div class="metric-detail">Across 120 pilot machines</div>
                     </div>
-                    <div class="metric-card neutral">
+                    <div class="metric-card positive">
                         <div class="metric-value">18%</div>
                         <div class="metric-label">Overall Margins</div>
                         <div class="metric-detail">Improved from 15%</div>
@@ -1678,7 +1368,7 @@
             
             <div class="case-study-hero">
                 <h1>How I Turned Gaming Voice Chat Toxicity Into Anonymous Fun and Scaled to 40K+ Users</h1>
-                <p>As a college gamer, I experienced firsthand how voice chats with strangers turned abusive when teams started losing. After researching Voicemod's 2M+ user platform, I saw an opportunity to make real-time voice interaction both safe and playful through anonymous voice filters.</p>
+                <p>As a college gamer, I experienced firsthand how voice chats with strangers turned abusive when teams started losing. I saw an opportunity to make real-time voice interaction both safe and playful through anonymous voice filters.</p>
             </div>
 
             <div class="stats-grid">
@@ -1702,80 +1392,77 @@
 
             <div class="content-section">
                 <h2>The Aha Moment</h2>
-                <p>During college gaming sessions, I noticed a consistent pattern: voice chats with strangers would quickly turn toxic when things went wrong—especially when teams started losing or strategies failed. Many of my peers faced the same issue: multiplayer games were fun, but voice interaction often became unpleasant under pressure.</p>
-                <p>After discovering Voicemod's platform with 2M+ users and speaking with their team about use cases, I realized there was a clear opportunity: we needed a solution that maintained the emotional expression of voice communication while removing the personal attack vectors through anonymity.</p>
+                <p>During college gaming sessions, I noticed voice chats with strangers would quickly turn toxic when teams started losing. After discovering Voicemod's platform with 2M+ users, I realized we needed a solution that maintained emotional expression while removing personal attack vectors through anonymity.</p>
                 
                 <div class="chart-container">
                     <h3>User Behavior Analysis: Gaming Voice Chat Pain Points</h3>
-                    <div class="category-analysis">
-                        <div class="simple-chart-section">
-                            <h4>Why Users Avoided Voice Chat</h4>
-                            <div class="simple-bars">
-                                <div class="simple-bar-row">
-                                    <span class="bar-label">Toxicity & Abuse</span>
-                                    <div class="bar-container">
-                                        <div class="bar toxicity" style="width: 40%;">40%</div>
-                                    </div>
-                                </div>
-                                <div class="simple-bar-row">
-                                    <span class="bar-label">Privacy Concerns</span>
-                                    <div class="bar-container">
-                                        <div class="bar privacy" style="width: 20%;">20%</div>
-                                    </div>
-                                </div>
-                                <div class="simple-bar-row">
-                                    <span class="bar-label">Language Barriers</span>
-                                    <div class="bar-container">
-                                        <div class="bar language" style="width: 20%;">20%</div>
-                                    </div>
-                                </div>
-                                <div class="simple-bar-row">
-                                    <span class="bar-label">Shyness/Anxiety</span>
-                                    <div class="bar-container">
-                                        <div class="bar shyness" style="width: 10%;">10%</div>
-                                    </div>
-                                </div>
-                                <div class="simple-bar-row">
-                                    <span class="bar-label">Technical Issues</span>
-                                    <div class="bar-container">
-                                        <div class="bar technical" style="width: 10%;">10%</div>
-                                    </div>
+                    <div class="single-chart-container">
+                        <h4>Why Users Avoided Voice Chat</h4>
+                        <div class="simple-bars">
+                            <div class="simple-bar-row">
+                                <span class="bar-label">Toxicity & Abuse</span>
+                                <div class="bar-container">
+                                    <div class="bar toxicity" style="width: 40%;">40%</div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="simple-chart-section">
-                            <h4>Gaming Session Impact on Chat Quality</h4>
-                            <div class="simple-bars">
-                                <div class="simple-bar-row">
-                                    <span class="bar-label">Team Winning</span>
-                                    <div class="bar-container">
-                                        <div class="bar positive-chat" style="width: 85%;">85% Positive</div>
-                                    </div>
+                            <div class="simple-bar-row">
+                                <span class="bar-label">Privacy Concerns</span>
+                                <div class="bar-container">
+                                    <div class="bar privacy" style="width: 20%;">20%</div>
                                 </div>
-                                <div class="simple-bar-row">
-                                    <span class="bar-label">Close Game</span>
-                                    <div class="bar-container">
-                                        <div class="bar mixed-chat" style="width: 60%;">60% Positive</div>
-                                    </div>
+                            </div>
+                            <div class="simple-bar-row">
+                                <span class="bar-label">Language Barriers</span>
+                                <div class="bar-container">
+                                    <div class="bar language" style="width: 20%;">20%</div>
                                 </div>
-                                <div class="simple-bar-row">
-                                    <span class="bar-label">Team Losing</span>
-                                    <div class="bar-container">
-                                        <div class="bar negative-chat" style="width: 25%;">25% Positive</div>
-                                    </div>
+                            </div>
+                            <div class="simple-bar-row">
+                                <span class="bar-label">Shyness/Anxiety</span>
+                                <div class="bar-container">
+                                    <div class="bar shyness" style="width: 10%;">10%</div>
                                 </div>
-                                <div class="simple-bar-row">
-                                    <span class="bar-label">Player Mistake</span>
-                                    <div class="bar-container">
-                                        <div class="bar toxic-chat" style="width: 15%;">15% Positive</div>
-                                    </div>
+                            </div>
+                            <div class="simple-bar-row">
+                                <span class="bar-label">Technical Issues</span>
+                                <div class="bar-container">
+                                    <div class="bar technical" style="width: 10%;">10%</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="analysis-insight">
-                        <strong>Key Insight:</strong> Voice chat toxicity was directly correlated with game performance—creating a predictable pattern that anonymity could solve.
+
+                    <div class="single-chart-container">
+                        <h4>Gaming Session Impact on Chat Quality</h4>
+                        <div class="simple-bars">
+                            <div class="simple-bar-row">
+                                <span class="bar-label">Team Winning</span>
+                                <div class="bar-container">
+                                    <div class="bar positive-chat" style="width: 85%;">85% Positive</div>
+                                </div>
+                            </div>
+                            <div class="simple-bar-row">
+                                <span class="bar-label">Close Game</span>
+                                <div class="bar-container">
+                                    <div class="bar mixed-chat" style="width: 60%;">60% Positive</div>
+                                </div>
+                            </div>
+                            <div class="simple-bar-row">
+                                <span class="bar-label">Team Losing</span>
+                                <div class="bar-container">
+                                    <div class="bar negative-chat" style="width: 25%;">25% Positive</div>
+                                </div>
+                            </div>
+                            <div class="simple-bar-row">
+                                <span class="bar-label">Player Mistake</span>
+                                <div class="bar-container">
+                                    <div class="bar toxic-chat" style="width: 15%;">15% Positive</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="analysis-insight">
+                            <strong>Key Insight:</strong> Voice chat toxicity was directly correlated with game performance—creating a predictable pattern that anonymity could solve.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1789,7 +1476,7 @@
                     </div>
                     <div class="feature-card">
                         <h3>Community-Led Growth & Retention</h3>
-                        <p>Built 100-member campus ambassador network for low-cost user acquisition and launched meme + influencer campaigns to make FlipTalk viral within student communities</p>
+                        <p>Built 100-member campus ambassador network for low-cost user acquisition and launched meme campaigns to make FlipTalk viral within student communities</p>
                     </div>
                     <div class="feature-card">
                         <h3>Gamification & Engagement System</h3>
@@ -1797,14 +1484,14 @@
                     </div>
                     <div class="feature-card">
                         <h3>User-Centric Feedback Loop</h3>
-                        <p>Launched in-app feedback system gathering real-time insights on discomfort, fun level, and technical issues. Prioritized iterative improvements on voice lag, UI friction, and filter control</p>
+                        <p>Launched in-app feedback system gathering real-time insights on discomfort, fun level, and technical issues to drive iterative improvements</p>
                     </div>
                 </div>
             </div>
 
             <div class="content-section">
                 <h2>The Results</h2>
-                <p>Within 3 months, the user-centric feedback loop led to 13% churn reduction. The campus ambassador network proved highly effective for student-focused acquisition, while gamification elements significantly boosted engagement metrics.</p>
+                <p>Within 3 months, reached 40K+ users with 370% growth. The campus ambassador network proved highly effective for student-focused acquisition, while gamification elements significantly boosted engagement metrics.</p>
                 
                 <div class="chart-container">
                     <h3>3-Month Growth Journey: From Concept to 40K Users</h3>
@@ -1924,14 +1611,12 @@
 
             <div class="content-section">
                 <h2>Problem</h2>
-                <p>After the ride is confirmed, users experience a short-lived sense of relief, followed by uncertainty. Questions like "Why aren't they moving?", "Should I book again on another app?" or "Will the driver actually show up?" creates anxiety.</p>
-                <p>This is especially critical for time-sensitive use cases like airport drops, early morning rides, or meetings — where trust is as important as speed.</p>
+                <p>After the ride is confirmed, users experience uncertainty. Questions like "Why aren't they moving?", "Should I book again on another app?" create anxiety, especially for time-sensitive use cases like airport drops or meetings.</p>
             </div>
 
             <div class="content-section">
                 <h2>Insight</h2>
-                <p>From my own usage and conversations with friends who are also Uber users, I noticed a consistent pattern: people tend to check the map obsessively right after booking. If the car doesn't move within a minutes, they either call the driver, open a competing app, or cancel the ride.</p>
-                <p>This behavior isn't driven by ETA alone, it comes from a lack of certainty during a high-trust moment.</p>
+                <p>People tend to check the map obsessively right after booking. If the car doesn't move within minutes, they either call the driver, open a competing app, or cancel the ride. This behavior comes from a lack of certainty during a high-trust moment.</p>
             </div>
 
             <div class="content-section">
@@ -1939,21 +1624,21 @@
                 <div class="cards-grid">
                     <div class="feature-card">
                         <h3>Contextual Communication</h3>
-                        <p>Replace ETAs with reason-based ETA updates. Examples: "Driver is waiting at a traffic light before turning toward pickup". This reduces the anxiety caused by a stationary car icon.</p>
+                        <p>Replace ETAs with reason-based updates like "Driver is waiting at a traffic light before turning toward pickup" to reduce anxiety from stationary car icons.</p>
                     </div>
                     <div class="feature-card">
                         <h3>Driver Monitoring & Parallel Reassignment</h3>
-                        <p>If the assigned driver doesn't begin moving within a set threshold (e.g. 2 minutes), the system first nudges the driver to start the trip. If the driver still remains idle, Uber quietly begins searching for a backup driver in parallel, without creating unnecessary panic.</p>
+                        <p>If the assigned driver doesn't move within 2 minutes, nudge them first, then quietly search for a backup driver in parallel without creating panic.</p>
                     </div>
                     <div class="feature-card">
-                        <h3>Nudge to Rebook When Driver Doesn't Move</h3>
-                        <p>Allow users to "lock" a driver for ₹50 at the time of booking. If the driver cancels within the next 2–3 minutes, the user receives a ₹100 credit. This monetizes reliability for time-critical rides.</p>
+                        <h3>Reliability Monetization</h3>
+                        <p>Allow users to "lock" a driver for ₹50 at booking. If the driver cancels within 2-3 minutes, user receives ₹100 credit for time-critical rides.</p>
                     </div>
                 </div>
             </div>
 
             <div class="content-section">
-                <h2>Impact</h2>
+                <h2>Expected Impact</h2>
                 <p>These changes aim to solve not just logistical issues, but emotional friction. By addressing post-booking anxiety through transparency, backup systems, and reliability monetization, we can build deeper trust during critical moments.</p>
             </div>
 
@@ -1966,7 +1651,7 @@
                     </div>
                     <div class="feature-card">
                         <h3>Driver Call Frequency</h3>
-                        <p>Indicates trust gaps. May remain steady initially, but should decrease over time as users become familiar with clearer, in-app updates.</p>
+                        <p>Indicates trust gaps. Should decrease over time as users become familiar with clearer, in-app updates.</p>
                     </div>
                     <div class="feature-card">
                         <h3>Ride Lock Adoption Rate</h3>
@@ -1993,8 +1678,7 @@
 
             <div class="content-section">
                 <h2>Problem</h2>
-                <p>LinkedIn is meant to help professionals discover content that supports career growth, from job opportunities and upskilling to industry insights.</p>
-                <p>However, the feed is filled with clickbaity posts that often feel generic or attention-seeking. People find one post going viral and many others start posting that same content, this makes it spammy. Users scroll through content that doesn't match their interests, role, or goals, making the platform feel less useful over time.</p>
+                <p>LinkedIn is meant to help professionals discover content that supports career growth, but the feed is filled with clickbaity posts that feel generic. Users scroll through content that doesn't match their interests, role, or goals, making the platform feel less useful over time.</p>
             </div>
 
             <div class="content-section">
@@ -2002,26 +1686,26 @@
                 <div class="cards-grid">
                     <div class="feature-card">
                         <h3>Tag-Based Content Preferences</h3>
-                        <p>Allow users to select specific topics, skills, and industry areas they want to see more of. Use these preferences to weight content in the algorithm and surface more relevant posts.</p>
+                        <p>Allow users to select specific topics, skills, and industry areas they want to see more of. Use these preferences to weight content in the algorithm.</p>
                     </div>
                     <div class="feature-card">
                         <h3>Role-Specific Content Surfacing</h3>
-                        <p>Leverage job title and industry data to surface content that's specifically relevant to the user's current role and career stage. Product managers see product strategy content, designers see design thinking posts.</p>
+                        <p>Leverage job title and industry data to surface content that's specifically relevant to the user's current role and career stage.</p>
                     </div>
                     <div class="feature-card">
                         <h3>Anti-Viral Content Detection</h3>
-                        <p>Implement systems to detect when similar content templates are being overused. Reduce distribution of copycat posts and reward original, thoughtful content.</p>
+                        <p>Implement systems to detect when similar content templates are being overused. Reduce distribution of copycat posts and reward original content.</p>
                     </div>
                     <div class="feature-card">
                         <h3>Content Quality Scoring</h3>
-                        <p>Develop quality metrics based on engagement depth (comments vs. likes), save rates, and time spent reading. Prioritize substantive content over viral but shallow posts.</p>
+                        <p>Develop quality metrics based on engagement depth, save rates, and time spent reading. Prioritize substantive content over viral but shallow posts.</p>
                     </div>
                 </div>
             </div>
 
             <div class="content-section">
                 <h2>Expected Impact</h2>
-                <p>By focusing on relevance over virality, LinkedIn can become a more valuable professional tool. Users will spend more meaningful time on the platform, engage with content that actually helps their careers, and contribute higher-quality posts themselves.</p>
+                <p>By focusing on relevance over virality, LinkedIn can become a more valuable professional tool. Users will spend more meaningful time on the platform and engage with content that actually helps their careers.</p>
             </div>
 
             <div class="content-section">
@@ -2049,7 +1733,7 @@
     </div>
 
     <script>
-        // Navigation and page switching
+        // Navigation and page switching functions
         function showHome() {
             document.getElementById('home-page').style.display = 'block';
             document.querySelectorAll('.case-study').forEach(study => {
@@ -2077,7 +1761,7 @@
             }
         }
 
-        // Smooth scrolling for navigation
+        // Initialize page when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
             // Add smooth scrolling behavior
             const navLinks = document.querySelectorAll('.nav-links a');

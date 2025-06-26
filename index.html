@@ -111,14 +111,14 @@
         }
 
         .metric-number {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 700;
             color: #fff !important;
             display: block;
         }
 
         .metric-label {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #fff !important;
             opacity: 0.9;
             margin-top: 0.5rem;
@@ -161,6 +161,9 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
             border: 1px solid #e5e7eb;
+            display: flex;
+            flex-direction: column;
+            min-height: 400px;
         }
 
         .work-card:hover {
@@ -191,6 +194,7 @@
             color: #666;
             margin-bottom: 1.5rem;
             line-height: 1.6;
+            flex-grow: 1;
         }
 
         .work-tags {
@@ -212,18 +216,24 @@
         .cta-button {
             background: #ff5a5f;
             color: white;
-            padding: 0.75rem 1.5rem;
+            padding: 0.5rem 1.25rem;
             border: none;
-            border-radius: 8px;
+            border-radius: 6px;
             font-weight: 600;
+            font-size: 0.95rem;
             text-decoration: none;
             display: inline-block;
             transition: background 0.3s ease;
             cursor: pointer;
+            width: auto;
         }
 
         .cta-button:hover {
             background: #e54348;
+        }
+
+        .work-card .cta-button {
+            align-self: flex-start;
         }
 
         /* 2 Cents Section */
@@ -837,9 +847,48 @@
             color: #92400e;
         }
 
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                border-top: 1px solid #e5e7eb;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
             }
 
             .hero h1 {
@@ -867,6 +916,19 @@
             .container {
                 padding: 0 16px;
             }
+
+            .revenue-bar-chart {
+                gap: 1rem;
+            }
+
+            .dual-comparison-chart {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .metrics-comparison {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -875,7 +937,12 @@
     <nav>
         <div class="nav-container">
             <div class="logo">Samarth Arora</div>
-            <ul class="nav-links">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
                 <li><a onclick="showHome()">Home</a></li>
                 <li><a onclick="scrollToSection('work')">My Work</a></li>
                 <li><a onclick="scrollToSection('two-cents')">2 Cents</a></li>
@@ -945,7 +1012,7 @@
 
                     <div class="work-card fliptalk" onclick="showCaseStudy('fliptalk')">
                         <h3>FlipTalk</h3>
-                        <p>A voice-based social app where users could chat using real-time voice filters, enabling fun, anonymous conversations. Grew it to 40K+ users and was backed by Startup India.</p>
+                        <p>A voice-based social app where users could chat using real-time voice filters, enabling fun, anonymous conversations. Grew it to 42K users and was backed by Startup India.</p>
                         <div class="work-tags">
                             <span class="tag">Social App</span>
                             <span class="tag">Voice Tech</span>
@@ -1373,7 +1440,7 @@
 
             <div class="stats-grid">
                 <div class="stat">
-                    <div class="stat-number">40K+</div>
+                    <div class="stat-number">42K</div>
                     <div class="stat-label">Users</div>
                 </div>
                 <div class="stat">
@@ -1516,7 +1583,7 @@
                             
                             <div class="revenue-month">
                                 <div class="revenue-bar month3">
-                                    <div class="revenue-amount">40K</div>
+                                    <div class="revenue-amount">42K</div>
                                 </div>
                                 <div class="month-label">Month 3</div>
                             </div>
@@ -1573,9 +1640,9 @@
 
                 <div class="metrics-dashboard">
                     <div class="metric-card positive">
-                        <div class="metric-value">40K+</div>
+                        <div class="metric-value">42K</div>
                         <div class="metric-label">Total Users</div>
-                        <div class="metric-detail">From 0 to 40K in 3 months</div>
+                        <div class="metric-detail">From 0 to 42K in 3 months</div>
                     </div>
                     <div class="metric-card positive">
                         <div class="metric-value">2.4x</div>
@@ -1587,7 +1654,7 @@
                         <div class="metric-label">CAC Reduction</div>
                         <div class="metric-detail">Via campus ambassadors</div>
                     </div>
-                    <div class="metric-card neutral">
+                    <div class="metric-card positive">
                         <div class="metric-value">13%</div>
                         <div class="metric-label">Churn Reduction</div>
                         <div class="metric-detail">Through UX improvements</div>
@@ -1733,8 +1800,21 @@
     </div>
 
     <script>
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking a link
+        function closeMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.remove('active');
+        }
+
         // Navigation and page switching functions
         function showHome() {
+            closeMobileMenu();
             document.getElementById('home-page').style.display = 'block';
             document.querySelectorAll('.case-study').forEach(study => {
                 study.style.display = 'none';
@@ -1743,6 +1823,7 @@
         }
 
         function showCaseStudy(study) {
+            closeMobileMenu();
             document.getElementById('home-page').style.display = 'none';
             document.querySelectorAll('.case-study').forEach(s => {
                 s.style.display = 'none';
@@ -1752,6 +1833,7 @@
         }
 
         function scrollToSection(sectionId) {
+            closeMobileMenu();
             const element = document.getElementById(sectionId);
             if (element) {
                 element.scrollIntoView({ 

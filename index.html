@@ -163,7 +163,7 @@
             border: 1px solid #e5e7eb;
             display: flex;
             flex-direction: column;
-            min-height: 400px;
+            min-height: 480px;
         }
 
         .work-card:hover {
@@ -195,6 +195,34 @@
             margin-bottom: 1.5rem;
             line-height: 1.6;
             flex-grow: 1;
+        }
+
+        .work-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+            padding: 1rem 0;
+            border-top: 1px solid #e5e7eb;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .work-metric {
+            text-align: center;
+        }
+
+        .work-metric .metric-value {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.25rem;
+        }
+
+        .work-metric .metric-label {
+            display: block;
+            font-size: 0.875rem;
+            color: #666;
         }
 
         .work-tags {
@@ -946,7 +974,6 @@
                 <li><a onclick="showHome()">Home</a></li>
                 <li><a onclick="scrollToSection('work')">My Work</a></li>
                 <li><a onclick="scrollToSection('two-cents')">2 Cents</a></li>
-                <li><a href="./resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
                 <li><a onclick="scrollToSection('contact')">Contact</a></li>
             </ul>
         </div>
@@ -966,8 +993,8 @@
                         <div class="metric-label">Users Impacted</div>
                     </div>
                     <div class="metric">
-                        <span class="metric-number">30L+</span>
-                        <div class="metric-label">Revenue Unlocked</div>
+                        <span class="metric-number">37%</span>
+                        <div class="metric-label">Retention Improvement</div>
                     </div>
                     <div class="metric">
                         <span class="metric-number">24%</span>

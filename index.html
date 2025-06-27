@@ -1,1867 +1,1658 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samarth Arora - Product Manager</title>
+    <title>ITC YiPPee! बाजार सर्वेक्षण</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f7f7f7;
+            min-height: 100vh;
+            padding: 24px;
+            margin: 0;
         }
-
-        .container {
-            max-width: 1200px;
+        
+        .survey-container {
+            max-width: 760px;
             margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 24px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #ff5a5f;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            cursor: pointer;
-        }
-
-        .nav-links a:hover {
-            color: #ff5a5f;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 120px 0 80px;
-            text-align: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            color: white;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 3rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0.9;
-            color: white;
-        }
-
-        /* Metrics */
-        .metrics {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .metric {
-            text-align: center;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-        }
-
-        .metric-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #fff !important;
-            display: block;
-        }
-
-        .metric-label {
-            font-size: 1.1rem;
-            color: #fff !important;
-            opacity: 0.9;
-            margin-top: 0.5rem;
-        }
-
-        /* Section Styles */
-        .section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #333;
-        }
-
-        .section-subtitle {
-            font-size: 1.25rem;
-            text-align: center;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto 3rem;
-        }
-
-        /* Work Section */
-        .work-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .work-card {
-            background: #fff;
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            border: 1px solid #e5e7eb;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .work-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .work-card.kirana {
-            border-left: 4px solid #10b981;
-        }
-
-        .work-card.azgo {
-            border-left: 4px solid #3b82f6;
-        }
-
-        .work-card.fliptalk {
-            border-left: 4px solid #8b5cf6;
-        }
-
-        .work-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .work-card p {
-            color: #666;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .work-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .tag {
-            background: #f3f4f6;
-            color: #374151;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-
-        .cta-button {
-            background: #ff5a5f;
-            color: white;
-            padding: 0.5rem 1.25rem;
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s ease;
-            cursor: pointer;
-            width: auto;
-        }
-
-        .cta-button:hover {
-            background: #e54348;
-        }
-
-        .work-card .cta-button {
-            align-self: flex-start;
-        }
-
-        /* 2 Cents Section */
-        .two-cents {
-            background: #f9fafb;
-        }
-
-        .insights-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .insight-card {
-            background: #fff;
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-
-        .insight-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .insight-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .insight-card p {
-            color: #666;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Contact Section */
-        .contact {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .contact .section-title {
-            color: white;
-        }
-
-        .contact .section-subtitle {
-            color: white;
-            opacity: 0.9;
-        }
-
-        .contact-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .contact-button {
-            background: #ff5a5f;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: background 0.3s ease;
-        }
-
-        .contact-button.secondary {
-            background: transparent;
-            border: 2px solid #ff5a5f;
-        }
-
-        .contact-button:hover {
-            background: #e54348;
-        }
-
-        .contact-button.secondary:hover {
-            background: #ff5a5f;
-        }
-
-        /* Case Study Pages */
-        .case-study {
-            display: none;
-            padding: 120px 0 80px;
-        }
-
-        .case-study.active {
-            display: block;
-        }
-
-        .case-study-hero {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .case-study-hero h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .case-study-hero p {
-            font-size: 1.25rem;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
-            padding: 2rem;
-            background: #f9fafb;
-            border-radius: 12px;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #ff5a5f;
-        }
-
-        .stat-label {
-            font-size: 0.875rem;
-            color: #666;
-            margin-top: 0.25rem;
-        }
-
-        .content-section {
-            margin: 3rem 0;
-        }
-
-        .content-section h2 {
-            font-size: 1.75rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .content-section p {
-            color: #666;
-            margin-bottom: 1rem;
-            line-height: 1.7;
-        }
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .feature-card {
-            background: #fff;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 1.5rem;
-            transition: box-shadow 0.3s ease;
-        }
-
-        .feature-card:hover {
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature-card h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: #333;
-        }
-
-        .feature-card p {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        .back-button {
-            background: #6b7280;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            margin-bottom: 2rem;
-            cursor: pointer;
-        }
-
-        .back-button:hover {
-            background: #4b5563;
-        }
-
-        /* Chart Styles */
-        .chart-container {
-            background: #f8fafc;
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 2rem 0;
-            border-left: 4px solid #10b981;
-        }
-
-        .chart-container h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: #333;
-            text-align: center;
-        }
-
-        .single-chart-container {
             background: white;
-            border: 1px solid #e5e7eb;
             border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .single-chart-container h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #374151;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .revenue-bar-chart {
-            display: flex;
-            justify-content: space-around;
-            align-items: end;
-            gap: 2rem;
-            height: 180px;
-            margin-bottom: 1rem;
-            padding: 0 1rem;
-        }
-
-        .revenue-month {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex: 1;
-            max-width: 120px;
-        }
-
-        .revenue-bar {
-            width: 100%;
-            border-radius: 8px 8px 0 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .revenue-bar.month1 {
-            height: 60px;
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-        }
-
-        .revenue-bar.month2 {
-            height: 100px;
-            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-        }
-
-        .revenue-bar.month3 {
-            height: 150px;
-            background: linear-gradient(135deg, #10b981, #059669);
-        }
-
-        .revenue-amount {
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-
-        .month-label {
-            font-weight: 600;
-            color: #374151;
-            margin-top: 0.75rem;
-            text-align: center;
-        }
-
-        .chart-insight {
-            text-align: center;
-            padding: 1rem;
-            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
-            border-radius: 8px;
-            color: #047857;
-            font-size: 0.9rem;
-        }
-
-        /* Metrics Dashboard */
-        .metrics-dashboard {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .metric-card {
-            background: white;
-            border: 2px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: transform 0.2s ease;
-        }
-
-        .metric-card:hover {
-            transform: translateY(-2px);
-        }
-
-        .metric-card.positive {
-            border-color: #10b981;
-            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
-        }
-
-        .metric-card.neutral {
-            border-color: #6b7280;
-            background: linear-gradient(135deg, #f9fafb, #f3f4f6);
-        }
-
-        .metric-value {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .metric-card.positive .metric-value {
-            color: #059669;
-        }
-
-        .metric-card.neutral .metric-value {
-            color: #374151;
-        }
-
-        .metric-card .metric-label {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #1f2937 !important;
-            opacity: 1 !important;
-            margin-bottom: 0.25rem;
-        }
-
-        .metric-detail {
-            font-size: 0.8rem;
-            color: #6b7280;
-            line-height: 1.4;
-        }
-
-        /* Dual Comparison Chart */
-        .dual-comparison-chart {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin: 2rem 0;
-        }
-
-        .comparison-group {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .group-header {
-            font-weight: 600;
-            color: #374151;
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-        }
-
-        .category-bars {
-            display: flex;
-            gap: 1rem;
-            align-items: end;
-            height: 120px;
-        }
-
-        .category-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .category-bar {
-            width: 60px;
-            border-radius: 6px 6px 0 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-            font-size: 0.875rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .red-bar {
-            background: linear-gradient(135deg, #ef4444, #dc2626);
-        }
-
-        .orange-bar {
-            background: linear-gradient(135deg, #f97316, #ea580c);
-        }
-
-        .yellow-bar {
-            background: linear-gradient(135deg, #eab308, #ca8a04);
-        }
-
-        .green-bar {
-            background: linear-gradient(135deg, #22c55e, #16a34a);
-        }
-
-        .category-label {
-            font-size: 0.75rem;
-            color: #6b7280;
-            text-align: center;
-            font-weight: 500;
-        }
-
-        /* Simple Bar Charts */
-        .simple-chart-section {
-            margin-bottom: 2rem;
-        }
-
-        .simple-chart-section h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #374151;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .simple-bars {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .simple-bar-row {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .bar-label {
-            min-width: 120px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: #374151;
-        }
-
-        .bar-container {
-            flex: 1;
-            height: 45px;
-            background: #e5e7eb;
-            border-radius: 6px;
-            position: relative;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
-
-        .bar {
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        
+        .survey-header {
+            background: #DC5A41;
             color: white;
+            padding: 32px;
+            text-align: center;
+        }
+
+        .survey-header::before {
+            display: none;
+        }
+
+        @keyframes shimmer {
+            display: none;
+        }
+        
+        .survey-header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
             font-weight: 600;
-            font-size: 0.875rem;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-            min-width: 60px;
+            position: relative;
+            z-index: 1;
         }
 
-        .bar.toxicity {
-            background: linear-gradient(135deg, #ef4444, #dc2626);
+        .survey-header p {
+            font-size: 16px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+            margin: 0;
+        }
+        
+        .survey-body {
+            padding: 32px;
+        }
+        
+        .question-container {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .question-container.active {
+            display: block;
+        }
+        
+        @keyframes slideInRight {
+            display: none;
         }
 
-        .bar.privacy {
-            background: linear-gradient(135deg, #f97316, #ea580c);
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
-        .bar.language {
-            background: linear-gradient(135deg, #eab308, #ca8a04);
+        
+        .question {
+            font-size: 20px;
+            color: #222;
+            margin-bottom: 24px;
+            line-height: 1.4;
+            font-weight: 600;
         }
-
-        .bar.shyness {
-            background: linear-gradient(135deg, #22c55e, #16a34a);
-        }
-
-        .bar.technical {
-            background: linear-gradient(135deg, #3b82f6, #2563eb);
-        }
-
-        .bar.positive-chat {
-            background: linear-gradient(135deg, #22c55e, #16a34a);
-        }
-
-        .bar.mixed-chat {
-            background: linear-gradient(135deg, #eab308, #ca8a04);
-        }
-
-        .bar.negative-chat {
-            background: linear-gradient(135deg, #f97316, #ea580c);
-        }
-
-        .bar.toxic-chat {
-            background: linear-gradient(135deg, #ef4444, #dc2626);
-        }
-
-        /* Metrics Comparison */
-        .metrics-comparison {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .metric-group {
+        
+        .options {
             display: flex;
             flex-direction: column;
+            gap: 12px;
+        }
+        
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: white;
         }
 
-        .metric-header {
-            font-weight: 600;
-            color: #374151;
-            margin-bottom: 1rem;
-            text-align: center;
-            font-size: 0.9rem;
+        .option::before {
+            display: none;
+        }
+        
+        .option:hover {
+            border-color: #DC5A41;
+            background: #fdf7f6;
         }
 
-        .metric-bars {
+        .option:hover::before {
+            display: none;
+        }
+        
+        .option.selected {
+            border-color: #DC5A41;
+            background: #DC5A41;
+            color: white;
+        }
+
+        .option.selected label {
+            color: white;
+        }
+        
+        .option input[type="checkbox"],
+        .option input[type="radio"] {
+            margin-right: 12px;
+            accent-color: #DC5A41;
+        }
+
+        .option.selected input[type="checkbox"],
+        .option.selected input[type="radio"] {
+            accent-color: white;
+        }
+        
+        .option label {
+            cursor: pointer;
+            flex: 1;
+            font-size: 16px;
+            font-weight: 400;
+        }
+        
+        .navigation {
             display: flex;
             justify-content: space-between;
-            align-items: end;
-            height: 120px;
-            margin-bottom: 1rem;
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid #eee;
+        }
+        
+        .btn {
+            padding: 14px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 600;
         }
 
-        .metric-month {
+        .btn::before {
+            display: none;
+        }
+
+        .btn:hover::before {
+            display: none;
+        }
+        
+        .btn-primary {
+            background: #DC5A41;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #c94d35;
+        }
+        
+        .btn-secondary {
+            background: #f7f7f7;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+        
+        .btn-secondary:hover {
+            background: #efefef;
+        }
+        
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background: #f0f0f0;
+            margin-bottom: 0;
+        }
+
+        .progress-bar::before {
+            display: none;
+        }
+
+        @keyframes loading {
+            display: none;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: #DC5A41;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+
+        .progress-fill::after {
+            display: none;
+        }
+
+        @keyframes progress-shimmer {
+            display: none;
+        }
+        
+        .termination-message,
+        .completion-message {
+            text-align: center;
+            padding: 32px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .termination-message {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+        }
+
+        .completion-message {
+            background: #f0f9ff;
+            color: #0369a1;
+            border: 1px solid #bae6fd;
+        }
+
+        .termination-message h2,
+        .completion-message h2 {
+            font-size: 24px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .termination-message p,
+        .completion-message p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }: center;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin: 30px 0;
+        }
+
+        .termination-message {
+            background: linear-gradient(135deg, #fed7d7 0%, #feb2b2 100%);
+            color: #c53030;
+            border-left: 6px solid #e53e3e;
+        }
+
+        .completion-message {
+            background: linear-gradient(135deg, #c6f6d5 0%, #9ae6b4 100%);
+            color: #2f855a;
+            border-left: 6px solid #38a169;
+        }
+
+        .termination-message h2,
+        .completion-message h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .termination-message p,
+        .completion-message p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .other-input {
+            margin-top: 12px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            width: 100%;
+            display: none;
+            font-size: 14px;
+            background: white;
+        }
+
+        .other-input:focus {
+            outline: none;
+            border-color: #DC5A41;
+            box-shadow: 0 0 0 2px rgba(220, 90, 65, 0.1);
+        }
+        
+        .other-input.show {
+            display: block;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; max-height: 0; }
+            to { opacity: 1; max-height: 60px; }
+        }
+
+        .error-message {
+            color: #dc2626;
+            background: #fef2f2;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 12px;
+            display: none;
+            font-weight: 500;
+            border: 1px solid #fecaca;
+            font-size: 14px;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-3px); }
+            20%, 40%, 60%, 80% { transform: translateX(3px); }
+        }
+
+        .variant-images {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex: 1;
+            gap: 16px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
         }
 
-        .metric-bar {
-            width: 90%;
-            border-radius: 6px 6px 0 0;
+        .variant-option {
+            text-align: center;
+            padding: 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: white;
+            min-width: 120px;
+        }
+
+        .variant-option::before {
+            display: none;
+        }
+
+        .variant-option:hover::before {
+            display: none;
+        }
+
+        .variant-option:hover {
+            border-color: #DC5A41;
+        }
+
+        .variant-option.selected {
+            border-color: #DC5A41;
+            background: #DC5A41;
+            color: white;
+        }
+
+        .variant-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 6px;
+            margin: 0 auto 12px;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
             color: white;
-            font-weight: 600;
-            font-size: 0.75rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .metric-bar.orders.month1 { height: 40px; background: linear-gradient(135deg, #ef4444, #dc2626); }
-        .metric-bar.orders.month2 { height: 65px; background: linear-gradient(135deg, #f97316, #ea580c); }
-        .metric-bar.orders.month3 { height: 80px; background: linear-gradient(135deg, #eab308, #ca8a04); }
-
-        .metric-bar.aov.month1 { height: 45px; background: linear-gradient(135deg, #06b6d4, #0891b2); }
-        .metric-bar.aov.month2 { height: 70px; background: linear-gradient(135deg, #3b82f6, #2563eb); }
-        .metric-bar.aov.month3 { height: 85px; background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
-
-        .metric-growth {
-            text-align: center;
-            font-weight: 600;
-            color: #059669;
-            background: #f0fdf4;
-            padding: 0.5rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-        }
-
-        /* Impact Mini Callouts */
-        .impact-mini {
-            margin-top: 1rem;
-            padding: 0.75rem;
-            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
-            border-radius: 8px;
-            border-left: 4px solid #10b981;
-            font-size: 0.875rem;
-            color: #064e3b;
-        }
-
-        .impact-mini strong {
-            color: #047857;
-        }
-
-        .analysis-insight {
-            margin-top: 1.5rem;
-            padding: 1rem;
-            background: linear-gradient(135deg, #fef3c7, #fde68a);
-            border-radius: 8px;
-            border-left: 4px solid #f59e0b;
-            font-size: 0.85rem;
-            color: #92400e;
-        }
-
-        /* Mobile Menu */
-        .mobile-menu-btn {
+        .variant-image::after {
             display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
         }
 
-        .mobile-menu-btn span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background: #333;
-            margin: 5px 0;
-            transition: 0.3s;
+        .variant-option:hover .variant-image::after {
+            display: none;
         }
 
+        .product-showcase {
+            text-align: center;
+            margin: 20px 0;
+            padding: 24px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .product-showcase::before {
+            display: none;
+        }
+
+        @keyframes rotate {
+            display: none;
+        }
+
+        .product-showcase > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-showcase img {
+            max-width: 200px;
+            height: auto;
+            margin: 12px;
+            border-radius: 6px;
+        }
+
+        /* Enhanced mobile responsiveness */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                padding: 1rem;
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-                border-top: 1px solid #e5e7eb;
+            .survey-container {
+                margin: 16px;
+                border-radius: 8px;
             }
-
-            .nav-links.active {
-                display: flex;
+            
+            .survey-header {
+                padding: 24px 20px;
             }
-
-            .nav-links li {
-                margin: 0.5rem 0;
+            
+            .survey-header h1 {
+                font-size: 24px;
             }
-
-            .mobile-menu-btn {
-                display: block;
+            
+            .survey-body {
+                padding: 24px 20px;
             }
-
-            .hero h1 {
-                font-size: 2.5rem;
+            
+            .question {
+                font-size: 18px;
+                margin-bottom: 20px;
             }
-
-            .hero p {
-                font-size: 1.1rem;
+            
+            .option {
+                padding: 14px 16px;
             }
-
-            .metrics {
-                grid-template-columns: repeat(2, 1fr);
+            
+            .variant-images {
+                gap: 12px;
             }
-
-            .work-grid,
-            .insights-grid {
-                grid-template-columns: 1fr;
+            
+            .variant-option {
+                padding: 16px 12px;
+                min-width: 100px;
             }
-
-            .contact-buttons {
-                flex-direction: column;
-                align-items: center;
+            
+            .variant-image {
+                width: 60px;
+                height: 60px;
             }
-
-            .container {
-                padding: 0 16px;
-            }
-
-            .revenue-bar-chart {
-                gap: 1rem;
-            }
-
-            .dual-comparison-chart {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .metrics-comparison {
-                grid-template-columns: 1fr;
+            
+            .btn {
+                padding: 12px 20px;
+                font-size: 14px;
             }
         }
+
+        /* Remove floating elements styling */
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Samarth Arora</div>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a onclick="showHome()">Home</a></li>
-                <li><a onclick="scrollToSection('work')">My Work</a></li>
-                <li><a onclick="scrollToSection('two-cents')">2 Cents</a></li>
-                <li><a onclick="scrollToSection('contact')">Contact</a></li>
-            </ul>
+    <!-- Floating background elements -->
+
+    <div class="survey-container">
+        <div class="survey-header">
+            <h1>🍝 ITC YiPPee! बाजार सर्वेक्षण</h1>
+            <p>पास्ता मसाला व्यापारी सर्वेक्षण</p>
         </div>
-    </nav>
-
-    <!-- Home Page -->
-    <div id="home-page">
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <h1>Product Manager</h1>
-                <p>Crafting user-centric solutions that drive growth, engagement, and meaningful impact across B2B and consumer platforms</p>
-                
-                <div class="metrics">
-                    <div class="metric">
-                        <span class="metric-number">500K+</span>
-                        <div class="metric-label">Users Impacted</div>
-                    </div>
-                    <div class="metric">
-                        <span class="metric-number">$40K+</span>
-                        <div class="metric-label">Revenue Unlocked</div>
-                    </div>
-                    <div class="metric">
-                        <span class="metric-number">24%</span>
-                        <div class="metric-label">Conversion Uplift</div>
-                    </div>
-                    <div class="metric">
-                        <span class="metric-number">5+</span>
-                        <div class="metric-label">Products Shipped</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Work Section -->
-        <section id="work" class="section">
-            <div class="container">
-                <h2 class="section-title">My Work</h2>
-                <p class="section-subtitle">Product experiences I've built across different industries and user segments</p>
-                
-                <div class="work-grid">
-                    <div class="work-card kirana" onclick="showCaseStudy('kirana')">
-                        <h3>Kirana Club</h3>
-                        <p>A community-driven platform helping Indian kirana store owners discover FMCG products, stay informed about brand schemes, and place direct orders.</p>
-                        <div class="work-tags">
-                            <span class="tag">B2B Platform</span>
-                            <span class="tag">Community</span>
-                            <span class="tag">E-commerce</span>
-                        </div>
-                        <a class="cta-button">View Work</a>
-                    </div>
-
-                    <div class="work-card azgo" onclick="showCaseStudy('azgo')">
-                        <h3>Azgo</h3>
-                        <p>A snack vending‑machine startup, offering cashless, IoT‑powered kiosks with 600+ machines across workplaces in Bangalore, India.</p>
-                        <div class="work-tags">
-                            <span class="tag">IoT</span>
-                            <span class="tag">B2B2C</span>
-                            <span class="tag">Hardware</span>
-                        </div>
-                        <a class="cta-button">View Work</a>
-                    </div>
-
-                    <div class="work-card fliptalk" onclick="showCaseStudy('fliptalk')">
-                        <h3>FlipTalk</h3>
-                        <p>A voice-based social app where users could chat using real-time voice filters, enabling fun, anonymous conversations. Grew it to 42K users and was backed by Startup India.</p>
-                        <div class="work-tags">
-                            <span class="tag">Social App</span>
-                            <span class="tag">Voice Tech</span>
-                            <span class="tag">Consumer</span>
-                        </div>
-                        <a class="cta-button">View Work</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 2 Cents Section -->
-        <section id="two-cents" class="section two-cents">
-            <div class="container">
-                <h2 class="section-title">My 2 Cents</h2>
-                <p class="section-subtitle">From User to Product Thinker<br>Here's how I'd drive impact if I owned the roadmap.</p>
-                
-                <div class="insights-grid">
-                    <div class="insight-card" onclick="showCaseStudy('uber')">
-                        <h3>Uber</h3>
-                        <p>Solving post-booking anxiety through contextual communication, driver monitoring, and reliability monetization to build trust in critical moments.</p>
-                        <a class="cta-button">Read Analysis</a>
-                    </div>
-
-                    <div class="insight-card" onclick="showCaseStudy('linkedin')">
-                        <h3>LinkedIn</h3>
-                        <p>Building LinkedIn's feed relevance through tag-based preferences, informed content surfacing, and posts relevant to user's role and industry.</p>
-                        <a class="cta-button">Read Analysis</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section contact">
-            <div class="container">
-                <h2 class="section-title">Let's Connect</h2>
-                <p class="section-subtitle">Always excited to discuss product strategy, user experience, and growth opportunities</p>
-                
-                <div class="contact-buttons">
-                    <a href="mailto:arorasamarth17@gmail.com" class="contact-button">Email me</a>
-                    <a href="https://www.linkedin.com/in/samarthsaarora/" target="_blank" class="contact-button secondary">LinkedIn</a>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Case Study: Kirana Club -->
-    <div id="kirana-study" class="case-study">
-        <div class="container">
-            <button class="back-button" onclick="showHome()">← Back to Home</button>
-            
-            <div class="case-study-hero">
-                <h1>How I Solved the Brand Pull Problem and Unlocked ₹30L+ in Monthly Revenue Through Retailer Voice</h1>
-                <p>When I discovered the real pattern behind retailer ordering behavior, I found a way to turn retailer voice into our sales engine.</p>
-            </div>
-
-            <div class="stats-grid">
-                <div class="stat">
-                    <div class="stat-number">₹30L+</div>
-                    <div class="stat-label">Monthly Revenue</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">40%</div>
-                    <div class="stat-label">Retailer Participation Growth</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">22%</div>
-                    <div class="stat-label">First-Order Conversion</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">18%</div>
-                    <div class="stat-label">AOV Increase</div>
-                </div>
-            </div>
-
-            <div class="content-section">
-                <h2>The Problem</h2>
-                <p>Big brands had such strong consumer pull that they could afford to give us minimal margins—sometimes we'd actually lose money on orders. We needed higher-margin small brands, but they lacked brand recognition.</p>
-            </div>
-
-            <div class="content-section">
-                <h2>The Aha Moment</h2>
-                <p>I noticed a concerning pattern: retailers who placed large orders one month would drastically reduce their orders the following month. When I started calling retailers to understand this behavior, the answer was clear: <em>'Customers don't ask for these small brands by name. We get stuck with inventory that <span style="color: #ef4444; font-weight: 700;">moves slowly</span>.'</em></p>
-            </div>
-
-            <div class="content-section">
-                <h2>What I Built</h2>
-                <div class="cards-grid">
-                    <div class="feature-card">
-                        <h3>Driving Brand Visibility via Retailer-Led Display Campaigns</h3>
-                        <p>To increase visibility and adoption for partner brands at the store level, we launched a monthly display competition for retailers with rewards ranging from ₹500–₹2,000, with a guaranteed ₹100 for participation. This resulted in a 22% increase in first orders linked to in-store displays.</p>
-                        <div class="impact-mini">
-                            <strong>Impact:</strong> 40% growth in retailer participation within first quarter
-                        </div>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Reinforcing Repeat Behavior through Loyalty Tiers</h3>
-                        <p>We rolled out a structured loyalty program tied to monthly order value with tier-based slabs designed to cater to retailers across different spending bands, leading to a 12% increase in repeat order volume.</p>
-                        <div class="impact-mini">
-                            <strong>Impact:</strong> 12% increase in repeat order volume with significantly higher engagement among mid-frequency retailers
-                        </div>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Reducing Order Cancellations through Upfront Incentives</h3>
-                        <p>We introduced a ₹50 confirmation fee for orders above ₹5,000 and 1% extra discount for full advance payments, resulting in a significant reduction in high-value order cancellations.</p>
-                        <div class="impact-mini">
-                            <strong>Impact:</strong> Significant reduction in high-value order cancellations
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="content-section">
-                <h2>Results Overview</h2>
-                <div class="chart-container">
-                    <h3>Retailer Engagement & Ordering Behavior</h3>
-                    
-                    <!-- Display Contest Participation Chart -->
-                    <div class="single-chart-container">
-                        <h4>Monthly Display Contest Participation</h4>
-                        <div class="revenue-bar-chart">
-                            <div class="revenue-month">
-                                <div class="revenue-bar month1">
-                                    <div class="revenue-amount">1,500</div>
-                                </div>
-                                <div class="month-label">Month 1</div>
-                            </div>
-                            
-                            <div class="revenue-month">
-                                <div class="revenue-bar month2">
-                                    <div class="revenue-amount">1,730</div>
-                                </div>
-                                <div class="month-label">Month 2</div>
-                            </div>
-                            
-                            <div class="revenue-month">
-                                <div class="revenue-bar month3">
-                                    <div class="revenue-amount">1,980</div>
-                                </div>
-                                <div class="month-label">Month 3</div>
-                            </div>
-                        </div>
-                        <div class="chart-insight">
-                            <strong>22% of display contest participants placed their first order</strong> within the program period
-                        </div>
-                    </div>
-
-                    <!-- Monthly Retention Chart -->
-                    <div class="single-chart-container">
-                        <h4>Monthly Retailer Retention from Loyalty Program</h4>
-                        <div class="metrics-comparison">
-                            <div class="metric-group">
-                                <div class="metric-header">Active Retailers Ordering Monthly</div>
-                                <div class="metric-bars">
-                                    <div class="metric-month">
-                                        <div class="metric-bar orders month1">34%</div>
-                                        <span class="metric-label">Month 1</span>
-                                    </div>
-                                    <div class="metric-month">
-                                        <div class="metric-bar orders month2">38%</div>
-                                        <span class="metric-label">Month 2</span>
-                                    </div>
-                                    <div class="metric-month">
-                                        <div class="metric-bar orders month3">41%</div>
-                                        <span class="metric-label">Month 3</span>
-                                    </div>
-                                </div>
-                                <div class="metric-growth">+19% Improvement</div>
-                            </div>
-
-                            <div class="metric-group">
-                                <div class="metric-header">Avg Orders Per Retailer</div>
-                                <div class="metric-bars">
-                                    <div class="metric-month">
-                                        <div class="metric-bar aov month1">1.7</div>
-                                        <span class="metric-label">Month 1</span>
-                                    </div>
-                                    <div class="metric-month">
-                                        <div class="metric-bar aov month2">1.9</div>
-                                        <span class="metric-label">Month 2</span>
-                                    </div>
-                                    <div class="metric-month">
-                                        <div class="metric-bar aov month3">2.0</div>
-                                        <span class="metric-label">Month 3</span>
-                                    </div>
-                                </div>
-                                <div class="metric-growth">+17% Growth</div>
-                            </div>
-                        </div>
-                        <div class="chart-insight">
-                            <strong>Loyalty points system drives consistent ordering behavior</strong> - Retailers actively chase tier rewards, leading to improved monthly retention and order frequency
-                        </div>
-                    </div>
-                </div>
-                <p style="text-align: center; margin-top: 2rem;"><em>The three initiatives created a compounding effect that unlocked ₹30L+ monthly revenue by transforming retailer behavior from sporadic ordering to consistent brand advocacy.</em></p>
-            </div>
+        
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
         </div>
-    </div>
-
-    <!-- Case Study: Azgo -->
-    <div id="azgo-study" class="case-study">
-        <div class="container">
-            <button class="back-button" onclick="showHome()">← Back to Home</button>
-            
-            <div class="case-study-hero">
-                <h1>How I Turned Underperforming Machines Into Wellness Revenue Generators</h1>
-                <p>When 40% of our 600 machines underperformed despite "prime" office locations, I discovered the real opportunity: office workers wanted healthier snacking options we weren't providing.</p>
+        
+        <div class="survey-body">
+            <!-- Question 1 -->
+            <div class="question-container active" data-question="1">
+                <div class="question">1. आप इनमें से क्या बेचते हैं?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="checkbox" id="q1_instant_noodles" name="q1" value="instant_noodles">
+                        <label for="q1_instant_noodles">a) इंस्टेंट नूडल्स</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q1_instant_pasta" name="q1" value="instant_pasta">
+                        <label for="q1_instant_pasta">b) इंस्टेंट पास्ता</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q1_branded_pasta" name="q1" value="branded_pasta">
+                        <label for="q1_branded_pasta">c) ब्रांडेड नॉन इंस्टेंट पास्ता</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q1_loose_pasta" name="q1" value="loose_pasta">
+                        <label for="q1_loose_pasta">d) लूज पास्ता</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q1_pasta_masala" name="q1" value="pasta_masala">
+                        <label for="q1_pasta_masala">e) पास्ता मसाला</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q1_none" name="q1" value="none">
+                        <label for="q1_none">f) मैं इनमें से कोई भी नहीं बेचता</label>
+                    </div>
+                </div>
+                <div class="error-message" id="q1-error"></div>
             </div>
 
-            <div class="stats-grid">
-                <div class="stat">
-                    <div class="stat-number">₹3L+</div>
-                    <div class="stat-label">Monthly Revenue Increase</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">18%</div>
-                    <div class="stat-label">Margins (up from 15%)</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">27%</div>
-                    <div class="stat-label">Healthy Snack Mix</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">₹15K</div>
-                    <div class="stat-label">Average Monthly Revenue</div>
-                </div>
-            </div>
-
-            <div class="content-section">
-                <h2>The Aha Moment</h2>
-                <p>We had machines selling ₹3K/month while others hit ₹25K—same building, different floors. During routine site visits, I started noticing patterns: office workers kept asking 'do you have protein bars?' We were stocking what vendors pushed, not what office workers actually wanted.</p>
-                
-                <div class="chart-container">
-                    <h3>Machine Performance Analysis: Product Mix & Margins</h3>
-                    
-                    <!-- Product Distribution Chart -->
-                    <div class="single-chart-container">
-                        <h4>Traditional Snack Distribution</h4>
-                        <div class="revenue-bar-chart">
-                            <div class="revenue-month">
-                                <div class="revenue-bar" style="height: 120px; background: linear-gradient(135deg, #ef4444, #dc2626);">
-                                    <div class="revenue-amount">50%</div>
-                                </div>
-                                <div class="month-label">Chips</div>
-                            </div>
-                            
-                            <div class="revenue-month">
-                                <div class="revenue-bar" style="height: 60px; background: linear-gradient(135deg, #f97316, #ea580c);">
-                                    <div class="revenue-amount">25%</div>
-                                </div>
-                                <div class="month-label">Chocolates</div>
-                            </div>
-                            
-                            <div class="revenue-month">
-                                <div class="revenue-bar" style="height: 36px; background: linear-gradient(135deg, #eab308, #ca8a04);">
-                                    <div class="revenue-amount">15%</div>
-                                </div>
-                                <div class="month-label">Beverages</div>
-                            </div>
-
-                            <div class="revenue-month">
-                                <div class="revenue-bar" style="height: 24px; background: linear-gradient(135deg, #22c55e, #16a34a);">
-                                    <div class="revenue-amount">10%</div>
-                                </div>
-                                <div class="month-label">Healthy</div>
-                            </div>
-                        </div>
-                        <div class="chart-insight">
-                            <strong>Current Mix:</strong> Heavy reliance on low-margin traditional snacks
-                        </div>
-                    </div>
-
-                    <!-- Margin Analysis Chart -->
-                    <div class="single-chart-container">
-                        <h4>Profit Margin by Category</h4>
-                        <div class="revenue-bar-chart">
-                            <div class="revenue-month">
-                                <div class="revenue-bar" style="height: 48px; background: linear-gradient(135deg, #ef4444, #dc2626);">
-                                    <div class="revenue-amount">12%</div>
-                                </div>
-                                <div class="month-label">Chips</div>
-                            </div>
-                            
-                            <div class="revenue-month">
-                                <div class="revenue-bar" style="height: 60px; background: linear-gradient(135deg, #f97316, #ea580c);">
-                                    <div class="revenue-amount">15%</div>
-                                </div>
-                                <div class="month-label">Chocolates</div>
-                            </div>
-                            
-                            <div class="revenue-month">
-                                <div class="revenue-bar" style="height: 72px; background: linear-gradient(135deg, #eab308, #ca8a04);">
-                                    <div class="revenue-amount">18%</div>
-                                </div>
-                                <div class="month-label">Beverages</div>
-                            </div>
-
-                            <div class="revenue-month">
-                                <div class="revenue-bar" style="height: 140px; background: linear-gradient(135deg, #22c55e, #16a34a);">
-                                    <div class="revenue-amount">30%</div>
-                                </div>
-                                <div class="month-label">Healthy</div>
-                            </div>
-                        </div>
-                        <div class="chart-insight">
-                            <strong>Key Insight:</strong> Healthy options offer 30% margins vs 12% for chips - nearly 2.5x profit potential
-                        </div>
-                    </div>
+            <!-- Termination Message -->
+            <div class="question-container" data-question="terminate">
+                <div class="termination-message">
+                    <h2>धन्यवाद!</h2>
+                    <p>खुशी की बात है कि आपने हमारे सर्वेक्षण में भाग लिया। हालांकि, यह सर्वेक्षण केवल पास्ता मसाला बेचने वाले व्यापारियों के लिए है।</p>
                 </div>
             </div>
 
-            <div class="content-section">
-                <h2>What I Built</h2>
-                <div class="cards-grid">
-                    <div class="feature-card">
-                        <h3>Strategic Machine Repositioning</h3>
-                        <p>Relocated machines within offices to better locations after observing actual usage patterns and negotiating with facility managers</p>
+            <!-- Question 2 -->
+            <div class="question-container" data-question="2">
+                <div class="question">2. आप एक महीने में कितना पास्ता मसाला बेचते हैं?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q2_1_5" name="q2" value="1-5">
+                        <label for="q2_1_5">1-5 लड़ी</label>
                     </div>
-                    <div class="feature-card">
-                        <h3>Wellness Snacking Portfolio</h3>
-                        <p>Partnered with healthy snack brands offering 30% margins and positioned select machines as 'office wellness corners'</p>
+                    <div class="option">
+                        <input type="radio" id="q2_5_10" name="q2" value="5-10">
+                        <label for="q2_5_10">5-10 लड़ी</label>
                     </div>
-                    <div class="feature-card">
-                        <h3>Data-Driven Restocking Optimization</h3>
-                        <p>Analyzed hourly consumption patterns to optimize restocking schedules and reduce out-of-stock instances by 40%</p>
+                    <div class="option">
+                        <input type="radio" id="q2_10_15" name="q2" value="10-15">
+                        <label for="q2_10_15">10-15 लड़ी</label>
                     </div>
+                    <div class="option">
+                        <input type="radio" id="q2_15_plus" name="q2" value="15+">
+                        <label for="q2_15_plus">15 लड़ी से अधिक</label>
+                    </div>
+                </div>
+                <div class="error-message" id="q2-error"></div>
+            </div>
+
+            <!-- Question 3 with cohort 'g' modification -->
+            <div class="question-container" data-question="3">
+                <div class="question">3. आप इनमें से कौन-कौन से पास्ता मसाला ब्रांड्स के बारे में जानते हैं?</div>
+                <div class="options" id="q3-options">
+                    <div class="option">
+                        <input type="checkbox" id="q3_everest" name="q3" value="everest">
+                        <label for="q3_everest">एवरेस्ट</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q3_smith_jones" name="q3" value="smith_jones">
+                        <label for="q3_smith_jones">स्मिथ & जोन्स</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q3_bambinos" name="q3" value="bambinos">
+                        <label for="q3_bambinos">बंबिनोस</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q3_knorr" name="q3" value="knorr">
+                        <label for="q3_knorr">नॉर्स</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q3_catch" name="q3" value="catch">
+                        <label for="q3_catch">कैच</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q3_maggi" name="q3" value="maggi">
+                        <label for="q3_maggi">मैगी मसाला-ए-मैजिक</label>
+                    </div>
+                    <div class="option" id="q3_yippee_option">
+                        <input type="checkbox" id="q3_yippee" name="q3" value="yippee">
+                        <label for="q3_yippee">यिप्पी! पास्ता मसाला</label>
+                    </div>
+                    <!-- YiPPee noodles option for cohort g -->
+                    <div class="option" id="q3_yippee_noodles_option" style="display: none;">
+                        <input type="checkbox" id="q3_yippee_noodles" name="q3" value="yippee_noodles">
+                        <label for="q3_yippee_noodles">यिप्पी! नूडल्स</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q3_other" name="q3" value="other">
+                        <label for="q3_other">अन्य</label>
+                        <input type="text" class="other-input" placeholder="कृपया बताएं...">
+                    </div>
+                </div>
+                <div class="error-message" id="q3-error"></div>
+            </div>
+
+            <!-- Question 4 (removed "कोई नहीं" option) -->
+            <div class="question-container" data-question="4">
+                <div class="question">4. वर्तमान में आप इनमें से कौन सा पास्ता मसाला बेचते हैं?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="checkbox" id="q4_everest" name="q4" value="everest">
+                        <label for="q4_everest">एवरेस्ट</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q4_smith_jones" name="q4" value="smith_jones">
+                        <label for="q4_smith_jones">स्मिथ & जोन्स</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q4_bambinos" name="q4" value="bambinos">
+                        <label for="q4_bambinos">बंबिनोस</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q4_knorr" name="q4" value="knorr">
+                        <label for="q4_knorr">नॉर्स</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q4_catch" name="q4" value="catch">
+                        <label for="q4_catch">कैच</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q4_maggi" name="q4" value="maggi">
+                        <label for="q4_maggi">मैगी मसाला-ए-मैजिक</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q4_yippee" name="q4" value="yippee">
+                        <label for="q4_yippee">यिप्पी! पास्ता मसाला</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q4_other" name="q4" value="other">
+                        <label for="q4_other">अन्य</label>
+                        <input type="text" class="other-input" placeholder="कृपया बताएं...">
+                    </div>
+                </div>
+                <div class="error-message" id="q4-error"></div>
+            </div>
+
+            <!-- Question 5 (removed "कोई नहीं" option) -->
+            <div class="question-container" data-question="5">
+                <div class="question">5. आपने अब तक कौन सा पास्ता मसाला ब्रांड बेचना बंद कर दिया है?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="checkbox" id="q5_everest" name="q5" value="everest">
+                        <label for="q5_everest">एवरेस्ट</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q5_smith_jones" name="q5" value="smith_jones">
+                        <label for="q5_smith_jones">स्मिथ & जोन्स</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q5_bambinos" name="q5" value="bambinos">
+                        <label for="q5_bambinos">बंबिनोस</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q5_knorr" name="q5" value="knorr">
+                        <label for="q5_knorr">नॉर्स</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q5_catch" name="q5" value="catch">
+                        <label for="q5_catch">कैच</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q5_maggi" name="q5" value="maggi">
+                        <label for="q5_maggi">मैगी मसाला-ए-मैजिक</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q5_yippee" name="q5" value="yippee">
+                        <label for="q5_yippee">यिप्पी! पास्ता मसाला</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q5_other" name="q5" value="other">
+                        <label for="q5_other">अन्य</label>
+                        <input type="text" class="other-input" placeholder="कृपया बताएं...">
+                    </div>
+                </div>
+                <div class="error-message" id="q5-error"></div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question-container" data-question="6">
+                <div class="question">6. पिछले 1 महीने में सबसे ज्यादा बिकने वाला पास्ता मसाला ब्रांड कौन सा है?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q6_everest" name="q6" value="एवरेस्ट">
+                        <label for="q6_everest">एवरेस्ट</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q6_smith_jones" name="q6" value="स्मिथ & जोन्स">
+                        <label for="q6_smith_jones">स्मिथ & जोन्स</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q6_bambinos" name="q6" value="बंबिनोस">
+                        <label for="q6_bambinos">बंबिनोस</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q6_knorr" name="q6" value="नॉर्स">
+                        <label for="q6_knorr">नॉर्स</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q6_catch" name="q6" value="कैच">
+                        <label for="q6_catch">कैच</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q6_maggi" name="q6" value="मैगी मसाला-ए-मैजिक">
+                        <label for="q6_maggi">मैगी मसाला-ए-मैजिक</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q6_yippee" name="q6" value="यिप्पी! पास्ता मसाला">
+                        <label for="q6_yippee">यिप्पी! पास्ता मसाला</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q6_other" name="q6" value="अन्य">
+                        <label for="q6_other">अन्य</label>
+                        <input type="text" class="other-input" placeholder="कृपया बताएं...">
+                    </div>
+                </div>
+                <div class="error-message" id="q6-error"></div>
+            </div>
+
+            <!-- Question 7 (Modified to show only numbers) -->
+            <div class="question-container" data-question="7">
+                <div class="question" id="q7-text">7. आप <span id="q7-brand">___</span> पास्ता मसाला की हर महीने कितनी बिक्री करते हैं?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q7_very_low" name="q7" value="very_low">
+                        <label for="q7_very_low">(1-2 लड़ी)</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q7_low" name="q7" value="low">
+                        <label for="q7_low">(3-5 लड़ी)</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q7_medium" name="q7" value="medium">
+                        <label for="q7_medium">(6-10 लड़ी)</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q7_high" name="q7" value="high">
+                        <label for="q7_high">(11-15 लड़ी)</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q7_very_high" name="q7" value="very_high">
+                        <label for="q7_very_high">(15+ लड़ी)</label>
+                    </div>
+                </div>
+                <div class="error-message" id="q7-error"></div>
+            </div>
+
+            <!-- Question 8 (Updated to Question 9 with new text and options) -->
+            <div class="question-container" data-question="8">
+                <div class="question" id="q8-text">8. <span id="q8-brand">___</span> SKU की 1 लड़ी पर आपको MRP से कितना मार्जिन मिलता है?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q8_less_5" name="q8" value="<5%">
+                        <label for="q8_less_5">&lt;5%</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q8_5_10" name="q8" value="5%-10%">
+                        <label for="q8_5_10">5%-10%</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q8_10_15" name="q8" value="10%-15%">
+                        <label for="q8_10_15">10%-15%</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q8_more_15" name="q8" value=">15%">
+                        <label for="q8_more_15">&gt;15%</label>
+                    </div>
+                </div>
+                <div class="error-message" id="q8-error"></div>
+            </div>
+
+            <!-- Question 9 (Updated with margin question) -->
+            <div class="question-container" data-question="9">
+                <div class="question" id="q9-text">9. <span id="q9-brand">___</span> SKU की 1 लड़ी पर आपको MRP से कितना मार्जिन मिलता है?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q9_less_5" name="q9" value="<5%">
+                        <label for="q9_less_5">&lt;5%</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q9_5_10" name="q9" value="5%-10%">
+                        <label for="q9_5_10">5%-10%</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q9_10_15" name="q9" value="10%-15%">
+                        <label for="q9_10_15">10%-15%</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q9_more_15" name="q9" value=">15%">
+                        <label for="q9_more_15">&gt;15%</label>
+                    </div>
+                </div>
+                <div class="error-message" id="q9-error"></div>
+            </div>
+
+            <!-- YiPPee Aware Questions -->
+            <div class="question-container" data-question="10">
+                <div class="question">10. आपको यिप्पी! पास्ता मसाले के बारे में कैसे पता चला?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="checkbox" id="q10_distributor" name="q10" value="distributor">
+                        <label for="q10_distributor">डिस्ट्रीब्यूटर</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q10_wholesaler" name="q10" value="wholesaler">
+                        <label for="q10_wholesaler">होलसेलर</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q10_sales_team" name="q10" value="sales_team">
+                        <label for="q10_sales_team">सेल्स टीम</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q10_promo_event" name="q10" value="promo_event">
+                        <label for="q10_promo_event">प्रमोशनल इवेंट</label>
+                    </div>
+                </div>
+                <div class="error-message" id="q10-error"></div>
+            </div>
+
+            <div class="question-container" data-question="11">
+                <div class="question">11. यिप्पी! पास्ता मसाला का खरीद रेट प्रति लड़ी क्या है?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q11_104_88" name="q11" value="104.88">
+                        <label for="q11_104_88">₹ 104.88</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q11_103" name="q11" value="103">
+                        <label for="q11_103">₹ 103</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q11_105_12" name="q11" value="105.12">
+                        <label for="q11_105_12">₹ 105.12</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q11_110" name="q11" value="110">
+                        <label for="q11_110">₹ 110</label>
+                    </div>
+                </div>
+                <div class="error-message" id="q11-error"></div>
+            </div>
+
+            <div class="question-container" data-question="12">
+                <div class="question">12. यिप्पी! पास्ता मसाला (एक यूनिट) का MRP क्या है?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q12_5" name="q12" value="5">
+                        <label for="q12_5">₹5</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q12_6" name="q12" value="6">
+                        <label for="q12_6">₹6</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q12_9" name="q12" value="9">
+                        <label for="q12_9">₹9</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q12_10" name="q12" value="10">
+                        <label for="q12_10">₹10</label>
+                    </div>
+                </div>
+                <div class="error-message" id="q12-error"></div>
+            </div>
+
+            <!-- YiPPee Sellers Questions -->
+            <div class="question-container" data-question="13">
+                <div class="question">13. आपने यिप्पी! पास्ता मसाला क्यों रखा?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q13_good_rate" name="q13" value="good_rate">
+                        <label for="q13_good_rate">अच्छा रेट / मार्जिन</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q13_sales_offer" name="q13" value="sales_offer">
+                        <label for="q13_sales_offer">सेल्समैन ने बहुत अच्छा ऑफर दिया</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q13_branded" name="q13" value="branded">
+                        <label for="q13_branded">यिप्पी! एक ब्रांडेड प्रोडक्ट है</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q13_demand" name="q13" value="demand">
+                        <label for="q13_demand">उपभोक्ताओं ने इस उत्पाद की मांग की</label>
+                    </div>
+                </div>
+                <div class="error-message" id="q13-error"></div>
+            </div>
+
+            <div class="question-container" data-question="14">
+                <div class="question">14. पहली बार आपने कितनी लड़ी खरीदी थी?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q14_1" name="q14" value="1">
+                        <label for="q14_1">1</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q14_2" name="q14" value="2">
+                        <label for="q14_2">2</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q14_3" name="q14" value="3">
+                        <label for="q14_3">3</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q14_more" name="q14" value="more_than_3">
+                        <label for="q14_more">3 से ज़्यादा</label>
+                    </div>
+                </div>
+                <div class="error-message" id="q14-error"></div>
+            </div>
+
+            <div class="question-container" data-question="15">
+                <div class="question">15. पहली बार आपने कौन सा वैरिएंट खरीदा था?</div>
+                <div class="variant-images">
+                    <div class="variant-option" data-variant="blue">
+                        <div class="variant-image" style="background: linear-gradient(45deg, #4a90e2, #357abd);">ब्लू</div>
+                        <input type="radio" id="q15_blue" name="q15" value="blue" style="display: none;">
+                        <label for="q15_blue">ब्लू</label>
+                    </div>
+                    <div class="variant-option" data-variant="red">
+                        <div class="variant-image" style="background: linear-gradient(45deg, #e74c3c, #c0392b);">रेड</div>
+                        <input type="radio" id="q15_red" name="q15" value="red" style="display: none;">
+                        <label for="q15_red">रेड</label>
+                    </div>
+                    <div class="variant-option" data-variant="both">
+                        <div class="variant-image" style="background: linear-gradient(45deg, #4a90e2, #e74c3c);">दोनों</div>
+                        <input type="radio" id="q15_both" name="q15" value="both" style="display: none;">
+                        <label for="q15_both">दोनों</label>
+                    </div>
+                </div>
+                <div class="error-message" id="q15-error"></div>
+            </div>
+
+            <!-- Conditional Blue Variant Question -->
+            <div class="question-container" data-question="15a">
+                <div class="question">15a. आपने सिर्फ एक वैरिएंट ही क्यों खरीदा?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q15a_only_available" name="q15a" value="only_available">
+                        <label for="q15a_only_available">सेल्समैन के पास सिर्फ एक ही वैरिएंट था</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q15a_cheesy_preference" name="q15a" value="cheesy_preference">
+                        <label for="q15a_cheesy_preference">मेरे इलाके में कंज़्यूमर को चीज़ी पास्ता पसंद है</label>
+                    </div>
+                </div>
+                <div class="error-message" id="q15a-error"></div>
+            </div>
+
+            <!-- Conditional Red Variant Question -->
+            <div class="question-container" data-question="15b">
+                <div class="question">15b. आपने सिर्फ एक वैरिएंट ही क्यों खरीदा?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q15b_only_available" name="q15b" value="only_available">
+                        <label for="q15b_only_available">सेल्समैन के पास सिर्फ एक ही वैरिएंट था</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q15b_spicy_preference" name="q15b" value="spicy_preference">
+                        <label for="q15b_spicy_preference">मेरे इलाके में कंज़्यूमर को तीखा पास्ता पसंद है</label>
+                    </div>
+                </div>
+                <div class="error-message" id="q15b-error"></div>
+            </div>
+
+            <div class="question-container" data-question="16">
+                <div class="question">16. आपने अपनी पहली YiPPee! पास्ता मसाला लड़ी कितनी जल्दी बेच दी?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q16_1_week" name="q16" value="1_week">
+                        <label for="q16_1_week">1 हफ्ता</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q16_2_weeks" name="q16" value="2_weeks">
+                        <label for="q16_2_weeks">2 हफ्ते</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q16_1_month" name="q16" value="1_month">
+                        <label for="q16_1_month">1 महीना</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q16_more_month" name="q16" value="more_than_month">
+                        <label for="q16_more_month">1 महीने से ज़्यादा</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q16_not_sold" name="q16" value="not_sold">
+                        <label for="q16_not_sold">अभी तक पूरी नहीं बिकी है</label>
+                    </div>
+                </div>
+                <div class="error-message" id="q16-error"></div>
+            </div>
+
+            <!-- Question 17 (Reorder frequency question) -->
+            <div class="question-container" data-question="17">
+                <div class="question">17. आप कितने दिन में YiPPee! पास्ता मसाला को दोबारा मंगवाते हैं?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q17_weekly" name="q17" value="weekly">
+                        <label for="q17_weekly">हर हफ्ते</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q17_biweekly" name="q17" value="biweekly">
+                        <label for="q17_biweekly">दो हफ्ते में एक बार</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q17_monthly" name="q17" value="monthly">
+                        <label for="q17_monthly">हर महीने</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q17_no_reorder" name="q17" value="no_reorder">
+                        <label for="q17_no_reorder">मैंने दोबारा ऑर्डर नहीं किया</label>
+                    </div>
+                </div>
+                <div class="error-message" id="q17-error"></div>
+            </div>
+
+            <!-- Lapsers Questions -->
+            <div class="question-container" data-question="18">
+                <div class="question">18. आपने दोबारा ऑर्डर क्यों नहीं किया?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="checkbox" id="q18_slow_sale" name="q18" value="slow_sale">
+                        <label for="q18_slow_sale">बहुत धीरे बिकता है</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q18_hesitant" name="q18" value="hesitant">
+                        <label for="q18_hesitant">ग्राहक इसे ट्राय करने से हिचकते हैं</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q18_no_repeat" name="q18" value="no_repeat">
+                        <label for="q18_no_repeat">ग्राहक बार-बार नहीं खरीदते</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q18_other" name="q18" value="other">
+                        <label for="q18_other">अन्य</label>
+                        <input type="text" class="other-input" placeholder="कृपया बताएं...">
+                    </div>
+                </div>
+                <div class="error-message" id="q18-error"></div>
+            </div>
+
+            <div class="question-container" data-question="19">
+                <div class="question">19. क्या ग्राहकों को यह प्रोडक्ट पसंद आता है?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q19_yes" name="q19" value="yes">
+                        <label for="q19_yes">हाँ</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q19_no_diff" name="q19" value="no_difference">
+                        <label for="q19_no_diff">कोई खास फर्क नहीं पड़ता</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q19_no" name="q19" value="no">
+                        <label for="q19_no">नहीं</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q19_dont_know" name="q19" value="dont_know">
+                        <label for="q19_dont_know">मुझे नहीं पता</label>
+                    </div>
+                </div>
+                <div class="error-message" id="q19-error"></div>
+            </div>
+
+            <div class="question-container" data-question="20">
+                <div class="question">20. क्या आपको यह प्रोडक्ट पसंद है?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q20_good_demand" name="q20" value="good_demand">
+                        <label for="q20_good_demand">हाँ, इसकी डिमांड अच्छी है</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q20_ok_slow" name="q20" value="ok_slow">
+                        <label for="q20_ok_slow">ठीक है, लेकिन धीरे बिकता है</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q20_difficult" name="q20" value="difficult">
+                        <label for="q20_difficult">नहीं, बेचना मुश्किल है</label>
+                    </div>
+                </div>
+                <div class="error-message" id="q20-error"></div>
+            </div>
+
+            <!-- Aware but not selling Questions -->
+            <div class="question-container" data-question="21">
+                <div class="question">21. आपने YiPPee! पास्ता मसाला स्टॉक क्यों नहीं किया?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q21_not_available" name="q21" value="not_available">
+                        <label for="q21_not_available">स्टॉक उपलब्ध नहीं था</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q21_low_demand" name="q21" value="low_demand">
+                        <label for="q21_low_demand">इसकी मांग कम है</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q21_low_margin" name="q21" value="low_margin">
+                        <label for="q21_low_margin">मार्जिन कम है</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q21_no_new" name="q21" value="no_new">
+                        <label for="q21_no_new">मैं नए प्रोडक्ट्स ट्राय नहीं करता</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q21_no_contact" name="q21" value="no_contact">
+                        <label for="q21_no_contact">ITC का सेल्समैन संपर्क में नहीं आया</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q21_bad_exp" name="q21" value="bad_experience">
+                        <label for="q21_bad_exp">YiPPee! ब्रांड के साथ पहले का अनुभव अच्छा नहीं रहा है</label>
+                    </div>
+                </div>
+                <div class="error-message" id="q21-error"></div>
+            </div>
+
+            <div class="question-container" data-question="22">
+                <div class="question">22. आप इसे स्टॉक करने के लिए किस वजह से प्रेरित होंगे?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q22_better_margin" name="q22" value="better_margin">
+                        <label for="q22_better_margin">बेहतर मार्जिन</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q22_more_demand" name="q22" value="more_demand">
+                        <label for="q22_more_demand">ज़्यादा ग्राहक मांग</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q22_easy_stock" name="q22" value="easy_stock">
+                        <label for="q22_easy_stock">आसानी से स्टॉक मिलना</label>
+                    </div>
+                </div>
+                <div class="error-message" id="q22-error"></div>
+            </div>
+
+            <!-- Question 23 (Stocking question with 14.4% margin) -->
+            <div class="question-container" data-question="23">
+                <div class="question">23. YiPPee! का एक पास्ता मसाला है जिसकी MRP ₹5 है और उस पर 14.4% मार्जिन है, क्या आप इसे स्टॉक करना चाहेंगे?</div>
+                <div class="product-showcase">
+                    <div style="background: linear-gradient(45deg, #ff6b6b, #4ecdc4); width: 150px; height: 100px; margin: 0 auto; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">YiPPee! पास्ता मसाला</div>
+                    <p style="margin-top: 10px; font-weight: bold;">MRP: ₹5 | मार्जिन: 14.4%</p>
+                </div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q23_yes" name="q23" value="yes">
+                        <label for="q23_yes">हाँ</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q23_no" name="q23" value="no">
+                        <label for="q23_no">नहीं</label>
+                    </div>
+                </div>
+                <div class="error-message" id="q23-error"></div>
+            </div>
+
+            <!-- Question 24 (Follow-up for "no" answers) -->
+            <div class="question-container" data-question="24">
+                <div class="question">24. आप इसे स्टॉक करने के लिए किस वजह से प्रेरित होंगे?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q24_better_margin" name="q24" value="better_margin">
+                        <label for="q24_better_margin">बेहतर मार्जिन</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q24_more_demand" name="q24" value="more_demand">
+                        <label for="q24_more_demand">ज़्यादा ग्राहक मांग</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q24_easy_stock" name="q24" value="easy_stock">
+                        <label for="q24_easy_stock">आसानी से स्टॉक मिलना</label>
+                    </div>
+                </div>
+                <div class="error-message" id="q24-error"></div>
+            </div>
+
+            <!-- Question 25: YiPPee noodles question (for all) -->
+            <div class="question-container" data-question="25">
+                <div class="question">25. क्या आप YippEE नूडल्स बेचते हैं?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q25_5_10_pack" name="q25" value="yes_5_10_pack">
+                        <label for="q25_5_10_pack">हाँ, ₹5/₹10 पैक</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q25_other_pack" name="q25" value="yes_other_pack">
+                        <label for="q25_other_pack">हाँ, अन्य पैक साइज</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q25_no" name="q25" value="no">
+                        <label for="q25_no">नहीं</label>
+                    </div>
+                </div>
+                <div class="error-message" id="q25-error"></div>
+            </div>
+
+            <!-- Completion Message -->
+            <div class="question-container" data-question="complete">
+                <div class="completion-message">
+                    <h2>🎉 धन्यवाद!</h2>
+                    <p>आपने सफलतापूर्वक सर्वेक्षण पूरा कर लिया है। आपके जवाब हमारे लिए बहुत महत्वपूर्ण हैं।</p>
+                    <p>आपके सहयोग के लिए धन्यवाद!</p>
                 </div>
             </div>
 
-            <div class="content-section">
-                <h2>The Results</h2>
-                <div class="chart-container">
-                    <h3>Product Mix Transformation: From Traditional to Wellness</h3>
-                    
-                    <!-- Before vs After Comparison -->
-                    <div class="single-chart-container">
-                        <h4>Product Mix: Before vs After</h4>
-                        <div class="dual-comparison-chart">
-                            <div class="comparison-group">
-                                <div class="group-header">Before: Traditional Mix</div>
-                                <div class="category-bars">
-                                    <div class="category-item">
-                                        <div class="category-bar red-bar" style="height: 100px;">50%</div>
-                                        <span class="category-label">Chips</span>
-                                    </div>
-                                    <div class="category-item">
-                                        <div class="category-bar orange-bar" style="height: 50px;">25%</div>
-                                        <span class="category-label">Chocolates</span>
-                                    </div>
-                                    <div class="category-item">
-                                        <div class="category-bar yellow-bar" style="height: 30px;">15%</div>
-                                        <span class="category-label">Beverages</span>
-                                    </div>
-                                    <div class="category-item">
-                                        <div class="category-bar green-bar" style="height: 20px;">10%</div>
-                                        <span class="category-label">Healthy</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="comparison-group">
-                                <div class="group-header">After: Wellness Focus</div>
-                                <div class="category-bars">
-                                    <div class="category-item">
-                                        <div class="category-bar red-bar" style="height: 70px;">35%</div>
-                                        <span class="category-label">Chips</span>
-                                    </div>
-                                    <div class="category-item">
-                                        <div class="category-bar orange-bar" style="height: 40px;">20%</div>
-                                        <span class="category-label">Chocolates</span>
-                                    </div>
-                                    <div class="category-item">
-                                        <div class="category-bar yellow-bar" style="height: 36px;">18%</div>
-                                        <span class="category-label">Beverages</span>
-                                    </div>
-                                    <div class="category-item">
-                                        <div class="category-bar green-bar" style="height: 54px;">27%</div>
-                                        <span class="category-label">Healthy</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="chart-insight">
-                            <strong>Key Achievement:</strong> 2.7x increase in healthy snack mix (10% → 27%) drove 20% margin improvement
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="metrics-dashboard">
-                    <div class="metric-card positive">
-                        <div class="metric-value">₹15K</div>
-                        <div class="metric-label">Avg Monthly Revenue</div>
-                        <div class="metric-detail">Up from ₹8K baseline</div>
-                    </div>
-                    <div class="metric-card positive">
-                        <div class="metric-value">27%</div>
-                        <div class="metric-label">Healthy Snack Mix</div>
-                        <div class="metric-detail">Increased from 10%</div>
-                    </div>
-                    <div class="metric-card positive">
-                        <div class="metric-value">₹3L+</div>
-                        <div class="metric-label">Monthly Revenue Boost</div>
-                        <div class="metric-detail">Across 120 pilot machines</div>
-                    </div>
-                    <div class="metric-card positive">
-                        <div class="metric-value">18%</div>
-                        <div class="metric-label">Overall Margins</div>
-                        <div class="metric-detail">Improved from 15%</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Case Study: FlipTalk -->
-    <div id="fliptalk-study" class="case-study">
-        <div class="container">
-            <button class="back-button" onclick="showHome()">← Back to Home</button>
-            
-            <div class="case-study-hero">
-                <h1>How I Turned Gaming Voice Chat Toxicity Into Anonymous Fun and Scaled to 40K+ Users</h1>
-                <p>As a college gamer, I experienced firsthand how voice chats with strangers turned abusive when teams started losing. I saw an opportunity to make real-time voice interaction both safe and playful through anonymous voice filters.</p>
-            </div>
-
-            <div class="stats-grid">
-                <div class="stat">
-                    <div class="stat-number">42K</div>
-                    <div class="stat-label">Users</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">2.4x</div>
-                    <div class="stat-label">Session Duration Boost</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">33%</div>
-                    <div class="stat-label">Day 1-3 Retention Increase</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">30%</div>
-                    <div class="stat-label">CAC Reduction</div>
-                </div>
-            </div>
-
-            <div class="content-section">
-                <h2>The Aha Moment</h2>
-                <p>During college gaming sessions, I noticed voice chats with strangers would quickly turn toxic when teams started losing. After discovering Voicemod's platform with 2M+ users, I realized we needed a solution that maintained emotional expression while removing personal attack vectors through anonymity.</p>
-                
-                <div class="chart-container">
-                    <h3>User Behavior Analysis: Gaming Voice Chat Pain Points</h3>
-                    <div class="single-chart-container">
-                        <h4>Why Users Avoided Voice Chat</h4>
-                        <div class="simple-bars">
-                            <div class="simple-bar-row">
-                                <span class="bar-label">Toxicity & Abuse</span>
-                                <div class="bar-container">
-                                    <div class="bar toxicity" style="width: 40%;">40%</div>
-                                </div>
-                            </div>
-                            <div class="simple-bar-row">
-                                <span class="bar-label">Privacy Concerns</span>
-                                <div class="bar-container">
-                                    <div class="bar privacy" style="width: 20%;">20%</div>
-                                </div>
-                            </div>
-                            <div class="simple-bar-row">
-                                <span class="bar-label">Language Barriers</span>
-                                <div class="bar-container">
-                                    <div class="bar language" style="width: 20%;">20%</div>
-                                </div>
-                            </div>
-                            <div class="simple-bar-row">
-                                <span class="bar-label">Shyness/Anxiety</span>
-                                <div class="bar-container">
-                                    <div class="bar shyness" style="width: 10%;">10%</div>
-                                </div>
-                            </div>
-                            <div class="simple-bar-row">
-                                <span class="bar-label">Technical Issues</span>
-                                <div class="bar-container">
-                                    <div class="bar technical" style="width: 10%;">10%</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="single-chart-container">
-                        <h4>Gaming Session Impact on Chat Quality</h4>
-                        <div class="simple-bars">
-                            <div class="simple-bar-row">
-                                <span class="bar-label">Team Winning</span>
-                                <div class="bar-container">
-                                    <div class="bar positive-chat" style="width: 85%;">85% Positive</div>
-                                </div>
-                            </div>
-                            <div class="simple-bar-row">
-                                <span class="bar-label">Close Game</span>
-                                <div class="bar-container">
-                                    <div class="bar mixed-chat" style="width: 60%;">60% Positive</div>
-                                </div>
-                            </div>
-                            <div class="simple-bar-row">
-                                <span class="bar-label">Team Losing</span>
-                                <div class="bar-container">
-                                    <div class="bar negative-chat" style="width: 25%;">25% Positive</div>
-                                </div>
-                            </div>
-                            <div class="simple-bar-row">
-                                <span class="bar-label">Player Mistake</span>
-                                <div class="bar-container">
-                                    <div class="bar toxic-chat" style="width: 15%;">15% Positive</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="analysis-insight">
-                            <strong>Key Insight:</strong> Voice chat toxicity was directly correlated with game performance—creating a predictable pattern that anonymity could solve.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="content-section">
-                <h2>What I Built</h2>
-                <div class="cards-grid">
-                    <div class="feature-card">
-                        <h3>Voice-Filtered Gaming for Anonymous Fun</h3>
-                        <p>Integrated real-time voice filters allowing users to stay anonymous while expressing emotion through playful personas like chipmunk, robot, and horror voices</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Community-Led Growth & Retention</h3>
-                        <p>Built 100-member campus ambassador network for low-cost user acquisition and launched meme campaigns to make FlipTalk viral within student communities</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Gamification & Engagement System</h3>
-                        <p>Introduced loyalty-based XP rewards and streak bonuses to increase engagement and session repeat rates, driving long-term retention</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>User-Centric Feedback Loop</h3>
-                        <p>Launched in-app feedback system gathering real-time insights on discomfort, fun level, and technical issues to drive iterative improvements</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="content-section">
-                <h2>The Results</h2>
-                <p>Within 3 months, reached 40K+ users with 370% growth. The campus ambassador network proved highly effective for student-focused acquisition, while gamification elements significantly boosted engagement metrics.</p>
-                
-                <div class="chart-container">
-                    <h3>3-Month Growth Journey: From Concept to 40K Users</h3>
-                    
-                    <!-- User Growth Chart -->
-                    <div class="single-chart-container">
-                        <h4>User Acquisition & Retention Growth</h4>
-                        <div class="revenue-bar-chart">
-                            <div class="revenue-month">
-                                <div class="revenue-bar month1">
-                                    <div class="revenue-amount">8.5K</div>
-                                </div>
-                                <div class="month-label">Month 1</div>
-                            </div>
-                            
-                            <div class="revenue-month">
-                                <div class="revenue-bar month2">
-                                    <div class="revenue-amount">22K</div>
-                                </div>
-                                <div class="month-label">Month 2</div>
-                            </div>
-                            
-                            <div class="revenue-month">
-                                <div class="revenue-bar month3">
-                                    <div class="revenue-amount">42K</div>
-                                </div>
-                                <div class="month-label">Month 3</div>
-                            </div>
-                        </div>
-                        <div class="chart-insight">
-                            <strong>370% User Growth</strong> - Driven by campus ambassador network and viral meme campaigns
-                        </div>
-                    </div>
-
-                    <!-- Engagement Metrics Chart -->
-                    <div class="single-chart-container">
-                        <h4>Engagement & Session Quality Improvements</h4>
-                        <div class="metrics-comparison">
-                            <div class="metric-group">
-                                <div class="metric-header">Avg Session Duration</div>
-                                <div class="metric-bars">
-                                    <div class="metric-month">
-                                        <div class="metric-bar orders month1">8 min</div>
-                                        <span class="metric-label">Before</span>
-                                    </div>
-                                    <div class="metric-month">
-                                        <div class="metric-bar orders month2">14 min</div>
-                                        <span class="metric-label">Month 2</span>
-                                    </div>
-                                    <div class="metric-month">
-                                        <div class="metric-bar orders month3">19 min</div>
-                                        <span class="metric-label">Month 3</span>
-                                    </div>
-                                </div>
-                                <div class="metric-growth">+137% Growth</div>
-                            </div>
-
-                            <div class="metric-group">
-                                <div class="metric-header">Day 1-3 Retention</div>
-                                <div class="metric-bars">
-                                    <div class="metric-month">
-                                        <div class="metric-bar aov month1">45%</div>
-                                        <span class="metric-label">Before</span>
-                                    </div>
-                                    <div class="metric-month">
-                                        <div class="metric-bar aov month2">58%</div>
-                                        <span class="metric-label">Month 2</span>
-                                    </div>
-                                    <div class="metric-month">
-                                        <div class="metric-bar aov month3">60%</div>
-                                        <span class="metric-label">Month 3</span>
-                                    </div>
-                                </div>
-                                <div class="metric-growth">+33% Improvement</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="metrics-dashboard">
-                    <div class="metric-card positive">
-                        <div class="metric-value">42K</div>
-                        <div class="metric-label">Total Users</div>
-                        <div class="metric-detail">From 0 to 42K in 3 months</div>
-                    </div>
-                    <div class="metric-card positive">
-                        <div class="metric-value">2.4x</div>
-                        <div class="metric-label">Session Duration</div>
-                        <div class="metric-detail">19 min vs 8 min baseline</div>
-                    </div>
-                    <div class="metric-card positive">
-                        <div class="metric-value">30%</div>
-                        <div class="metric-label">CAC Reduction</div>
-                        <div class="metric-detail">Via campus ambassadors</div>
-                    </div>
-                    <div class="metric-card positive">
-                        <div class="metric-value">13%</div>
-                        <div class="metric-label">Churn Reduction</div>
-                        <div class="metric-detail">Through UX improvements</div>
-                    </div>
-                </div>
-                
-                <p><strong>Recognition:</strong> FlipTalk was incubated at 3 accelerators—IIIT-H, AIC-SMUTBI, and Wadhwani Foundation. Received funding and awards from 2 of them, including Meta XR recognition among India's top 20 XR startups.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Case Study: Uber -->
-    <div id="uber-study" class="case-study">
-        <div class="container">
-            <button class="back-button" onclick="showHome()">← Back to Home</button>
-            
-            <div class="case-study-hero">
-                <h1>Solving Post-Booking Anxiety</h1>
-                <p>Addressing uncertainty and building trust in the critical moments after ride confirmation</p>
-            </div>
-
-            <div class="content-section">
-                <h2>Problem</h2>
-                <p>After the ride is confirmed, users experience uncertainty. Questions like "Why aren't they moving?", "Should I book again on another app?" create anxiety, especially for time-sensitive use cases like airport drops or meetings.</p>
-            </div>
-
-            <div class="content-section">
-                <h2>Insight</h2>
-                <p>People tend to check the map obsessively right after booking. If the car doesn't move within minutes, they either call the driver, open a competing app, or cancel the ride. This behavior comes from a lack of certainty during a high-trust moment.</p>
-            </div>
-
-            <div class="content-section">
-                <h2>What I would do as a PM at Uber</h2>
-                <div class="cards-grid">
-                    <div class="feature-card">
-                        <h3>Contextual Communication</h3>
-                        <p>Replace ETAs with reason-based updates like "Driver is waiting at a traffic light before turning toward pickup" to reduce anxiety from stationary car icons.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Driver Monitoring & Parallel Reassignment</h3>
-                        <p>If the assigned driver doesn't move within 2 minutes, nudge them first, then quietly search for a backup driver in parallel without creating panic.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Reliability Monetization</h3>
-                        <p>Allow users to "lock" a driver for ₹50 at booking. If the driver cancels within 2-3 minutes, user receives ₹100 credit for time-critical rides.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="content-section">
-                <h2>Expected Impact</h2>
-                <p>These changes aim to solve not just logistical issues, but emotional friction. By addressing post-booking anxiety through transparency, backup systems, and reliability monetization, we can build deeper trust during critical moments.</p>
-            </div>
-
-            <div class="content-section">
-                <h2>Metrics to Track</h2>
-                <div class="cards-grid">
-                    <div class="feature-card">
-                        <h3>Post-Match Cancellation Rate</h3>
-                        <p>A direct measure of user anxiety after a driver is confirmed. Should drop as transparency and control improve.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Driver Call Frequency</h3>
-                        <p>Indicates trust gaps. Should decrease over time as users become familiar with clearer, in-app updates.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Ride Lock Adoption Rate</h3>
-                        <p>Reflects user demand for reliability during high-stakes situations.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Support Ticket Volume</h3>
-                        <p>Lower inbound support = better communication, less confusion, and smoother UX.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Case Study: LinkedIn -->
-    <div id="linkedin-study" class="case-study">
-        <div class="container">
-            <button class="back-button" onclick="showHome()">← Back to Home</button>
-            
-            <div class="case-study-hero">
-                <h1>Building LinkedIn's Feed Relevance</h1>
-                <p>Transforming the professional feed from clickbait-driven to career-focused through intelligent content curation and user preferences</p>
-            </div>
-
-            <div class="content-section">
-                <h2>Problem</h2>
-                <p>LinkedIn is meant to help professionals discover content that supports career growth, but the feed is filled with clickbaity posts that feel generic. Users scroll through content that doesn't match their interests, role, or goals, making the platform feel less useful over time.</p>
-            </div>
-
-            <div class="content-section">
-                <h2>What I would do as a PM at LinkedIn</h2>
-                <div class="cards-grid">
-                    <div class="feature-card">
-                        <h3>Tag-Based Content Preferences</h3>
-                        <p>Allow users to select specific topics, skills, and industry areas they want to see more of. Use these preferences to weight content in the algorithm.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Role-Specific Content Surfacing</h3>
-                        <p>Leverage job title and industry data to surface content that's specifically relevant to the user's current role and career stage.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Anti-Viral Content Detection</h3>
-                        <p>Implement systems to detect when similar content templates are being overused. Reduce distribution of copycat posts and reward original content.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Content Quality Scoring</h3>
-                        <p>Develop quality metrics based on engagement depth, save rates, and time spent reading. Prioritize substantive content over viral but shallow posts.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="content-section">
-                <h2>Expected Impact</h2>
-                <p>By focusing on relevance over virality, LinkedIn can become a more valuable professional tool. Users will spend more meaningful time on the platform and engage with content that actually helps their careers.</p>
-            </div>
-
-            <div class="content-section">
-                <h2>Success Metrics</h2>
-                <div class="cards-grid">
-                    <div class="feature-card">
-                        <h3>Content Relevance Score</h3>
-                        <p>User surveys on how relevant their feed content feels to their professional goals and interests.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Engagement Quality</h3>
-                        <p>Ratio of meaningful comments to surface-level reactions. Higher quality engagement indicates more valuable content.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Time Well Spent</h3>
-                        <p>User-reported satisfaction with time spent on LinkedIn. Are users learning and growing from their feed experience?</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Content Diversity</h3>
-                        <p>Reduction in duplicate or template-based content. Increase in original, industry-specific insights.</p>
-                    </div>
-                </div>
+            <!-- Navigation -->
+            <div class="navigation">
+                <button class="btn btn-secondary" id="prevBtn" onclick="previousQuestion()" style="display: none;">पिछला</button>
+                <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">अगला</button>
             </div>
         </div>
     </div>
 
     <script>
-        // Toggle mobile menu
-        function toggleMobileMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
+        let currentQuestion = 1;
+        let totalQuestions = 25;
+        let userResponses = {};
+        let questionFlow = [];
+        
+        // Cohort assignment for YiPPee noodles option
+        let cohort = Math.random() < 0.5 ? 'g' : 'h'; // 50% chance for cohort 'g'
+        
+        // Helper functions for conditional logic
+        function checkCondition1e() {
+            return userResponses.q1 && userResponses.q1.includes('pasta_masala');
+        }
+        
+        function checkCondition1f() {
+            return userResponses.q1 && userResponses.q1.includes('none');
+        }
+        
+        function checkCondition3g() {
+            return userResponses.q3 && (userResponses.q3.includes('yippee') || userResponses.q3.includes('yippee_noodles'));
+        }
+        
+        function checkCondition4g() {
+            return userResponses.q4 && userResponses.q4.includes('yippee');
+        }
+        
+        function checkCondition5g() {
+            return userResponses.q5 && userResponses.q5.includes('yippee');
+        }
+        
+        function checkCondition36d() {
+            return userResponses.q17 && userResponses.q17.includes('no_reorder');
+        }
+        
+        function checkCondition33a() {
+            return userResponses.q15 && userResponses.q15.includes('blue');
+        }
+        
+        function checkCondition33b() {
+            return userResponses.q15 && userResponses.q15.includes('red');
+        }
+        
+        function checkCondition33c() {
+            return userResponses.q15 && userResponses.q15.includes('both');
         }
 
-        // Close mobile menu when clicking a link
-        function closeMobileMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.remove('active');
-        }
-
-        // Navigation and page switching functions
-        function showHome() {
-            closeMobileMenu();
-            document.getElementById('home-page').style.display = 'block';
-            document.querySelectorAll('.case-study').forEach(study => {
-                study.style.display = 'none';
-            });
-            window.scrollTo(0, 0);
-        }
-
-        function showCaseStudy(study) {
-            closeMobileMenu();
-            document.getElementById('home-page').style.display = 'none';
-            document.querySelectorAll('.case-study').forEach(s => {
-                s.style.display = 'none';
-            });
-            document.getElementById(study + '-study').style.display = 'block';
-            window.scrollTo(0, 0);
-        }
-
-        function scrollToSection(sectionId) {
-            closeMobileMenu();
-            const element = document.getElementById(sectionId);
-            if (element) {
-                element.scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+        // Check if question should be shown based on conditions
+        function shouldShowQuestion(questionLogic) {
+            const condition1e = checkCondition1e();
+            const condition1f = checkCondition1f();
+            const condition3g = checkCondition3g();
+            const condition4g = checkCondition4g();
+            const condition5g = checkCondition5g();
+            const condition36d = checkCondition36d();
+            const condition33a = checkCondition33a();
+            const condition33b = checkCondition33b();
+            const condition33c = checkCondition33c();
+            
+            switch(questionLogic) {
+                case 'yippee_aware':
+                    return condition1e && !condition1f && condition3g;
+                    
+                case 'yippee_seller':
+                    return condition1e && !condition1f && condition3g && (condition4g || condition5g) && !(condition4g && condition5g);
+                    
+                case 'variant_conditional':
+                    return condition1e && !condition1f && (condition33a || condition33b) && !(condition4g && condition5g && condition33b && !condition33c);
+                    
+                case 'lapsers':
+                    return condition1e && !condition1f && condition36d && !(condition4g && condition5g);
+                    
+                case 'stopped_selling':
+                    return condition1e && !condition1f && condition3g && condition5g && !(condition4g && condition5g);
+                    
+                case 'aware_not_selling':
+                    return (condition1e && !condition1f && !condition3g && !(condition4g || condition5g) && !(condition4g && condition5g)) || 
+                           (condition1e && !condition1f && condition3g && !(condition4g || condition5g) && !(condition4g && condition5g));
+                    
+                case 'not_aware':
+                    return condition1e && !condition1f && !condition3g && !(condition4g || condition5g) && !(condition4g && condition5g);
+                    
+                case 'general':
+                    return condition1e && !condition1f;
+                    
+                default:
+                    return true;
             }
         }
 
-        // Initialize page when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add smooth scrolling behavior
-            const navLinks = document.querySelectorAll('.nav-links a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    // Don't prevent default for external links
-                    if (this.getAttribute('href') && this.getAttribute('href').startsWith('http')) {
-                        return;
-                    }
-                    if (this.getAttribute('onclick')) return;
-                    e.preventDefault();
-                });
+        // Initialize survey
+        function initializeSurvey() {
+            updateProgress();
+            document.getElementById('nextBtn').textContent = 'अगला';
+            
+            // Show YiPPee noodles option for cohort 'g'
+            if (cohort === 'g') {
+                document.getElementById('q3_yippee_noodles_option').style.display = 'flex';
+            }
+        }
+
+        // Validation functions
+        function validateQuestion(questionNum) {
+            const questionContainer = document.querySelector(`[data-question="${questionNum}"]`);
+            const inputs = questionContainer.querySelectorAll('input[type="checkbox"], input[type="radio"]');
+            const errorElement = questionContainer.querySelector('.error-message');
+            
+            let isValid = false;
+            let checkedInputs = [];
+
+            inputs.forEach(input => {
+                if (input.checked) {
+                    checkedInputs.push(input);
+                }
             });
 
-            // Add scroll effect to navigation
-            window.addEventListener('scroll', function() {
-                const nav = document.querySelector('nav');
-                if (window.scrollY > 100) {
-                    nav.style.background = 'rgba(255, 255, 255, 0.98)';
-                } else {
-                    nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            // Check if at least one option is selected
+            if (checkedInputs.length > 0) {
+                isValid = true;
+                
+                // Handle "other" input validation
+                checkedInputs.forEach(input => {
+                    if (input.value === 'other') {
+                        const otherInput = input.parentElement.querySelector('.other-input');
+                        if (otherInput && (!otherInput.value || otherInput.value.trim() === '')) {
+                            isValid = false;
+                        }
+                    }
+                });
+            }
+
+            if (!isValid) {
+                errorElement.textContent = 'कृपया कम से कम एक विकल्प चुनें।';
+                errorElement.style.display = 'block';
+            } else {
+                errorElement.style.display = 'none';
+            }
+
+            return isValid;
+        }
+
+        // Store user responses
+        function storeResponse(questionNum) {
+            const questionContainer = document.querySelector(`[data-question="${questionNum}"]`);
+            const inputs = questionContainer.querySelectorAll('input[type="checkbox"], input[type="radio"]');
+            
+            userResponses[`q${questionNum}`] = [];
+            
+            inputs.forEach(input => {
+                if (input.checked) {
+                    let value = input.value;
+                    if (value === 'other') {
+                        const otherInput = input.parentElement.querySelector('.other-input');
+                        value = otherInput ? otherInput.value : '';
+                    }
+                    userResponses[`q${questionNum}`].push(value);
+                }
+            });
+        }
+
+        // Determine next question based on logic
+        function getNextQuestion(currentQ) {
+            switch(currentQ) {
+                case 1:
+                    // Check if pasta masala is selected
+                    if (!userResponses.q1 || !userResponses.q1.includes('pasta_masala')) {
+                        return 'terminate';
+                    }
+                    return 2;
+                
+                case 2:
+                    return 3;
+                
+                case 3:
+                    return 4;
+                
+                case 4:
+                    return 5;
+                
+                case 5:
+                    return 6;
+                
+                case 6:
+                    // Update Q7, Q9 with selected brand (Q8 removed)
+                    const selectedBrand = userResponses.q6[0];
+                    const q7Brand = document.getElementById('q7-brand');
+                    const q9Brand = document.getElementById('q9-brand');
+                    if (q7Brand) q7Brand.textContent = selectedBrand;
+                    if (q9Brand) q9Brand.textContent = selectedBrand;
+                    return 7;
+                
+                case 7:
+                    return 9; // Skip Q8, go directly to Q9
+                
+                case 9:
+                    // After Q9, check conditions for YiPPee questions
+                    if (shouldShowQuestion('yippee_aware')) {
+                        return 10; // YiPPee aware questions
+                    } else if (shouldShowQuestion('not_aware')) {
+                        return 23; // Not aware questions
+                    } else if (shouldShowQuestion('general')) {
+                        return 25; // General YiPPee noodles question
+                    } else {
+                        return 'complete';
+                    }
+                
+                case 10:
+                    if (shouldShowQuestion('yippee_aware')) return 11;
+                    return 'complete';
+                
+                case 11:
+                    if (shouldShowQuestion('yippee_aware')) return 12;
+                    return 'complete';
+                
+                case 12:
+                    if (shouldShowQuestion('yippee_seller')) {
+                        return 13; // Sellers questions
+                    } else if (shouldShowQuestion('aware_not_selling')) {
+                        return 21; // Aware but not selling
+                    } else {
+                        return 'complete';
+                    }
+                
+                case 13:
+                    if (shouldShowQuestion('yippee_seller')) return 14;
+                    return 'complete';
+                
+                case 14:
+                    if (shouldShowQuestion('yippee_seller')) return 15;
+                    return 'complete';
+                
+                case 15:
+                    const selectedVariant = userResponses.q15[0];
+                    if (shouldShowQuestion('variant_conditional')) {
+                        if (selectedVariant === 'blue') {
+                            return '15a';
+                        } else if (selectedVariant === 'red') {
+                            return '15b';
+                        }
+                    }
+                    return 16;
+                
+                case '15a':
+                case '15b':
+                    return 16;
+                
+                case 16:
+                    if (shouldShowQuestion('yippee_seller')) return 17;
+                    return 'complete';
+                
+                case 17:
+                    // Check for lapsers or reorder pattern
+                    const reorders = userResponses.q17[0] !== 'no_reorder';
+                    if (shouldShowQuestion('lapsers') || !reorders) {
+                        return 18; // Lapsers questions
+                    } else {
+                        return 'complete';
+                    }
+                
+                case 18:
+                    if (shouldShowQuestion('lapsers')) return 19;
+                    return 'complete';
+                
+                case 19:
+                    if (shouldShowQuestion('yippee_seller')) return 20;
+                    return 'complete';
+                
+                case 20:
+                    return 'complete';
+                
+                case 21:
+                    if (shouldShowQuestion('aware_not_selling')) return 22;
+                    return 'complete';
+                
+                case 22:
+                    return 'complete';
+                
+                case 23:
+                    // Check if they answered "no" to stocking question
+                    const willStock = userResponses.q23[0] === 'yes';
+                    if (willStock) {
+                        return 'complete';
+                    } else {
+                        return 24; // Follow-up for "no" answers
+                    }
+                
+                case 24:
+                    if (shouldShowQuestion('general')) {
+                        return 25; // YiPPee noodles question
+                    } else {
+                        return 'complete';
+                    }
+                
+                case 25:
+                    return 'complete';
+                
+                default:
+                    return 'complete';
+            }
+        }
+
+        // Navigation functions
+        function nextQuestion() {
+            if (currentQuestion === 'terminate' || currentQuestion === 'complete') {
+                return;
+            }
+
+            if (!validateQuestion(currentQuestion)) {
+                return;
+            }
+
+            storeResponse(currentQuestion);
+            
+            const nextQ = getNextQuestion(currentQuestion);
+            
+            // Hide current question
+            const currentElement = document.querySelector(`[data-question="${currentQuestion}"]`);
+            if (currentElement) {
+                currentElement.classList.remove('active');
+            }
+            
+            // Show next question
+            currentQuestion = nextQ;
+            const nextElement = document.querySelector(`[data-question="${currentQuestion}"]`);
+            if (nextElement) {
+                nextElement.classList.add('active');
+            }
+            
+            // Update navigation
+            updateNavigation();
+            updateProgress();
+        }
+
+        function previousQuestion() {
+            // Implementation for previous question (simplified)
+            if (currentQuestion > 1 && typeof currentQuestion === 'number') {
+                const currentElement = document.querySelector(`[data-question="${currentQuestion}"]`);
+                if (currentElement) {
+                    currentElement.classList.remove('active');
+                }
+                currentQuestion--;
+                const prevElement = document.querySelector(`[data-question="${currentQuestion}"]`);
+                if (prevElement) {
+                    prevElement.classList.add('active');
+                }
+                updateNavigation();
+                updateProgress();
+            }
+        }
+
+        function updateNavigation() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            if (!prevBtn || !nextBtn) return;
+            
+            if (currentQuestion === 1) {
+                prevBtn.style.display = 'none';
+            } else if (currentQuestion !== 'terminate' && currentQuestion !== 'complete') {
+                prevBtn.style.display = 'block';
+            }
+            
+            if (currentQuestion === 'complete' || currentQuestion === 'terminate') {
+                nextBtn.style.display = 'none';
+            } else {
+                nextBtn.style.display = 'block';
+                nextBtn.textContent = 'अगला';
+            }
+        }
+
+        function updateProgress() {
+            let progress = 0;
+            if (typeof currentQuestion === 'number') {
+                progress = (currentQuestion / totalQuestions) * 100;
+            } else if (currentQuestion === 'complete') {
+                progress = 100;
+            }
+            
+            const progressFill = document.getElementById('progressFill');
+            if (progressFill) {
+                progressFill.style.width = progress + '%';
+            }
+        }
+
+        // Event listeners for options
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeSurvey();
+            
+            // Handle option selection
+            document.addEventListener('change', function(e) {
+                if (e.target.type === 'checkbox' || e.target.type === 'radio') {
+                    const option = e.target.closest('.option');
+                    
+                    // Handle "other" input visibility
+                    if (e.target.value === 'other' && e.target.checked) {
+                        const otherInput = option.querySelector('.other-input');
+                        if (otherInput) {
+                            otherInput.classList.add('show');
+                        }
+                    }
+                    
+                    // Handle exclusive options like "none"
+                    if (e.target.name.includes('q1') && e.target.value === 'none' && e.target.checked) {
+                        // Uncheck other options when "none" is selected
+                        const otherInputs = document.querySelectorAll('input[name="q1"]');
+                        otherInputs.forEach(input => {
+                            if (input !== e.target) input.checked = false;
+                        });
+                    }
+                    
+                    // Update option styling
+                    if (e.target.checked) {
+                        option.classList.add('selected');
+                    } else {
+                        option.classList.remove('selected');
+                        const otherInput = option.querySelector('.other-input');
+                        if (otherInput) {
+                            otherInput.classList.remove('show');
+                        }
+                    }
+                }
+            });
+            
+            // Handle variant selection
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('.variant-option')) {
+                    const variantOption = e.target.closest('.variant-option');
+                    const variant = variantOption.dataset.variant;
+                    const radio = document.getElementById(`q15_${variant}`);
+                    
+                    // Clear previous selections
+                    document.querySelectorAll('.variant-option').forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    document.querySelectorAll('input[name="q15"]').forEach(input => {
+                        input.checked = false;
+                    });
+                    
+                    // Select current option
+                    variantOption.classList.add('selected');
+                    radio.checked = true;
                 }
             });
         });

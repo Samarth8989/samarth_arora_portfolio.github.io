@@ -400,14 +400,17 @@
             margin: 2rem 0;
         }
 
-        .feature-card {
-            background: #fff;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 1.5rem;
-            transition: box-shadow 0.3s ease;
-        }
-
+       .feature-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 280px;
+}
         .feature-card:hover {
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
@@ -825,14 +828,14 @@
 
         /* Impact Mini Callouts */
         .impact-mini {
-            margin-top: 1rem;
-            padding: 0.75rem;
-            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
-            border-radius: 8px;
-            border-left: 4px solid #10b981;
-            font-size: 0.875rem;
-            color: #064e3b;
-        }
+    margin-top: auto;
+    padding: 0.75rem;
+    background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+    border-radius: 8px;
+    border-left: 4px solid #10b981;
+    font-size: 0.875rem;
+    color: #064e3b;
+}
 
         .impact-mini strong {
             color: #047857;

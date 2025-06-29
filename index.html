@@ -934,7 +934,56 @@
                 grid-template-columns: 1fr;
             }
         }
-    </style>
+        <style>
+/* Extra enhancements for small mobile devices */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    padding: 0 12px;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .metric-number {
+    font-size: 2rem;
+  }
+
+  .metric-label {
+    font-size: 0.9rem;
+  }
+
+  .cta-button, .contact-button {
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .nav-container {
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .nav-links {
+    padding: 0.5rem 1rem;
+  }
+}
+</style>
 </head>
 <body>
     <!-- Navigation -->
